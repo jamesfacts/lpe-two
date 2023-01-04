@@ -81,6 +81,16 @@ add_action('after_setup_theme', function () {
      */
     add_theme_support('post-thumbnails');
 
+    // using this for the homepage blog feed
+    // also for the blog feed thumb
+    add_image_size('w450', 450, 9999);
+
+    // using this for the featured blog post
+    add_image_size('w680', 680, 9999);
+
+    // Allow excerpts for pages
+    add_post_type_support('page', 'excerpt');
+
     /**
      * Enable responsive embed support.
      *
@@ -112,25 +122,72 @@ add_action('after_setup_theme', function () {
 }, 20);
 
 /**
- * Register the theme sidebars.
- *
- * @return void
+ * Remove the default WordPress image thumb sizes
+ * unclear why we need two approaches to eliminate '2048x2048', '1536x1536' vs
+ * the other default sizes
+ */
+
+ add_action('init', function () {
+    remove_image_size('2048x2048');
+    remove_image_size('1536x1536');
+});
+
+add_filter('intermediate_image_sizes', __NAMESPACE__ . '\remove_default_img_sizes', 10, 1);
+
+function remove_default_img_sizes($sizes)
+{
+    $targets = ['medium', 'medium_large', 'thumbnail', 'large'];
+
+    foreach ($sizes as $size_index=>$size) {
+        if (in_array($size, $targets)) {
+            unset($sizes[$size_index]);
+        }
+    }
+
+    return $sizes;
+}
+
+/**
+ * Register sidebars
  */
 add_action('widgets_init', function () {
-    $config = [
+    $sidebarConfig = [
         'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
+        'after_widget'  => '</section>',
+        'before_title'  => '<span class="widget-hed">',
+        'after_title'   => '</span>'
     ];
 
+    /**
+     * this messy duplicate config is necessary because widgets don't know
+     * what sidebar they belong to, so you can't remove titles
+     * with the `widget_title` filter
+     */
+    $footerConfig = [
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="d-none">',
+        'after_title'   => '</h3>'
+    ];
     register_sidebar([
-        'name' => __('Primary', 'sage'),
-        'id' => 'sidebar-primary',
-    ] + $config);
+        'name'          => __('Blog Sidebar', 'sage'),
+        'id'            => 'sidebar-primary'
+    ] + $sidebarConfig);
+    register_sidebar([
+        'name'          => __('Main Footer', 'sage'),
+        'before_widget' => '<section class="widget footer-widget %1$s %2$s">',
+        'id'            => 'sidebar-footer'
+    ] + $footerConfig);
+    register_sidebar([
+        'name'          => __('Lower Footer', 'sage'),
+        'before_widget' => '<section class="widget %1$s %2$s" id="sidebar-lower-footer">',
+        'id'            => 'sidebar-lower-footer'
+    ] + $footerConfig);
+});
 
-    register_sidebar([
-        'name' => __('Footer', 'sage'),
-        'id' => 'sidebar-footer',
-    ] + $config);
+/**
+ * Updates the `$post` variable on each iteration of the loop.
+ * Note: updated value is only available for subsequently loaded views, such as partials
+ */
+add_action('the_post', function ($post) {
+    sage('blade')->share('post', $post);
 });
