@@ -142,9 +142,15 @@ return [
     */
 
     'taxonomy' => [
-        'genre' => [
-            'links' => ['book'],
-            'meta_box' => 'radio',
+        'speaker_topics' => [
+            'links' => ['lpe_speaker'],
+            'hierarchical' => false,
+            'rewrite' => ['slug' => 'speaker-topics', 'with_front' => false ]
+        ],
+        'symposia' => [
+            'links' => ['post'],
+            'hierarchical' => false,
+            'rewrite' => ['slug' => 'symposia', 'with_front' => false ]
         ],
     ],
 
