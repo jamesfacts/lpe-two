@@ -21,18 +21,35 @@ class FrontPage extends Composer
      */
 
      public function getHero()
-     {
-         $heroUrl = wp_get_attachment_url(get_theme_mod('lpe_hero_image'));
- 
-         echo "************************";
-         var_dump($heroUrl);
+     { 
+         if(function_exists('get_field') && get_field('lpe_hero_image')) {
+            $hero = get_field('lpe_hero_image');
 
-         if (!$heroUrl) {
-             $heroUrl = 'https://placehold.it/1820x1080';
-         }
+            if( is_array( $hero ) ) {
+                return (object) [
+                    'url' => $hero['url'],
+                    'alt' => $hero['alt']
+                ];
+            }
+        }
  
          // Always return
-         return $heroUrl;
+         return false;
+     }
+
+
+     public function pageBlurbs()
+     {
+        if(function_exists('get_field')) {
+            return collect([
+                (object)['title' => 'Learn', 'text' => get_field('learn_blurb') ],
+                (object)['title' => 'Engage', 'text' => get_field('engage_blurb')],
+                (object)['title' => 'Events', 'text' => get_field('events_blurb')],
+            ]);
+        }
+ 
+         // Always return
+         return false;
      }
 
     /**
@@ -77,6 +94,7 @@ class FrontPage extends Composer
         return [
             'frontHero' => $this->getHero(),
             'blogFeed' => $this->blogFeed(),
+            'pageBlurbs' => $this->pageBlurbs(),
         ];
     }
 }
