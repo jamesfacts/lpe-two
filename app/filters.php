@@ -261,10 +261,6 @@ function add_lpe_syllabi_columns($columns)
 add_filter('manage_posts_columns', __NAMESPACE__ . '\add_lpe_syllabi_columns');
 add_action('manage_posts_custom_column', __NAMESPACE__ . '\custom_lpe_syllabi_columns', 10, 2);
 
-add_filter('get_search_form', function () {
-   return \App\template('partials.searchform');
-});
-
 add_filter('next_posts_link_attributes', __NAMESPACE__ . '\lpe_posts_link_attributes');
 add_filter('previous_posts_link_attributes', __NAMESPACE__ . '\lpe_posts_link_attributes');
 

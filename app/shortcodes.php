@@ -208,6 +208,7 @@ class Shortcodes
             $atts
         );
 
+        // https://discourse.roots.io/t/filter-get-search-form-to-return-sage-10-view/24051/2
         $html = \App\template('partials.masthead', ['hed' => $atts['hed']]);
 
         return $html;
