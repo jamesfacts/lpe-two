@@ -54,7 +54,7 @@ try {
 |
 */
 
-collect(['setup', 'filters', 'helpers'])
+collect(['setup', 'filters', 'helpers', 'metaboxes'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(

@@ -58,6 +58,10 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
+        'about_navigation' => __('About Navigation', 'sage'),
+        'engage_navigation' => __('Engage Navigation', 'sage'),
+        'learn_navigation' => __('Learn Navigation', 'sage'),
+        'events_navigation' => __('Events Navigation', 'sage')
     ]);
 
     /**
@@ -191,3 +195,80 @@ add_action('widgets_init', function () {
 // add_action('the_post', function ($post) {
 //     sage('blade')->share('post', $post);
 // });
+
+/**
+ *  Once a post is featured, we don't want it showing up elsewhere
+ */
+
+ function custom_query_vars($query)
+ {
+     if (!is_admin() && $query->is_main_query()) {
+         if (is_home()) {
+             $args = [
+                 'post_type' => 'post',
+                 'posts_per_page' => '1',
+                 'meta_query' => [
+                 ['key' => 'allow_featured', 'value' => 1] ]
+           ];
+ 
+             $excluded_query = new \WP_Query($args);
+ 
+             $excluded_posts = collect($excluded_query->posts)->map(function ($post) {
+                 return $post->ID;
+             })->first();
+ 
+             $query->set('post__not_in', [$excluded_posts]);
+         }
+     }
+ }
+ 
+ add_action('pre_get_posts', __NAMESPACE__ . '\custom_query_vars');
+
+ // rename the default WP tags
+function rename_tag_taxonomy()
+{
+
+  // grab the default tag taxonomy
+    global $wp_taxonomies;
+
+    // because we are messing with the default tag tax object it's important
+    // to re-insert _every_ possible label
+    // list of taxonomy labels pulled from here https://developer.wordpress.org/reference/functions/get_taxonomy_labels/
+    $wp_taxonomies['post_tag']->labels = (object)[
+    'name'
+        => _x('Topics', 'taxonomy general name', 'sage'), 'singular_name'
+        => _x('Topic', 'taxonomy singular name', 'sage'), 'search_items'
+        => __('Search Topics', 'sage'), 'popular_items'
+        => __('Popular Topics', 'sage'), 'all_items'
+        => __('All Topics', 'sage'), 'parent_item'
+        => null, 'parent_item_colon'
+        => null, 'edit_item'
+        => __('Edit Topic', 'sage'), 'view_item'
+        => __('View Topic', 'sage'), 'update_item'
+        => __('Update Topic', 'sage'), 'add_new_item'
+        => __('Add New Topic', 'sage'), 'new_item_name'
+        => __('New Topic Name', 'sage'), 'separate_items_with_commas'
+        => __('Separate topics with commas', 'sage'), 'add_or_remove_items'
+        => __('Add or remove topics', 'sage'), 'choose_from_most_used'
+        => __('Choose from the most used topics', 'sage'), 'not_found'
+        => __('No topics found.', 'sage'), 'no_terms'
+        => null, 'items_list_navigation'
+        => __('Topics', 'sage'), 'items_list'
+        => __('Topics', 'sage'), 'most_used'
+        => __('Most used topics', 'sage'), 'menu_name'
+        => __('Topics', 'sage'),
+    ];
+}
+
+add_action('init', __NAMESPACE__ . '\rename_tag_taxonomy', 10);
+
+function lpe_project_register_search_route()
+{
+    register_rest_route('lpe_project/v1', '/search', [
+        'methods' => \WP_REST_Server::READABLE,
+        'callback' => __NAMESPACE__ . '\lpe_project_ajax_search',
+        'args' => \App\lpe_project_get_search_args()
+    ]);
+}
+
+add_action('rest_api_init', __NAMESPACE__ . '\lpe_project_register_search_route');

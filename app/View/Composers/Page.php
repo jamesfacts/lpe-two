@@ -12,7 +12,8 @@ class Page extends Composer
      * @var array
      */
     protected static $views = [
-        'partials.page-header'
+        'partials.page-header',
+        'partials.content-page'
     ];
 
     /**
@@ -29,6 +30,22 @@ class Page extends Composer
      }
 
     /**
+     * Check to see if we're in a page that wants to show a menu
+     * 
+     * @return boolean 
+    */
+
+    public function showMenu()
+    {
+        if ( function_exists('get_field') && !get_field('disable_menu') )
+        {
+            return true;
+        } 
+
+        return false;
+    }
+
+    /**
      * Data to be passed to view before rendering.
      *
      * @return array
@@ -37,6 +54,7 @@ class Page extends Composer
     {
         return [
             'featuredPageImage' => $this->featuredPageImage(),
+            'showMenu' => $this->showMenu(),
         ];
     }
 }
