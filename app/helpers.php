@@ -15,30 +15,26 @@ function filler_image($filler_type = '', $width = 'full')
 {
     switch ($filler_type) {
             case 'thumb':
-                $customizer_prefix = 'lpe_thumb_filler_image_';
+                $filler_set = 'lpe_thumb_filler_image_';
                 break;
             case 'header':
-                $customizer_prefix = 'lpe_filler_image_';
+                $filler_set = 'header_filler_images';
+                $array_container = 'filler_header_image';
                 break;
             default:
-                $customizer_prefix = 'lpe_filler_image_';
+                $filler_set = 'lpe_filler_image_';
                 break;
         };
 
-
-    $image_array = [];
-
-    // we have more thumb fillers than header fillers
-    $image_count = ($filler_type === 'thumb') ? 12 : 6;
-    static $filler_offset = null;
-
-    for ($x = 1; $x <= $image_count; $x++) {
-        $filler_id = get_theme_mod($customizer_prefix . $x);
-        if (!empty($filler_id)) {
-            $image_array[] = wp_get_attachment_image_src($filler_id, $width)[0];
-        }
+    if( function_exists('get_field') && get_field( $filler_set, 'options' ) ){
+        $images_avail = get_field($filler_set, 'options' );
+        $image_count = count($images_avail);
+        $image_selected = $images_avail[rand(0, ($image_count-1))];
+        
+        return (object)[
+            'url' => $image_selected[$array_container]["url"],
+        ];
     }
 
-    $filler_offset = rand(0, (count($image_array) - 1));
-    return $image_array[$filler_offset];
+    return false;
 }
