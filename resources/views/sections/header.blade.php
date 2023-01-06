@@ -1,7 +1,7 @@
 <header class="nav-wrapper">
-  <div class="nav-header nav-buttons">
-    <button id="menuCollapse" class="navbar-toggler" type="button">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 30" version="1.1" x="0px" y="0px" class="menu-burger">
+  <div class="nav-header nav-buttons bg-black flex items-center  py-6">
+    <button id="menuCollapse" class="navbar-toggler " type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 30" version="1.1" x="0px" y="0px" class="menu-burger fill-white px-5" style="height:38px;>
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g fill="white">
             <path d="M20.0387825,5.75903332 L4.26253805,5.75903332 C3.7175576,5.75903332 3.2759355,5.31741123 3.2759355,4.7734748 C3.2759355,4.22849435 3.7175576,3.78687226 4.26253805,3.78687226 L20.0387825,3.78687226 C20.5827189,3.78687226 21.024341,4.22849435 21.024341,4.7734748 C21.024341,5.31741123 20.5827189,5.75903332 20.0387825,5.75903332"/>
