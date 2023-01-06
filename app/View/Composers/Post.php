@@ -26,6 +26,7 @@ class Post extends Composer
     {
         return [
             'title' => $this->title(),
+            'contributor' => $this->contributor(),
         ];
     }
 
@@ -65,5 +66,45 @@ class Post extends Composer
         }
 
         return get_the_title();
+    }
+
+    /**
+     * Are there any contributors available here?
+     */
+
+     public function contributor()
+     {
+         if (!function_exists('get_field')) {
+             return false;
+         }
+ 
+         $contributors = [];
+ 
+         $contributorsInArticle = get_field('_author', get_the_ID());
+             if(is_array($contributorsInArticle)) {
+                 foreach ($contributorsInArticle as $contributorID) {
+                     $contributors[] = (object)[
+                         'name' => get_the_title($contributorID),
+                         'url' => get_permalink($contributorID),
+                     ];
+                 }
+ 
+                 return $contributors;
+             }
+ 
+         return false;
+     }
+ 
+
+    /**
+     * Data to be passed to view before rendering.
+     *
+     * @return array
+     */
+    public function with()
+    {
+        return [
+            //
+        ];
     }
 }

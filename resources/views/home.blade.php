@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
-  {{"hi i am blog"}}
+  <section class="row">
+    <div class="col-lg-5">
+      <h1 class="blog-title">LPE Blog</h1>
+    </div>
+  </section>
+  
+  @dump($homeFeaturedBlog)
 
   @if (! have_posts())
     <x-alert type="warning">

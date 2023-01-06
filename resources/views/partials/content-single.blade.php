@@ -3,7 +3,7 @@
     <h1 class="entry-title">
       {!! $title !!}
     </h1>
-
+    @dump($contributor)
     @include('partials.entry-meta')
   </header>
 
