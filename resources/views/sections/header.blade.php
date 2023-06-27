@@ -1,6 +1,6 @@
-<header class="nav-wrapper bg-black block lg:h-full" x-data="{ open: false }">
-  <div class="nav-header nav-buttons bg-black flex items-center  py-6">
-    <button id="menuCollapse" class="navbar-toggler " type="button" x-on:click=" open = ! open ">
+<header class="nav-wrapper bg-black block lg:h-full lg:flex lg:space-between" x-data="{ open: true }" :class="open ? 'navigating' : ''">
+  <div class="nav-header nav-buttons bg-black py-6 lg:flex lg:flex-col lg:px-2 lg:justify-between">
+    <button id="menuCollapse" class="navbar-toggler " type="button" x-on:click=" open = ! open " >
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 30" version="1.1" x="0px" y="0px" class="menu-burger fill-white px-5" style="height:38px;>
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g fill="white">
@@ -17,13 +17,13 @@
     </a>
   </div>
 
-    @if (has_nav_menu('primary_navigation'))
-      <nav class="nav-primary pt-8 pl-8 bg-black text-white" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}" id="navbarToggler" x-show="open" style="height: 100vh;">
-        <div class="" aria-modal="true" role="dialog">
-          {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
-          {!! get_search_form(false) !!}
-        </div>
-      </nav>
-    @endif
+  @if (has_nav_menu('primary_navigation'))
+    <nav class="nav-primary pt-8 pl-8 bg-black text-white lg:flex lg:items-center lg:pb-20" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}" x-show="open" >
+      <div class="" aria-modal="true" role="dialog">
+        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
+        {!! get_search_form(false) !!}
+      </div>
+    </nav>
+  @endif
 
 </header>
