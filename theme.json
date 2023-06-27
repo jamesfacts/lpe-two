@@ -1171,6 +1171,11 @@
           "name": "Ui-monospace",
           "slug": "mono",
           "fontFamily": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
+        },
+        {
+          "name": "Rubik",
+          "slug": "rubik",
+          "fontFamily": "Rubik,sans-serif"
         }
       ],
       "fontSizes": [

@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {}, // Extend Tailwind's default colors
+      fontFamily: {
+        rubik: ['Rubik', 'sans-serif'],
+      },
     },
   },
-  plugins: [],
+  plugins: [ ],
 };
