@@ -1,0 +1,30 @@
+.nav-primary .search-form {
+    border: 1px solid #ffffff;
+    border-top: none;
+    border-left: none;
+    width: 1305px;
+    max-width: 82%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem 0.4rem 0;
+}
+
+.nav-primary .search-form .search-field {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: Rubik, sans-serif;
+    text-transform: uppercase;
+    line-height: 4.5rem;
+    padding: 0 0 0 0.2rem;
+    letter-spacing: .02em;
+    width: 100%;
+    background-color: black;
+}
+
+@media screen(lg) {
+    .nav-wrapper {
+        width: 100px;
+        position: fixed;
+        z-index: 999;
+    }
+}

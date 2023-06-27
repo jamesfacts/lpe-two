@@ -8,6 +8,16 @@ namespace App;
 
 use function Roots\bundle;
 
+function google_fonts_rubik_url()
+{
+    return 'https://fonts.googleapis.com/css?family=' . urlencode('Rubik:300,400,600,700&display=swap');
+}
+
+function google_fonts_serif_pro_url()
+{
+    return 'https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap';
+}
+
 /**
  * Register the theme assets.
  *
@@ -15,6 +25,8 @@ use function Roots\bundle;
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
+
+    wp_enqueue_style('google/fonts', \App\google_fonts_rubik_url(), false, null);
 }, 100);
 
 /**

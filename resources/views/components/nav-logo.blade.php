@@ -1,7 +1,7 @@
-<img src="{{ \Roots\asset('images/LPE_PrimaryLogo_White.svg') }}" class="vertical-lpe-logo hidden" alt="Law and Political Economy Project" />
+<img src="{{ \Roots\asset('images/LPE_PrimaryLogo_White.svg') }}" class="vertical-lpe-logo hidden lg:visible" alt="Law and Political Economy Project" />
 
 <svg width="138px" height="43px" viewBox="0 0 138 43" version="1.1" xmlns="http://www.w3.org/2000/svg" 
-  xmlns:xlink="http://www.w3.org/1999/xlink" class="horizontal-lpe-logo mx-auto">
+  xmlns:xlink="http://www.w3.org/1999/xlink" class="horizontal-lpe-logo block mx-auto lg:hidden">
   <title>Law and Political Economy Project</title>
   <g id="lpe-logo" fill="white" fill-rule="nonzero">
     <path
