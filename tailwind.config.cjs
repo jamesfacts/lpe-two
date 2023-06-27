@@ -7,6 +7,9 @@ module.exports = {
       fontFamily: {
         rubik: ['Rubik', 'sans-serif'],
       },
+      spacing: {
+        '168': '42rem',
+      },
     },
   },
   plugins: [ ],
