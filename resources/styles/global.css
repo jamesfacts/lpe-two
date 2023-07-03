@@ -72,4 +72,8 @@
     .nav-primary .search-submit {
         @apply mt-3;
     }
+
+    main.main {
+        margin-left: 100px;
+    }
 }

@@ -42,9 +42,9 @@ class FrontPage extends Composer
      {
         if(function_exists('get_field')) {
             return collect([
-                (object)['title' => 'Learn', 'text' => get_field('learn_blurb') ],
-                (object)['title' => 'Engage', 'text' => get_field('engage_blurb')],
-                (object)['title' => 'Events', 'text' => get_field('events_blurb')],
+                (object)['title' => 'Learn', 'text' => get_field('learn_blurb'), 'url' => home_url('/learn') ],
+                (object)['title' => 'Engage', 'text' => get_field('engage_blurb'), 'url' => home_url('/engage') ],
+                (object)['title' => 'Events', 'text' => get_field('events_blurb'), 'url' => home_url('/events') ],
             ]);
         }
  

@@ -1133,6 +1133,11 @@
           "name": "Rose 900",
           "slug": "rose-900",
           "color": "#881337"
+        },
+        {
+          "name": "Tahini 500",
+          "slug": "tahini-500",
+          "color": "#d4a45e"
         }
       ]
     },
