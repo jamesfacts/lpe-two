@@ -4,13 +4,6 @@ namespace App;
 
 use WP_Query;
 
-/**
- * Add a tickbox to set a single post as a 'featured' item, to be displayed in the
- * featured blog section of the 'home' template
- *
- * Accepts the current metaboxes object
- * @param object $meta_boxes
- */
 
 // Register the 'contributor' meta box for articles, books and posts
 if (! function_exists('author-select-meta-box')) {
@@ -19,48 +12,6 @@ if (! function_exists('author-select-meta-box')) {
     });
 }
 
-// here's how we save the "featured" meta box...a little different than most meta box saves
-
-// there can only be one
-function highlander_featured_post($post_id)
-{
-    // Be sure we're in a blog post
-    $post = get_post($post_id);
-    $posts_to_check = ['post', 'lpe_video'];
-    $fields_to_check = ['_featured_video', 'blog-options-featured_blog'];
-    
-    if (!in_array($post->post_type, $posts_to_check)) {
-        return;
-    }
-
-    // Stop when it is an autosave
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-    // Prevent quick edit from clearing custom fields
-    if (defined('DOING_AJAX') && DOING_AJAX) {
-        return;
-    }
-
-    $field = 'blog-options-featured_blog';
-
-    // todo no ==
-    if (!empty($_POST[$field])
-         && $_POST[$field] == true
-         && $_POST['post_status'] == 'publish') {
-
-        // Delete 'featured_blah_blah' meta from all posts
-        foreach ($posts_to_check as $post) {
-            delete_metadata($post, null, $field, null, true);
-        }
-
-        // Set 'featured_blah_blah' meta for the post bring saved
-        add_post_meta($post_id, $field, true);
-    }
-}
-
-add_action('publish_post', __NAMESPACE__ . '\highlander_featured_post');
-add_action('save_post', __NAMESPACE__ . '\highlander_featured_post');
 
 /**
  * Add a dropdown selector of authors, to allow a regular blog post to
