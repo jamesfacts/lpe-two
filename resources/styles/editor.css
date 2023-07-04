@@ -1,0 +1,7 @@
+.is-desktop-preview {
+    .editor-styles-wrapper {
+        padding-left: 4rem;
+        padding-right: 2rem;
+        max-width: 800px;
+    }
+}
