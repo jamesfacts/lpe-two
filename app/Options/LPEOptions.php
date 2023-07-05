@@ -55,6 +55,31 @@ class LPEOptions extends Field
                 ])
             ->endRepeater();
 
+        $FillerOptions
+            ->addRepeater('story_filler_images')
+                ->addImage('filler_story_image', [
+                    'label' => 'All images to be displayed as fallback fillers',
+                    'instructions' => 'Select a set of thumbnail images. Ideally 680px wide, 380px tall.',
+                    'required' => 0,
+                    'conditional_logic' => [],
+                    'wrapper' => [
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ],
+                    'return_format' => 'array',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+                    'min_width' => '600',
+                    'min_height' => '350',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ])
+            ->endRepeater();
+
         return $FillerOptions->build();
     }
 }

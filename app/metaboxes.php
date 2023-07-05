@@ -6,11 +6,11 @@ use WP_Query;
 
 
 // Register the 'contributor' meta box for articles, books and posts
-if (! function_exists('author-select-meta-box')) {
-    add_action('add_meta_boxes', function () {
-        add_meta_box('author-select-meta-box', 'Select Contributors', __NAMESPACE__.'\\author_select_meta_box', ['article', 'book', 'post'], 'side', 'core');
-    });
-}
+// if (! function_exists('author-select-meta-box')) {
+//     add_action('add_meta_boxes', function () {
+//         add_meta_box('author-select-meta-box', 'Select Contributors', __NAMESPACE__.'\\author_select_meta_box', ['article', 'book', 'post'], 'side', 'core');
+//     });
+// }
 
 
 /**
@@ -69,9 +69,9 @@ function author_select_meta_box($post)
 }
 
 // Register the 'contributor' meta box for posts
-add_action('add_meta_boxes', function () {
-    add_meta_box('author-select-meta-box', 'Select Contributors', __NAMESPACE__.'\\author_select_meta_box', ['post'], 'side', 'core');
-});
+// add_action('add_meta_boxes', function () {
+//     add_meta_box('author-select-meta-box', 'Select Contributors', __NAMESPACE__.'\\author_select_meta_box', ['post'], 'side', 'core');
+// });
 
 
 /**
@@ -108,11 +108,11 @@ function save_author_select_meta_boxes($post_ID)
 }
 
 // add save functionality for the contributor meta box to native WP post
-add_action(
-    'publish_post',
-    __NAMESPACE__.'\save_author_select_meta_boxes'
-);
-add_action('save_post', __NAMESPACE__.'\save_author_select_meta_boxes');
+// add_action(
+//     'publish_post',
+//     __NAMESPACE__.'\save_author_select_meta_boxes'
+// );
+// add_action('save_post', __NAMESPACE__.'\save_author_select_meta_boxes');
 
 
 // Register the 'contributor info' meta box for articles

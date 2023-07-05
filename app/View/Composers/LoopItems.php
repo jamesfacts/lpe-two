@@ -1,10 +1,13 @@
 <?php
+/**
+ * Locking these calls to a single post within the loop
+ */
 
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class App extends Composer
+class LoopItems extends Composer
 {
     /**
      * List of views served by this composer.
@@ -12,7 +15,7 @@ class App extends Composer
      * @var array
      */
     protected static $views = [
-        '*',
+        'partials.content-post',
     ];
 
     /**
@@ -23,23 +26,25 @@ class App extends Composer
     public function with()
     {
         return [
-            'siteName' => $this->siteName(),
-            'lpeContributors' => $this->lpeContributors(),
+            'postImage' => $this->postImage(),
+            'loopContributors' => $this->loopContributors(),
         ];
     }
 
-    /**
-     * Returns the site name.
-     *
-     * @return string
-     */
-    public function siteName()
-    {
-        return get_bloginfo('name', 'display');
+    public function postImage() {
+        $img_url = get_the_post_thumbnail_url(get_the_ID(), 'w680')
+                ? get_the_post_thumbnail_url(get_the_ID(), 'w680')
+                : \App\filler_image('thumb')["url"];
+
+        $img_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
+
+        return (object) [
+            'src' => $img_url,
+            'alt' => $img_alt,
+        ];
     }
 
-    public function lpeContributors()
-    {
+    public function loopContributors() {
         if (!function_exists('get_field')) {
             return false;
         }

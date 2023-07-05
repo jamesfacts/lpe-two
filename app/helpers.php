@@ -60,30 +60,32 @@ function lpe_project_ajax_search($request)
     return rest_ensure_response($results);
 }
 
+/**
+ * Return an image from the ACF options page
+ */
 
 function filler_image($filler_type = '', $width = 'full')
 {
     switch ($filler_type) {
             case 'thumb':
-                $filler_set = 'lpe_thumb_filler_image_';
+                $filler_set = 'story_filler_images';
                 break;
             case 'header':
                 $filler_set = 'header_filler_images';
-                $array_container = 'filler_header_image';
                 break;
             default:
-                $filler_set = 'lpe_filler_image_';
+                $filler_set = 'story_filler_images';
                 break;
         };
 
     if( function_exists('get_field') && get_field( $filler_set, 'options' ) ){
         $images_avail = get_field($filler_set, 'options' );
         $image_count = count($images_avail);
-        $image_selected = $images_avail[rand(0, ($image_count-1))];
+        $image_pick = rand(1, ($image_count)) - 1;
         
-        return (object)[
-            'url' => $image_selected[$array_container]["url"],
-        ];
+        foreach ($images_avail[$image_pick] as $image) {
+            return $image;
+        }
     }
 
     return false;

@@ -55,6 +55,14 @@ class PostSettings extends Field
                 'ui_off_text' => '',
             ]);
 
+        $postSettings
+            ->addPostObject('_author', [
+                'label' =>  'Select Contributors',
+                'post_type' => ['lpe_author'],
+                'multiple' => 1,
+                'return_format' => 'integer',
+            ]);
+
         return $postSettings->build();
     }
 }

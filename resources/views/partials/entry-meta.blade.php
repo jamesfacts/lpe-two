@@ -1,12 +1,19 @@
-<time class="updated" datetime="{{ get_post_time('c', true) }}">
-  {{ get_the_date() }}
-</time>
 
-@if($contributor)
-  <p class="byline author vcard">
-    <span>{{ __('By', 'sage') }}</span>
-    <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn">
-      @dump($contributor)
-    </a>
-  </p>
+@if(@isset($loopContributors))
+  <div class="">
+    <span class="by-text font-bold uppercase font-rubik leading-tight tracking-wide mb-3">
+      {{ __('By ', 'sage') }}
+    </span>
+    <!-- postContributors -->
+    @foreach ($loopContributors as $s_contributor)
+      <a href="{!! $contributor->url !!}" rel="author" class="font-bold uppercase font-rubik leading-tight tracking-wide mb-3">
+        {{$s_contributor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
+    @endforeach
+  </div>
+@else
+<div class="">
+  <span class="by-text">
+    Sorry, looks like no contributors are set
+  </span>
+</div>
 @endif

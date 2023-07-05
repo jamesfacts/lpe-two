@@ -27,7 +27,7 @@ class Home extends Composer
             'numberposts' => '1',
             'order_by' => 'date',
             'meta_query' => [
-                ['key' => 'allow_featured', 'value' => 1] ]
+                ['key' => 'top_post', 'value' => 1] ]
             ]);
 
             // 'authors' => App::postAuthors(),
@@ -52,7 +52,7 @@ class Home extends Composer
                     'url' => get_permalink($post),
                     'img_url' => get_the_post_thumbnail_url($post->ID, 'w680')
                                 ? get_the_post_thumbnail_url($post->ID, 'w680')
-                                                    : \App\filler_image(),
+                                                    : \App\filler_image('thumb')["url"],
                     'image_alt' => get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true),
                     'authors' => $contributors,
                     'excerpt' => get_field('featured_post_excerpt', $post->ID) ?

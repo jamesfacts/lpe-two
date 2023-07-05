@@ -10,6 +10,7 @@ module.exports = {
       }, // Extend Tailwind's default colors
       fontFamily: {
         rubik: ['Rubik', 'sans-serif'],
+        necto: ['Necto Mono', 'monospace'],
       },
       spacing: {
         '150': '36rem',
