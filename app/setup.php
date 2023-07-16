@@ -8,6 +8,16 @@ namespace App;
 
 use function Roots\bundle;
 
+function google_fonts_rubik_url()
+{
+    return 'https://fonts.googleapis.com/css?family=' . urlencode('Rubik:300,400,600,700&display=swap');
+}
+
+function google_fonts_serif_pro_url()
+{
+    return 'https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap';
+}
+
 /**
  * Register the theme assets.
  *
@@ -15,6 +25,8 @@ use function Roots\bundle;
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
+
+    wp_enqueue_style('google/fonts', \App\google_fonts_rubik_url(), false, null);
 }, 100);
 
 /**
@@ -58,6 +70,10 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
+        'about_navigation' => __('About Navigation', 'sage'),
+        'engage_navigation' => __('Engage Navigation', 'sage'),
+        'learn_navigation' => __('Learn Navigation', 'sage'),
+        'events_navigation' => __('Events Navigation', 'sage')
     ]);
 
     /**
@@ -80,6 +96,16 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
      */
     add_theme_support('post-thumbnails');
+
+    // using this for the homepage blog feed
+    // also for the blog feed thumb
+    add_image_size('w450', 450, 9999);
+
+    // using this for the featured blog post
+    add_image_size('w680', 680, 9999);
+
+    // Allow excerpts for pages
+    add_post_type_support('page', 'excerpt');
 
     /**
      * Enable responsive embed support.
@@ -112,25 +138,149 @@ add_action('after_setup_theme', function () {
 }, 20);
 
 /**
- * Register the theme sidebars.
- *
- * @return void
+ * Remove the default WordPress image thumb sizes
+ * unclear why we need two approaches to eliminate '2048x2048', '1536x1536' vs
+ * the other default sizes
+ */
+
+ add_action('init', function () {
+    remove_image_size('2048x2048');
+    remove_image_size('1536x1536');
+});
+
+add_filter('intermediate_image_sizes', __NAMESPACE__ . '\remove_default_img_sizes', 10, 1);
+
+function remove_default_img_sizes($sizes)
+{
+    $targets = ['medium', 'medium_large', 'thumbnail', 'large'];
+
+    foreach ($sizes as $size_index=>$size) {
+        if (in_array($size, $targets)) {
+            unset($sizes[$size_index]);
+        }
+    }
+
+    return $sizes;
+}
+
+/**
+ * Register sidebars
  */
 add_action('widgets_init', function () {
-    $config = [
+    $sidebarConfig = [
         'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
+        'after_widget'  => '</section>',
+        'before_title'  => '<span class="widget-hed">',
+        'after_title'   => '</span>'
     ];
 
+    /**
+     * this messy duplicate config is necessary because widgets don't know
+     * what sidebar they belong to, so you can't remove titles
+     * with the `widget_title` filter
+     */
+    $footerConfig = [
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="d-none">',
+        'after_title'   => '</h3>'
+    ];
     register_sidebar([
-        'name' => __('Primary', 'sage'),
-        'id' => 'sidebar-primary',
-    ] + $config);
-
+        'name'          => __('Blog Sidebar', 'sage'),
+        'id'            => 'sidebar-primary'
+    ] + $sidebarConfig);
     register_sidebar([
-        'name' => __('Footer', 'sage'),
-        'id' => 'sidebar-footer',
-    ] + $config);
+        'name'          => __('Main Footer', 'sage'),
+        'before_widget' => '<section class="widget footer-widget %1$s %2$s">',
+        'id'            => 'sidebar-footer'
+    ] + $footerConfig);
+    register_sidebar([
+        'name'          => __('Lower Footer', 'sage'),
+        'before_widget' => '<section class="widget %1$s %2$s" id="sidebar-lower-footer">',
+        'id'            => 'sidebar-lower-footer'
+    ] + $footerConfig);
 });
+
+/**
+ * Updates the `$post` variable on each iteration of the loop.
+ * Note: updated value is only available for subsequently loaded views, such as partials
+ */
+// add_action('the_post', function ($post) {
+//     sage('blade')->share('post', $post);
+// });
+
+/**
+ *  Once a post is featured, we don't want it showing up elsewhere
+ */
+
+ function custom_query_vars($query)
+ {
+     if (!is_admin() && $query->is_main_query()) {
+         if (is_home()) {
+             $args = [
+                 'post_type' => 'post',
+                 'posts_per_page' => '1',
+                 'meta_query' => [
+                 ['key' => 'allow_featured', 'value' => 1] ]
+           ];
+ 
+             $excluded_query = new \WP_Query($args);
+ 
+             $excluded_posts = collect($excluded_query->posts)->map(function ($post) {
+                 return $post->ID;
+             })->first();
+ 
+             $query->set('post__not_in', [$excluded_posts]);
+         }
+     }
+ }
+ 
+ add_action('pre_get_posts', __NAMESPACE__ . '\custom_query_vars');
+
+ // rename the default WP tags
+function rename_tag_taxonomy()
+{
+
+  // grab the default tag taxonomy
+    global $wp_taxonomies;
+
+    // because we are messing with the default tag tax object it's important
+    // to re-insert _every_ possible label
+    // list of taxonomy labels pulled from here https://developer.wordpress.org/reference/functions/get_taxonomy_labels/
+    $wp_taxonomies['post_tag']->labels = (object)[
+    'name'
+        => _x('Topics', 'taxonomy general name', 'sage'), 'singular_name'
+        => _x('Topic', 'taxonomy singular name', 'sage'), 'search_items'
+        => __('Search Topics', 'sage'), 'popular_items'
+        => __('Popular Topics', 'sage'), 'all_items'
+        => __('All Topics', 'sage'), 'parent_item'
+        => null, 'parent_item_colon'
+        => null, 'edit_item'
+        => __('Edit Topic', 'sage'), 'view_item'
+        => __('View Topic', 'sage'), 'update_item'
+        => __('Update Topic', 'sage'), 'add_new_item'
+        => __('Add New Topic', 'sage'), 'new_item_name'
+        => __('New Topic Name', 'sage'), 'separate_items_with_commas'
+        => __('Separate topics with commas', 'sage'), 'add_or_remove_items'
+        => __('Add or remove topics', 'sage'), 'choose_from_most_used'
+        => __('Choose from the most used topics', 'sage'), 'not_found'
+        => __('No topics found.', 'sage'), 'no_terms'
+        => null, 'items_list_navigation'
+        => __('Topics', 'sage'), 'items_list'
+        => __('Topics', 'sage'), 'most_used'
+        => __('Most used topics', 'sage'), 'menu_name'
+        => __('Topics', 'sage'),
+    ];
+}
+
+add_action('init', __NAMESPACE__ . '\rename_tag_taxonomy', 10);
+
+function lpe_project_register_search_route()
+{
+    register_rest_route('lpe_project/v1', '/search', [
+        'methods' => \WP_REST_Server::READABLE,
+        'callback' => __NAMESPACE__ . '\lpe_project_ajax_search',
+        'args' => \App\lpe_project_get_search_args()
+    ]);
+}
+
+add_action('rest_api_init', __NAMESPACE__ . '\lpe_project_register_search_route');

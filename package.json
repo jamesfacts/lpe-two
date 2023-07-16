@@ -21,5 +21,8 @@
     "@roots/bud": "6.4.5",
     "@roots/bud-tailwindcss": "6.4.5",
     "@roots/sage": "6.4.5"
+  },
+  "dependencies": {
+    "alpinejs": "^3.12.2"
   }
 }

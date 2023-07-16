@@ -1,0 +1,10 @@
+.author-wrap span,
+.author-wrap a {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+.blog .widget_search label {
+    @apply sr-only;
+}

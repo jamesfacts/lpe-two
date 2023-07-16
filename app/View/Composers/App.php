@@ -24,6 +24,7 @@ class App extends Composer
     {
         return [
             'siteName' => $this->siteName(),
+            'lpeContributors' => $this->lpeContributors(),
         ];
     }
 
@@ -35,5 +36,29 @@ class App extends Composer
     public function siteName()
     {
         return get_bloginfo('name', 'display');
+    }
+
+    public function lpeContributors()
+    {
+        if (!function_exists('get_field')) {
+            return false;
+        }
+
+        $contributors = [];
+
+        $contributorsInArticle = get_field('_author', get_the_ID());
+            if(is_array($contributorsInArticle)) {
+                foreach ($contributorsInArticle as $contributorID) {
+                    $contributors[] = (object)[
+                        'name' => get_the_title($contributorID),
+                        'url' => get_permalink($contributorID),
+                        'excerpt' => apply_filters('the_excerpt', get_post_field('post_excerpt', $contributorID)),
+                    ];
+                }
+
+                return $contributors;
+            }
+
+        return false;
     }
 }
