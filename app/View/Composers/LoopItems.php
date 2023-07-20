@@ -32,8 +32,8 @@ class LoopItems extends Composer
     }
 
     public function postImage() {
-        $img_url = get_the_post_thumbnail_url(get_the_ID(), 'w680')
-                ? get_the_post_thumbnail_url(get_the_ID(), 'w680')
+        $img_url = get_the_post_thumbnail_url(get_the_ID(), 'w450')
+                ? get_the_post_thumbnail_url(get_the_ID(), 'w450')
                 : \App\filler_image('thumb')["url"];
 
         $img_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);

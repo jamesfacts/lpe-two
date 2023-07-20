@@ -9,16 +9,17 @@
     <section class="bg-tahini-500">
       @foreach ($homeFeaturedBlog as $featured_post)
         <div class="max-w-screen-xl lg:flex lg:flex-row lg:pb-16">
-          <a href="{!! $featured_post->url !!}" class="lg:w-3/5" style="background-color: transparent;">
+          <div class="h-72 sm:h-96 lg:w-3/5">
             @if(@isset($featured_post->img_url))
-              <img src="{!! $featured_post->img_url !!}" class="w-full lg:p-12"
-                @if( @isset($featured_post->image_alt) )
-                  alt="{{ $featured_post->image_alt }}"
-                @endif
-              >
+              <figure class="img-fill"
+                style="background-image: url( {!! $featured_post->img_url !!} );" aria-label="{{ $featured_post->image_alt }}">
+                <a href="{!! $featured_post->url !!}" class="anchor-fill">
+                  <span class="sr-only">{!! $featured_post->title !!}</span>
+                </a>
+              </figure>
             @endif
             <span class="sr-only">{!! $featured_post->title !!}</span>
-          </a>
+          </div>
           <article class="py-6 mx-auto max-w-sm sm:py-12 md:max-w-lg lg:w-2/5 lg:pr-12">
             <h1 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none mb-3">
               <a href="{!! $featured_post->url !!}">{!! $featured_post->title !!}</a>

@@ -1,14 +1,12 @@
 
 <article @php(post_class('max-w-sm mx-auto md:max-w-md'))>
   @if(@isset($postImage))
-    <a href="{!! get_permalink() !!}" class="" style="">
-      <img src="{!! $postImage->src !!}" class="w-full"
-        @if( @isset($postImage->alt) )
-            alt="{{ $postImage->alt }}"
-        @endif
-        >
-      <span class="sr-only">{!! $postImage->title !!}</span>
-    </a>
+    @include('components/thumb-figure', [
+      'aspect_ratio' => '65%', 
+      'img_url' => $postImage->src, 
+      'url' => get_permalink(), 
+      'alt' => $postImage->alt
+    ])
   @endif
   <header>
     <h2 class="entry-title">
