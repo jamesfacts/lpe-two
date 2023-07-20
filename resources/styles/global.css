@@ -54,6 +54,26 @@ body {
     border-radius: 0;
 }
 
+.img-fill {
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.anchor-fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+  
+.underlay-fill {
+    display: flex;
+    width: 100%;
+}
+
 @media screen(lg) {
     .nav-wrapper {
         width: 100px;

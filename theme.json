@@ -1181,6 +1181,11 @@
           "name": "Rubik",
           "slug": "rubik",
           "fontFamily": "Rubik,sans-serif"
+        },
+        {
+          "name": "Necto Mono",
+          "slug": "necto",
+          "fontFamily": "Necto Mono,monospace"
         }
       ],
       "fontSizes": [
