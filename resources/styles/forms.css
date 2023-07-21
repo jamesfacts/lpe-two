@@ -5,24 +5,26 @@
     background-position-x: 50%;
     background-position-y: 50%;
     width: 12%;
-    max-width: 50px;
+    max-width: 40px;
     padding: 0 0.8rem 0 0;
     border-radius: 0;
 }
 .search-field {
-    font-size: 3rem;
-    font-weight: 700;
-    font-family: $theme-fonts-heavy;
-    text-transform: uppercase;
-    line-height: 4.5rem;
-    padding: 0;
-    padding-left: 0.2rem;
+    @apply text-4xl;
     letter-spacing: 0.02em;
-    width: 100%;
 
     &::placeholder {
       -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: black;
     }
-  }
+}
+
+@media screen(lg) {
+    .search-submit {
+        max-width: 50px;
+    }
+    .search-field {
+        @apply text-5xl;
+    }
+}
