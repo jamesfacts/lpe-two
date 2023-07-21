@@ -1,0 +1,28 @@
+.search-submit {
+    color: transparent !important;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 105 89'%3E%3Cpath class='st0' d='M52.6 88.6l49.6-44L52.6.6m-50.2 44h99.2' fill='none' stroke='%23000' stroke-width='2.4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    width: 12%;
+    max-width: 50px;
+    padding: 0 0.8rem 0 0;
+    border-radius: 0;
+}
+.search-field {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: $theme-fonts-heavy;
+    text-transform: uppercase;
+    line-height: 4.5rem;
+    padding: 0;
+    padding-left: 0.2rem;
+    letter-spacing: 0.02em;
+    width: 100%;
+
+    &::placeholder {
+      -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+    }
+  }

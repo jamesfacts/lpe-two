@@ -1143,6 +1143,11 @@
           "name": "Sunshine 500",
           "slug": "sunshine-500",
           "color": "#ffbf00"
+        },
+        {
+          "name": "Beige 200",
+          "slug": "beige-200",
+          "color": "#faf6f1"
         }
       ]
     },

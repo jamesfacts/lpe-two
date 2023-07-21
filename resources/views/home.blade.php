@@ -48,7 +48,8 @@
     </aside>
     <div class="lg:w-2/3 xl:w-3/4">
       @if(get_query_var('paged') == 0 && $stickyPosts)
-        <div class="bg-gray-200 md:grid md:grid-cols-2 md:gap-6 md:mb-6 xl:grid-cols-3">
+      <h1 class="font-bold text-4xl ">FEATURED</h1>
+        <div class="bg-beige-200 md:grid md:grid-cols-2 md:gap-6 md:mb-6 xl:grid-cols-3">
           @foreach ($stickyPosts as $stickyPost)
             @include('partials.content-post-sticky')            
           @endforeach
@@ -72,7 +73,7 @@
     @include('partials.masthead')
   </section>
   @endif
-  <section class="p-8 max-w-1400 lg:p-12 xl:p-24 xl:pl-32">
+  <section class="p-8 max-w-1400 lg:p-12 xl:p-24 xl:pl-32 xl:pr-8">
     @include('partials.searchbar')
   </section>
 @endsection
