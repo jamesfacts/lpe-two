@@ -70,6 +70,7 @@ class Masthead extends Composer
                 'managing' => $this->getMastheadOfType('managing_editor'),
                 'students' => $this->getMastheadOfType('student_editors'),
                 'emeriti' => $this->getMastheadOfType('student_editor_emeriti'),
+                'emeriti_count' => intval(count($this->getMastheadOfType('student_editor_emeriti')) / 2),
             ],
         ];
     }
