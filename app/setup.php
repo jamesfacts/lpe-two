@@ -216,20 +216,46 @@ add_action('widgets_init', function () {
  {
      if (!is_admin() && $query->is_main_query()) {
          if (is_home()) {
-             $args = [
+            $toppost_args = [
                  'post_type' => 'post',
-                 'posts_per_page' => '1',
                  'meta_query' => [
-                 ['key' => 'allow_featured', 'value' => 1] ]
-           ];
+                    ['key' => 'top_post', 'value' => 1] 
+                ]
+            ];
+
+            $sticky_args = [
+                'post_type' => 'post',
+                'meta_query' => [
+                    ['key' => 'sticky_zone', 'value' => 1] 
+                ]
+            ];
  
-             $excluded_query = new \WP_Query($args);
+             $excluded_toppost_query = new \WP_Query($toppost_args);
+             $excluded_sticky_query = new \WP_Query($sticky_args);
  
-             $excluded_posts = collect($excluded_query->posts)->map(function ($post) {
-                 return $post->ID;
-             })->first();
+             $excluded_toppost = collect($excluded_toppost_query->posts)->map(function ($post) {
+                 return (object) [
+                    'top_ID' => $post->ID,
+                    'post_modified' => $post->post_modified
+                 ];
+             })->sortByDesc('post_modified')->first();
+
+             $excluded_sticky_posts = collect($excluded_sticky_query->posts)->map(function ($post) {
+                return (object) [
+                   'sticky_ID' => $post->ID,
+                   'post_modified' => $post->post_modified
+                ];
+            })->sortByDesc('post_modified');
+
+             var_dump("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+             var_dump($excluded_sticky_posts);
  
-             $query->set('post__not_in', [$excluded_posts]);
+             $query->set('post__not_in', [$excluded_toppost->top_ID]);
+             
+             if(get_query_var('paged') == 0) {
+                $query->set('posts_per_page', 5);
+             }
+             
          }
      }
  }

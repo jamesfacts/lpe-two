@@ -7,6 +7,9 @@ module.exports = {
         tahini: { 
           500: '#d4a45e' 
         },
+        sunshine: {
+          500: '#ffbf00'
+        },
       }, // Extend Tailwind's default colors
       fontFamily: {
         rubik: ['Rubik', 'sans-serif'],
