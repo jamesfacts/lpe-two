@@ -8,8 +8,8 @@
   @if(get_query_var('paged') == 0 && $homeFeaturedBlog)
     <section class="bg-tahini-500">
       @foreach ($homeFeaturedBlog as $featured_post)
-        <div class="max-w-screen-xl lg:flex lg:flex-row lg:pb-16">
-          <div class="h-72 sm:h-96 lg:w-3/5">
+        <div class="max-w-screen-2xl lg:flex lg:flex-row lg:pb-16">
+          <div class="h-72 max-w-2xl mx-auto sm:h-120 sm:pt-8 lg:w-1/2 lg:py-12 lg:pl-12 xl:h-150 xl:mr-0">
             @if(@isset($featured_post->img_url))
               <figure class="img-fill"
                 style="background-image: url( {!! $featured_post->img_url !!} );" aria-label="{{ $featured_post->image_alt }}">
@@ -20,8 +20,8 @@
             @endif
             <span class="sr-only">{!! $featured_post->title !!}</span>
           </div>
-          <article class="py-6 mx-auto max-w-sm sm:py-12 md:max-w-lg lg:w-2/5 lg:pr-12">
-            <h1 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none mb-3">
+          <article class="py-6 mx-auto max-w-sm sm:py-12 md:max-w-lg lg:w-1/2 lg:px-12 xl:max-w-xl xl:ml-0">
+            <h1 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none mb-3 xl:text-5xl">
               <a href="{!! $featured_post->url !!}">{!! $featured_post->title !!}</a>
             </h1>
             
