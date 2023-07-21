@@ -9,7 +9,7 @@
     ])
   @endif
 
-  <div class="uppercase font-necto">
+  <div class="uppercase font-necto mt-2">
     @if($postCategories)
       @foreach ($postCategories as $lpe_category)
         <a href="{!! $lpe_category->link !!}" class="">
@@ -21,7 +21,7 @@
   </div>
 
   <header>
-    <h2 class="entry-title text-3xl font-bold uppercase font-rubik tracking-tighter leading-none my-3 lg:text-2xl xl:text-3xl">
+    <h2 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none my-3 lg:text-2xl xl:text-3xl">
       <a href="{{ get_permalink() }}">
         {!! $title !!}
       </a>
@@ -34,7 +34,7 @@
         </span>
         <!-- postContributors -->
         @foreach ($loopContributors as $s_contributor)
-          <a href="{!! $s_contributor->url !!}" rel="author" class="uppercase font-necto leading-tight tracking-wide mb-3">
+          <a href="{!! $s_contributor->url !!}" rel="author" class="uppercase font-necto leading-tight tracking-wide mb-3 hover:text-tahini-500">
             {{$s_contributor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
         @endforeach
       </div>

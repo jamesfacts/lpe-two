@@ -1,5 +1,5 @@
 
-<article @php(post_class('max-w-sm mx-auto md:max-w-md'))>
+<article @php(post_class('max-w-sm mx-auto md:max-w-md pb-8'))>
   @if(@isset($stickyPost->img_url))
     @include('components/thumb-figure', [
       'aspect_ratio' => '65%', 
@@ -8,9 +8,13 @@
       'alt' => $stickyPost->image_alt
     ])
   @endif
+  <div class="uppercase font-necto mt-2">
+    <span>Sticky Zone</span>
+  </div>
+
   <header>
-    <h2 class="entry-title">
-      <a href="{{ $stickyPost->url }}">
+    <h2 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none my-3 lg:text-2xl xl:text-3xl">
+      <a href="{{ $stickyPost->url }}" class="hover:text-tahini-500">
         {!! $stickyPost->title !!}
       </a>
     </h2>
@@ -22,7 +26,7 @@
         </span>
         
         @foreach ($stickyPost->authors as $s_contributor)
-          <a href="{!! $s_contributor->url !!}" rel="author" class="uppercase font-necto leading-tight tracking-wide mb-3">
+          <a href="{!! $s_contributor->url !!}" rel="author" class="uppercase font-necto leading-tight tracking-wide mb-3 hover:underline">
             {{$s_contributor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
         @endforeach
       </div>

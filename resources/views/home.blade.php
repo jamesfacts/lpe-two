@@ -27,7 +27,7 @@
             
             @include('partials/fixed-authors', ['featured_id' => $featured_post->post_id])
             <p class="featured-snippet">{!! $featured_post->excerpt !!}</p>
-            <a href="{!! $featured_post->url !!}" class="border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block mt-4" aria-label="Full post: {{ $featured_post->title }}">Continue Reading</a>
+            <a href="{!! $featured_post->url !!}" class="border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block mt-4 hover:bg-black hover:text-white" aria-label="Full post: {{ $featured_post->title }}">Continue Reading</a>
           </article>  
         </div>
       @endforeach
@@ -48,7 +48,7 @@
     </aside>
     <div class="lg:w-2/3 xl:w-3/4">
       @if(get_query_var('paged') == 0 && $stickyPosts)
-        <div class="bg-gray-300 md:grid md:grid-cols-2 md:gap-6 md:mb-6 xl:grid-cols-3">
+        <div class="bg-gray-200 md:grid md:grid-cols-2 md:gap-6 md:mb-6 xl:grid-cols-3">
           @foreach ($stickyPosts as $stickyPost)
             @include('partials.content-post-sticky')            
           @endforeach
@@ -69,45 +69,10 @@
 
   @if($mastheadMembers)
   <section class="bg-black">
-    <div class="max-w-1400">
-    <div class="pb-12 mx-auto xl:flex xl:flex-row xl:p-12 xl:mr-0 xl:pr-0 xl:ml-20">
-    <h2 class="p-12 uppercase text-3xl text-white font-bold max-w-xs lg:text-5xl xl:pl-0 ">LPE Masthead</h2>
-      
-      <div class="px-12 grid md:grid-cols-3 md:gap-6 md:mb-6 xl:mr-0 xl:pr-0 xl:ml-auto">
-        <div class="mb-8 md:border-r md:border-white xl:border-l xl:pl-6">
-          @if($mastheadMembers->managing)
-          <span class="text-white uppercase font-necto block mb-2">Managing Editor</span>
-            @foreach($mastheadMembers->managing as $item)
-              <a href="{{ $item->url }}" class="font-necto text-white block hover:text-tahini-500 hover:underline">{{ $item->name }}</a>
-            @endforeach
-          @endif
-          @if($mastheadMembers->board)
-          <span class="text-white uppercase font-necto block mb-2 mt-8">Editoral Board</span>
-            @foreach($mastheadMembers->board as $item)
-              <a href="{{ $item->url }}" class="font-necto text-white block hover:text-tahini-500 hover:underline">{{ $item->name }}</a>
-            @endforeach
-          @endif
-          @if($mastheadMembers->students)
-          <span class="text-white uppercase font-necto block  mb-2 mt-8">Student Editors</span>
-            @foreach($mastheadMembers->students as $item)
-              <a href="{{ $item->url }}" class="font-necto text-white block hover:text-tahini-500 hover:underline">{{ $item->name }}</a>
-            @endforeach
-          @endif
-        </div>
-        <div class="mb-8 md:border-r md:border-white">
-          @if($mastheadMembers->emeriti)
-          <span class="text-white uppercase font-necto block mb-2 pr-6">Student Editor Emeriti</span>
-            @foreach($mastheadMembers->emeriti as $item)
-              <a href="{{ $item->url }}" class="font-necto text-white block hover:text-tahini-500 hover:underline">{{ $item->name }}</a>
-              @if($loop->index === $mastheadMembers->emeriti_count)
-                </div><div>
-              @endif
-            @endforeach
-          @endif          
-        </div>
-      </div>
-      </div>
+    @include('partials.masthead')
   </section>
-  </div>
   @endif
+  <section class="p-8 max-w-1400 lg:p-12 xl:p-24 xl:pl-32">
+    @include('partials.searchbar')
+  </section>
 @endsection
