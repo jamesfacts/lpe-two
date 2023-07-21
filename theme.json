@@ -1138,6 +1138,11 @@
           "name": "Tahini 500",
           "slug": "tahini-500",
           "color": "#d4a45e"
+        },
+        {
+          "name": "Sunshine 500",
+          "slug": "sunshine-500",
+          "color": "#ffbf00"
         }
       ]
     },

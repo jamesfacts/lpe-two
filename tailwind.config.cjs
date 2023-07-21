@@ -10,6 +10,9 @@ module.exports = {
         sunshine: {
           500: '#ffbf00'
         },
+        beige: {
+          200: '#faf6f1'
+        },
       }, // Extend Tailwind's default colors
       fontFamily: {
         rubik: ['Rubik', 'sans-serif'],

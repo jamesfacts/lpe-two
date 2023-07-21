@@ -9,7 +9,7 @@
     <section class="bg-tahini-500">
       @foreach ($homeFeaturedBlog as $featured_post)
         <div class="max-w-screen-2xl lg:flex lg:flex-row lg:pb-16">
-          <div class="h-72 max-w-2xl mx-auto sm:h-120 sm:pt-8 lg:w-1/2 lg:py-12 lg:pl-12 xl:h-150 xl:mr-0">
+          <div class="h-72 max-w-2xl mx-auto sm:h-120 sm:pt-8 lg:w-1/2 lg:py-12 lg:pl-12 xl:h-150 xl:mx-0">
             @if(@isset($featured_post->img_url))
               <figure class="img-fill"
                 style="background-image: url( {!! $featured_post->img_url !!} );" aria-label="{{ $featured_post->image_alt }}">
@@ -67,4 +67,33 @@
 
   @endif
 
+  @if($mastheadMembers)
+  <section class="bg-black">
+    <h2 class="p-12 uppercase text-5xl text-white font-bold">LPE Masthead</h2>
+      
+      <div class="grid md:grid-cols-2 md:gap-6 md:mb-6 xl:grid-cols-3">
+        <div class="">
+          @if($mastheadMembers->managing)
+          <span class="text-white uppercase font-necto">Managing Editor</span>
+            @dump($mastheadMembers->managing)
+          @endif
+          @if($mastheadMembers->board)
+          <span class="text-white uppercase font-necto">Editoral Board</span>
+            @dump($mastheadMembers->board)
+          @endif
+          @if($mastheadMembers->students)
+          <span class="text-white uppercase font-necto">Student Editors</span>
+            @dump($mastheadMembers->students)
+          @endif
+        </div>
+        <div class="">
+          @if($mastheadMembers->emeriti)
+          <span class="text-white uppercase font-necto">Student Editor Emeriti</span>
+            @dump($mastheadMembers->emeriti)
+          @endif          
+        </div>
+      </div>
+
+  </section>
+  @endif
 @endsection

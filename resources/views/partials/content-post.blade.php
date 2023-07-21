@@ -8,8 +8,20 @@
       'alt' => $postImage->alt
     ])
   @endif
+
+  <div class="uppercase font-necto">
+    @if($postCategories)
+      @foreach ($postCategories as $lpe_category)
+        <a href="{!! $lpe_category->link !!}" class="">
+          {!! $lpe_category->name !!}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
+      @endforeach
+    @else
+      {{ __('LPE Originals', 'sage') }}
+    @endif
+  </div>
+
   <header>
-    <h2 class="entry-title">
+    <h2 class="entry-title text-3xl font-bold uppercase font-rubik tracking-tighter leading-none my-3 lg:text-2xl xl:text-3xl">
       <a href="{{ get_permalink() }}">
         {!! $title !!}
       </a>
@@ -26,12 +38,6 @@
             {{$s_contributor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
         @endforeach
       </div>
-    @else
-    <div class="">
-      <span class="by-text">
-        Sorry, looks like no contributors are set
-      </span>
-    </div>
     @endif
   </header>
 

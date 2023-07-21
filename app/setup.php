@@ -250,7 +250,7 @@ add_action('widgets_init', function () {
              $query->set('post__not_in', [$excluded_toppost->top_ID]);
              
              if(get_query_var('paged') == 0) {
-                $query->set('posts_per_page', 5);
+                $query->set('posts_per_page', 6);
              }
              
          }

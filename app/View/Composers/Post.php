@@ -27,6 +27,7 @@ class Post extends Composer
         return [
             'title' => $this->title(),
             'contributor' => $this->contributor(),
+            'postCategories' => $this->postCategories(),
         ];
     }
 
@@ -94,6 +95,37 @@ class Post extends Composer
  
          return false;
      }
+
+    /**
+    * Return a Laravel collection of categories that a post belongs to.
+    * @return object
+    */
+
+    public function postCategories()
+    {
+        if (is_archive()) {
+            // no category output inside archive pages
+            return false;
+        } else {
+            $categories = collect(get_the_category())->filter(
+                function ($category) {
+                    return $category->slug !== 'uncategorized';
+                }
+            )
+        ->map(function ($category) {
+            $lpeCategory = (object) [
+             'name' => $category->name,
+             'slug' => $category->slug,
+             'link' => home_url('/') . $category->taxonomy . '/' . $category->slug
+           ];
+            return $lpeCategory;
+        });
+
+            wp_reset_postdata();
+
+            return $categories->isEmpty() ? false : $categories;
+        }
+    }
  
 
     /**
