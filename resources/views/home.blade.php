@@ -34,7 +34,7 @@
     </section>
   @endif
  
-  @dump($stickyPosts)
+  
 
   @if (! have_posts())
     <x-alert type="warning">
@@ -47,6 +47,13 @@
       @include('sections.sidebar')
     </aside>
     <div class="lg:w-2/3 xl:w-3/4">
+      @if(get_query_var('paged') == 0 && $stickyPosts)
+        <div class="bg-gray-300 md:grid md:grid-cols-2 md:gap-6 md:mb-6 xl:grid-cols-3">
+          @foreach ($stickyPosts as $stickyPost)
+            @include('partials.content-post-sticky')            
+          @endforeach
+        </div>
+      @endif
       <div class=" md:grid md:grid-cols-2 md:gap-6 xl:grid-cols-3">
         @while(have_posts()) @php(the_post())
           @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])

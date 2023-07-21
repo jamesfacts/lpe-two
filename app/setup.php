@@ -246,9 +246,6 @@ add_action('widgets_init', function () {
                    'post_modified' => $post->post_modified
                 ];
             })->sortByDesc('post_modified');
-
-             var_dump("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-             var_dump($excluded_sticky_posts);
  
              $query->set('post__not_in', [$excluded_toppost->top_ID]);
              
