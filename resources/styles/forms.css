@@ -20,6 +20,46 @@
     }
 }
 
+/* aside sidebar widgets */
+
+.wp-block-search__inside-wrapper,
+#author-search {
+    @apply border border-black w-full p-1 bg-white mb-4;
+}
+
+#author-search {
+    @apply h-12 p-2 uppercase;
+}
+
+.wp-block-search__inside-wrapper:hover,
+#author-search:hover {
+    @apply border-tahini-500;
+}
+
+.wp-block-search__label {
+    @apply !relative uppercase;
+}
+
+.wp-block-search__input {
+    @apply !py-0 h-10 w-full border-none;
+}
+
+.widget-hed {
+    @apply uppercase block mb-1;
+}
+
+.wp-block-search__button {
+    color: transparent !important;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 105 89'%3E%3Cpath class='st0' d='M52.6 88.6l49.6-44L52.6.6m-50.2 44h99.2' fill='none' stroke='%23000' stroke-width='2.4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    width: 12%;
+    max-width: 30px;
+    padding: 0 0.8rem 0 0;
+    border-radius: 0;
+}
+
 @media screen(lg) {
     .search-submit {
         max-width: 50px;
