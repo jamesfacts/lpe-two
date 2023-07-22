@@ -1,5 +1,6 @@
 import {domReady} from '@roots/sage/client';
 import Alpine from 'alpinejs';
+import homeTemplate from './forms.js';
 
 /**
  * app.main
@@ -13,6 +14,7 @@ const main = async (err) => {
   // application code
   window.Alpine = Alpine
   Alpine.start()
+  homeTemplate.init()  
 };
 
 /**

@@ -35,7 +35,7 @@
   
     <section class="bg-gray-200">
       <div class="max-w-1400 p-8 flex flex-col-reverse lg:pl-12 lg:flex-row lg:py-12">
-        <aside class="pl-4 lg:pl-0 lg:w-1/3 lg:pr-8 xl:w-1/4 xl:mr-6">
+        <aside class="pl-4 max-w-xl lg:pl-0 lg:w-1/3 lg:pr-8 xl:w-1/4 xl:mr-6">
           <h1 class="font-bold text-4xl mb-4">EXPLORE</h1>
           @include('sections.sidebar')
         </aside>
@@ -45,7 +45,7 @@
             <span class="border-t border-black text-left w-full block uppercase my-4">Featured</span>
           </section>
           @endif
-            <div class="bg-beige-200 md:grid md:grid-cols-2 md:gap-6 md:mb-6 xl:grid-cols-3">
+            <div class="md:grid md:grid-cols-2 md:gap-6 md:mb-6 xl:grid-cols-3">
               @if($stickyPosts)
                 @foreach ($stickyPosts as $stickyPost)
                   @include('partials.content-post-sticky')            
@@ -55,15 +55,12 @@
         </div>
       </div>
     </section>
-    <section class="max-w-1400 p-8 flex flex-col-reverse lg:pl-12 lg:flex-row lg:py-12">
-    <aside class="lg:w-1/3 lg:pr-8 xl:w-1/4">
-          <h1 class="font-bold text-4xl ">EXPLORE</h1>
-          
-        </aside>
-      <div class="">
+    <section class="p-8 max-w-1400 lg:pl-10 lg:py-12">
+      <div class="lg:w-2/3 lg:ml-auto xl:pl-6 xl:w-3/4 ">
           <section class="mx-4 sm:mx-0 max-w-1400">
             <span class="border-t border-black text-left w-full block uppercase my-4">Recent</span>
           </section>
+
           <div class=" md:grid md:grid-cols-2 md:gap-6 xl:grid-cols-3">
             @while(have_posts()) @php(the_post())
               @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
@@ -76,14 +73,16 @@
     </section>
   @else
     <section class="max-w-1400 p-8 flex flex-col-reverse lg:pl-12 lg:flex-row lg:py-12">
-      <aside class="pl-4 lg:w-1/3 lg:pr-8 xl:w-1/4">
+      <aside class="pl-4 max-w-xl lg:w-1/3 lg:pr-8 xl:w-1/4">
         <h1 class="font-bold text-4xl ">EXPLORE</h1>
         @include('sections.sidebar')
       </aside>
       <div class="lg:w-2/3 xl:w-3/4">
-        <section class="mx-4 sm:mx-0 max-w-1400">
-          <span class="border-t border-black text-left w-full block uppercase my-4">Recent</span>
-        </section>
+          @if(get_query_var('paged') == 0)
+            <section class="mx-4 sm:mx-0 max-w-1400">
+              <span class="border-t border-black text-left w-full block uppercase my-4">Recent</span>
+            </section>
+          @endif
         <div class=" md:grid md:grid-cols-2 md:gap-6 xl:grid-cols-3">
           @while(have_posts()) @php(the_post())
             @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
