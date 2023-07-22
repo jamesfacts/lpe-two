@@ -41,19 +41,6 @@ body {
     @apply bg-black text-4xl w-full uppercase font-rubik font-bold tracking-tight;
 }
 
-.search-submit {
-    /* color: transparent!important; */
-    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 105 89' style='enable-background:new 0 0 105 89;' xml:space='preserve'%3E%3Cg style='fill:none;stroke:%23FFF;stroke-width:3.5px;'%3E%3Cpath class='st0' d='M52.6,88.6l49.6-44l-49.6-44'/%3E%3Cpath class='st0' d='M2.4,44.6l99.2,0'/%3E%3C/g%3E%3C/svg%3E%0A");
-    background-repeat: no-repeat;
-    background-position-x: 50%;
-    background-position-y: 50%;
-    width: 12%;
-    max-width: 50px;
-    padding: 0 0.8rem 0 0;
-    height: 40px;
-    border-radius: 0;
-}
-
 .img-fill {
     background-size: cover;
     background-position: 50%;

@@ -5,3 +5,12 @@
         max-width: 800px;
     }
 }
+
+/* Hide the native WP sticky post functionality */
+.components-panel .edit-post-post-status > .components-panel__row:not(
+    .edit-post-post-visibility, 
+    .edit-post-post-schedule, 
+    .edit-post-post-author, 
+    :last-child) {
+    display: none;
+}

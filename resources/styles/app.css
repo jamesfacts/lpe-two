@@ -3,4 +3,6 @@
 @import 'tailwindcss/utilities';
 @import 'global.css';
 @import 'posts.css';
+@import 'navigation.css';
+@import 'forms.css';
 /* @import 'prev_lpe.css'; */

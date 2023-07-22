@@ -78,7 +78,6 @@ class SingleLpe_author extends Composer
     public function with()
     {
         return [
-            'hello' => 'world',
             'contributorWork' => $this->contributorWork(),
         ];
     }

@@ -6212,6 +6212,13 @@ browserslist@latest:
   languageName: node
   linkType: hard
 
+"jquery@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "jquery@npm:3.7.0"
+  checksum: 907785e133afc427650a131af5fccef66a404885037513b3d4d7d63aee6409bcc32a39836868c60e59b05aa0fb8ace8961c18b2ee3ffdf6ffdb571d6d7cd88ff
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -9328,6 +9335,7 @@ browserslist@latest:
     "@roots/bud-tailwindcss": 6.4.5
     "@roots/sage": 6.4.5
     alpinejs: ^3.12.2
+    jquery: ^3.7.0
   languageName: unknown
   linkType: soft
 
