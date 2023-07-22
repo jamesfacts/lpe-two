@@ -8,10 +8,6 @@
       'alt' => $stickyPost->image_alt
     ])
   @endif
-  <div class="uppercase font-necto mt-2">
-    <span>Sticky Zone</span>
-  </div>
-
   <header>
     <h2 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none my-3 lg:text-2xl xl:text-3xl">
       <a href="{{ $stickyPost->url }}" class="hover:text-tahini-500">
