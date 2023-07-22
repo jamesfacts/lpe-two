@@ -1,7 +1,7 @@
 export default {
     init() {
       // AJAX functionality for the author search dropdown
-        let baseUrl = jQuery('#author-search').data('action');
+        let baseUrl = $('#author-search').data('action');
         let urlEndpoint = 'wp-json/lpe_project/v1/search?';
   
         let hideAuthorResults = () => {

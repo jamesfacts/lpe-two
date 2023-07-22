@@ -1,5 +1,7 @@
 import {domReady} from '@roots/sage/client';
 import Alpine from 'alpinejs';
+import jQuery from "jquery";
+window.$ = window.jQuery = jQuery;
 import homeTemplate from './forms.js';
 
 /**
