@@ -73,7 +73,9 @@ add_action('after_setup_theme', function () {
         'about_navigation' => __('About Navigation', 'sage'),
         'engage_navigation' => __('Engage Navigation', 'sage'),
         'learn_navigation' => __('Learn Navigation', 'sage'),
-        'events_navigation' => __('Events Navigation', 'sage')
+        'events_navigation' => __('Events Navigation', 'sage'),
+        'main_footer_nav' => __('Footer Navigation', 'sage'),
+        'lower_footer_nav' => __('Lower Footer Navigation', 'sage'),
     ]);
 
     /**
@@ -181,23 +183,23 @@ add_action('widgets_init', function () {
      */
     $footerConfig = [
         'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="d-none">',
+        'before_title'  => '<h3 class="hidden">',
         'after_title'   => '</h3>'
     ];
     register_sidebar([
         'name'          => __('Blog Sidebar', 'sage'),
         'id'            => 'sidebar-primary'
     ] + $sidebarConfig);
-    register_sidebar([
-        'name'          => __('Main Footer', 'sage'),
-        'before_widget' => '<section class="widget footer-widget %1$s %2$s">',
-        'id'            => 'sidebar-footer'
-    ] + $footerConfig);
-    register_sidebar([
-        'name'          => __('Lower Footer', 'sage'),
-        'before_widget' => '<section class="widget %1$s %2$s" id="sidebar-lower-footer">',
-        'id'            => 'sidebar-lower-footer'
-    ] + $footerConfig);
+    // register_sidebar([
+    //     'name'          => __('Main Footer', 'sage'),
+    //     'before_widget' => '<section class="widget footer-widget %1$s %2$s">',
+    //     'id'            => 'sidebar-footer'
+    // ] + $footerConfig);
+    // register_sidebar([
+    //     'name'          => __('Lower Footer', 'sage'),
+    //     'before_widget' => '<section class="widget %1$s %2$s" id="sidebar-lower-footer">',
+    //     'id'            => 'sidebar-lower-footer'
+    // ] + $footerConfig);
 });
 
 /**
