@@ -28,7 +28,19 @@
 }
 
 #author-search {
-    @apply h-12 p-2 uppercase;
+    @apply h-12 p-2 uppercase text-black;
+
+    &::placeholder {
+        @apply text-black;
+    }
+}
+
+.widget_categories form {
+    @apply border border-black w-full p-1 bg-white mb-4;
+}
+
+.widget_categories select {
+    @apply w-full bg-white p-2;
 }
 
 .wp-block-search__inside-wrapper:hover,
@@ -42,6 +54,10 @@
 
 .wp-block-search__input {
     @apply !py-0 h-10 w-full border-none;
+
+    &::placeholder {
+        @apply text-black;
+    }
 }
 
 .widget-hed {
