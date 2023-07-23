@@ -1,15 +1,15 @@
 <footer class="bg-black p-6 lpe-footer">
-  <div class="max-w-1400">
+  <div class="max-w-1400 lg:flex xl:pr-16">
       <div class="">
         <h2 class="sr-only">Constellation of LPE Links</h2>
       </div>
-      <div class="col-12 col-lg-5 newsletter-footer">
+      <div class="flex flex-row justify-center pt-12 lg:w-1/2 lg:mr-10 xl:mr-20">
         @include('components/vertical-stack-email')
       </div>
       @if ($footer_navigation)
-        <ul class="max-w-1400 flex flex-wrap flex-col" style="max-height:350px">
+        <ul class="pt-12 sm:flex sm:flex-wrap sm:flex-col sm:max-h-96 lg:w-1/2 xl:w-2/3 xl:max-h-80">
             @foreach ($footer_navigation as $item)
-            <li class="bg-gray-700 mb-2">
+            <li class="mb-2 lg:w-1/2 xl:w-1/3">
                 <a href="{{ $item->url }}" class="uppercase font-necto text-white text-lg hover:underline">
                 {{ $item->label }}
                 </a>
@@ -29,13 +29,11 @@
       @endif
   </div>
   
-  <div class="max-w-1400">
-  </div>
   @if ($lower_footer_links)
-    <div class="max-w-1400">
+    <div class="max-w-1400 pt-12 xl:pt-20 xl:pr-16">
         <ul class="md:flex md:flex-row md:justify-center">
             @foreach ($lower_footer_links as $item)
-            <li class="px-3 lg:px-0">
+            <li class="md:px-3 lg:px-0">
                 <a href="{{ $item->url }}" class="text-white font-necto text-sm hover:underline">
                 {{ $item->label }}
                 </a>
