@@ -93,7 +93,8 @@ body {
         @apply mt-3;
     }
 
-    main.main {
+    main.main,
+    footer.lpe-footer {
         margin-left: 100px;
     }
 }

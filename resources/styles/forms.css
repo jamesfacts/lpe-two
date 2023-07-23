@@ -76,6 +76,13 @@
     border-radius: 0;
 }
 
+/** Mailpoet forms **/
+
+.mailpoet_hp_email_label,
+.mailpoet_text_label {
+  display: none !important;
+}
+
 @media screen(lg) {
     .search-submit {
         max-width: 50px;
