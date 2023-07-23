@@ -139,6 +139,8 @@ class OurTeam extends Block
     {
         return [
             'items' => $this->items(),
+            'teamMembers' => $this->ourTeamMembers(),
+            'studentEditors' => $this->studentEditors(),
         ];
     }
 
@@ -152,9 +154,7 @@ class OurTeam extends Block
         $ourTeam = new FieldsBuilder('our_team');
 
         $ourTeam
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+            ->addText('title');
 
         return $ourTeam->build();
     }
@@ -167,6 +167,59 @@ class OurTeam extends Block
     public function items()
     {
         return get_field('items') ?: $this->example['items'];
+    }
+
+    public function ourTeamMembers()
+    {
+        $teamMembers = collect(get_posts([
+        'post_type' => 'page',
+        'numberposts' => '-1',
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'meta_query' => [
+            [ 'key' => 'our_team_title',
+              'value' => array(''),
+               'compare' => 'NOT IN' ]
+        ]
+        ]))->map(function ($post) {
+            setup_postdata($post);
+            $team_member = (object) [
+            'name' => get_the_title($post),
+            'url' => get_permalink($post),
+            'position' => get_post_meta($post->ID, 'our_team_title', true),
+        ];
+            wp_reset_postdata();
+            return $team_member;
+        });
+
+        return $teamMembers;
+    }
+
+    public function studentEditors($masthead_category = 'student_editors')
+    {
+        return collect(get_posts([
+        'post_type' => 'lpe_author',
+        'numberposts' => '-1',
+        'post_status' => 'publish',
+        'meta_query' => [
+            [ 'key' => '_masthead_category',
+            'value' => $masthead_category ]
+        ]]))->map(function ($post) {
+                setup_postdata($post);
+                $masthead_author = (object) [
+                    'name' => get_the_title($post),
+                    'url' => get_permalink($post),
+                    'position' => get_post_meta($post->ID, '_position_title', true),
+                    'category' => get_post_meta($post->ID, '_masthead_category', true)
+                    ];
+                wp_reset_postdata();
+                return $masthead_author;
+            })->sortBy(function ($masthead_author) {
+                $fullname = explode(' ', $masthead_author->name);
+                $surname = end($fullname);
+                return $surname;
+            });
     }
 
     /**
