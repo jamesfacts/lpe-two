@@ -177,7 +177,7 @@ return [
     */
 
     'block' => [
-        // 'sage/accordion',
+        // 'sage/our-team',
     ],
 
     /*
