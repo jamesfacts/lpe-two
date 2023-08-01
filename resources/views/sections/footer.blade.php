@@ -10,7 +10,7 @@
         <ul class="pt-12 sm:flex sm:flex-wrap sm:flex-col sm:max-h-96 lg:w-1/2 xl:w-2/3 xl:max-h-80">
             @foreach ($footer_navigation as $item)
             <li class="mb-2 lg:w-1/2 xl:w-1/3">
-                <a href="{{ $item->url }}" class="uppercase font-necto text-white text-lg hover:underline">
+                <a href="{{ $item->url }}" class="uppercase font-necto text-white text-lg pr-5 hover:underline">
                 {{ $item->label }}
                 </a>
 
@@ -18,7 +18,7 @@
                 <ul class="mb-2">
                     @foreach ($item->children as $child)
                     <li class="leading-none">
-                      <a href="{{ $child->url }}" class="uppercase font-necto text-white text-sm hover:underline">{{ $child->label }}</a>
+                      <a href="{{ $child->url }}" class="uppercase font-necto text-white text-sm pr-5 hover:underline">{{ $child->label }}</a>
                     </li>
                     @endforeach
                 </ul>
