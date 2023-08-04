@@ -87,7 +87,7 @@
     @endif
   </section>
 
-  <section class="">
+  <section class="bg-beige-200">
     {!! get_search_form(false) !!}
   </section>
 
