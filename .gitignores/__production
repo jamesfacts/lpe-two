@@ -11,6 +11,7 @@
 !wp-content/themes/lpe-two/resources
 !wp-content/themes/lpe-two/public
 !wp-content/themes/lpe-two/vendor
+!wp-content/cache/acorn/
 
 # Files to deploy
 !wp-content/themes/lpe-two/screenshot.png
