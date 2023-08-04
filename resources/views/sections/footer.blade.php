@@ -3,11 +3,11 @@
       <div class="">
         <h2 class="sr-only">Constellation of LPE Links</h2>
       </div>
-      <div class="flex flex-row justify-center pt-12 lg:w-1/2 lg:mr-10 xl:mr-20">
+      <div class="flex flex-row justify-center pt-12 lg:w-1/2 lg:mr-10 xl:mr-20 lg:max-w-md">
         @include('components/vertical-stack-email')
       </div>
       @if ($footer_navigation)
-        <ul class="pt-12 sm:flex sm:flex-wrap sm:flex-col sm:max-h-96 lg:w-1/2 xl:w-2/3 xl:max-h-80">
+        <ul class="pt-12 sm:max-w-lg sm:flex sm:flex-wrap sm:flex-col sm:max-h-96 md:mx-auto lg:w-1/2 xl:max-w-xl">
             @foreach ($footer_navigation as $item)
             <li class="mb-2 lg:w-1/2 xl:w-1/3">
                 <a href="{{ $item->url }}" class="uppercase font-necto text-white text-lg pr-5 hover:underline">

@@ -1,7 +1,7 @@
 <article @php(post_class('max-w-sm mx-auto px-5 lg:px-0'))>
     @if(@isset($postImage))
         @include('components/thumb-figure', [
-        'aspect_ratio' => '50%', 
+        'aspect_ratio' => '65%', 
         'img_url' => $postImage->src, 
         'url' => get_permalink(), 
         'alt' => $postImage->alt

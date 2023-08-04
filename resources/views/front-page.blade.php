@@ -21,8 +21,8 @@
       <div class="lpe-intro-excerpt font-rubik mb-6 leading-6" style="max-width: 650px;">
         @php(the_content())
       </div>
-      <a class="border border-black rounded-full uppercase font-rubik text-xs px-3 text-center py-2" href="{{ home_url('/about') }}" aria-label="Continue Reading the LPE introduction">About The LPE Project</a>
-      <a class="border border-black rounded-full uppercase font-rubik text-xs px-3 text-center py-2 ml-5" href="{{ get_post_type_archive_link( 'post' ) }}" aria-label="Read the LPE blog">Read the LPE Blog</a>
+      <a class="generic-button" href="{{ home_url('/about') }}" aria-label="Continue Reading the LPE introduction">About The LPE Project</a>
+      <a class="generic-button ml-5" href="{{ get_post_type_archive_link( 'post' ) }}" aria-label="Read the LPE blog">Read the LPE Blog</a>
     </article>
   </section>
 
@@ -37,7 +37,7 @@
         <div class="mb-10">
             <h2 class="font-rubik font-bold uppercase text-2xl lg:text-3xl mb-6">{!! $blurb->title !!}</h2>
             <p class="mb-6">{!! $blurb->text !!}</p>
-            <a href="{!! $blurb->url !!}" class="border border-black rounded-full uppercase font-rubik text-xs px-3 text-center py-2">
+            <a href="{!! $blurb->url !!}" class="generic-button">
               Go to {{ $blurb->title }}
             </a>
         </div>
@@ -61,6 +61,16 @@
       <div class="w-full bg-indigo-100 md:w-2/3 lg:w-1/2 xl:w-2/3">
         @foreach($blogFeed as $item)
         <article class="">
+            @if($loop->index < 2)
+              @if(@isset($item->img_url))
+                @include('components/thumb-figure', [
+                  'aspect_ratio' => '65%', 
+                  'img_url' => $item->img_url, 
+                  'url' => get_permalink(), 
+                  'alt' => $item->img_url->alt
+                ])
+              @endif
+            @endif
             <span class="">{{ $item->content_type }}</span>
             <h4 class="">
                 <a href="{{ $item->url }}">{!! $item->title !!}</a>
