@@ -2,7 +2,7 @@
 
   <div class="mailpoet_form_popup_overlay"></div>
 
-  <h3 class="text-2xl text-white font-necto uppercase mb-6" id="newsletter-label">Enter Your Email To Subscribe</h3>
+  <h3 class="text-2xl text-white font-necto uppercase mb-6 max-w-sm" id="newsletter-label">Enter Your Email To Subscribe</h3>
 
 <form target="_self" method="post" action="{{ home_url('/wp-admin/admin-post.php?action=mailpoet_subscription_form') }}" class="border border-white mailpoet_form mailpoet_form_form mailpoet_form_widget" novalidate="" data-delay="" data-exit-intent-enabled="" data-font-family="" style="padding: 0;">
     <input type="hidden" name="data[form_id]" value="1">

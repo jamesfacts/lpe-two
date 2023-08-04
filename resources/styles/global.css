@@ -80,6 +80,11 @@ body {
     width: 100%;
 }
 
+.lpe-footer .mailpoet_paragraph input::placeholder {
+    color: white;
+    opacity: 1; 
+}
+
 @media screen(lg) {
     .nav-wrapper {
         width: 100px;
