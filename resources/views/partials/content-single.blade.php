@@ -6,7 +6,7 @@
     </span>
   @endif
 
-  <div class="mx-4">
+  <div class="mx-4 lg:mx-8 max-w-xl">
     @if($conference_symposia)
       <span class="">
         <a href="{{ home_url('/symposia/') . $conference_symposia->slug }}">{!! $conference_symposia->name !!}</a>
@@ -22,27 +22,18 @@
             @endforeach
         </div>
     @endif
-    <div class="mt-2">
+    <div class="mt-2 lg:hidden">
       @include('components.time-updated')
     </div>
   </div>
 
 </header>
 
-<section class="mx-4 flex flex-col-reverse mb-32">
-  <div class="luv-marginalia">
-    <div class="hidden">
-      @if($lpeContributors)
-          <div class="">
-              <span class="">
-              {{ __('By ', 'sage') }}
-              </span>
-              @foreach ($lpeContributors as $lpeAuthor)
-              <a href="{!! $lpeAuthor->link !!}" rel="author" class="">
-                  {{$lpeAuthor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
-              @endforeach
-          </div>
-      @endif
+<section class="mx-4 flex flex-col-reverse mb-32 lg:flex-row">
+  <div class="lg:mt-12 lg:ml-4 lg:mr-16 lg:flex lg:flex-col lg:justify-between">
+    <div class="hidden lg:block">
+      @include('partials.entry-author-bio')
+      <span class="py-3 lg:block"></span>
       @include('components.time-updated')
     </div>
     <div class="">

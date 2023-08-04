@@ -14,4 +14,8 @@
         -webkit-text-fill-color: black;
         -webkit-text-stroke-width: 0;
     }
+
+    .lpe-bios a {
+        @apply text-tahini-700 underline;
+    }
 }
