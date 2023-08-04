@@ -25,10 +25,13 @@ class App extends Composer
     {
         return [
             'siteName' => $this->siteName(),
+            'featuredHeaderImage' => $this->featuredHeaderImage(),
             'lpeContributors' => $this->lpeContributors(),
             'footer_navigation' => $this->footer_navigation(),
             'lower_footer_links' => $this->lower_footer_links(),
             'aboutNavigation' => $this->aboutNavigation(),
+            'shareUrl' => $this->shareUrl(),
+            'shareTitle' => $this->shareTitle(),
         ];
     }
 
@@ -41,6 +44,19 @@ class App extends Composer
     {
         return get_bloginfo('name', 'display');
     }
+
+    /**
+     * Skinny top image
+     * Returns the url of the featured header common image
+     * Image is not tied to the featured post, ie, not a "post_thumbnail"
+     *
+     * @return string
+     */
+
+     public function featuredHeaderImage()
+     {
+         return \App\filler_image('header');
+     }
 
     public function lpeContributors()
     {
@@ -65,6 +81,26 @@ class App extends Composer
 
         return false;
     }
+
+    /**
+     * Returns the full url of current page with URL base
+     * 
+     * @return string
+     */
+    public static function shareUrl()
+    {
+        return urlencode(html_entity_decode(get_permalink()));
+    }
+
+    /**
+     * Get the title of current page encoded for purposes of contructing a link
+     * @return string
+     */
+    public static function shareTitle()
+    {
+        return urlencode(html_entity_decode(get_the_title()));
+    }
+
 
     /**
      * Returns the lower footer navigation links.
