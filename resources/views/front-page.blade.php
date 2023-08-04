@@ -58,28 +58,29 @@
 
   <section class="mx-4 my-12 sm:mx-8 max-w-1400 lg:flex lg:flex-row lg:mb-32 xl:mx-32 xl:mt-20">
     @if($blogFeed)
-      <div class="w-full bg-indigo-100 md:w-2/3 lg:w-1/2 xl:w-2/3">
+      <div class="w-full lg:w-1/2 xl:w-2/3 xl:grid xl:grid-cols-2 xl:gap-4">
         @foreach($blogFeed as $item)
-        <article class="">
+        <article class="max-w-sm mx-auto mb-10 lg:ml-0">
             @if($loop->index < 2)
               @if(@isset($item->img_url))
                 @include('components/thumb-figure', [
                   'aspect_ratio' => '65%', 
                   'img_url' => $item->img_url, 
                   'url' => get_permalink(), 
-                  'alt' => $item->img_url->alt
+                  'alt' => $item->alt
                 ])
               @endif
+              <span class="block mt-4"></span>
             @endif
-            <span class="">{{ $item->content_type }}</span>
+            <span class="uppercase font-rubik block">{{ $item->content_type }}</span>
             <h4 class="">
-                <a href="{{ $item->url }}">{!! $item->title !!}</a>
+                <a href="{{ $item->url }}" class="text-2xl uppercase font-bold leading-none mb-3 block hover:text-tahini-500">{!! $item->title !!}</a>
             </h4>
             <p class="excerpt">{!! $item->excerpt !!}</p>
         </article> 
         @if($loop->index === 1)
           </div>
-          <div class="w-full md:w-1/3 lg:w-1/2 xl:w-1/3">
+          <div class="w-full md:grid md:grid-cols-2 md:gap-10 lg:w-1/2 lg:flex lg:flex-col xl:w-1/3 xl:ml-8">
         @endif
         @endforeach
       </div>
