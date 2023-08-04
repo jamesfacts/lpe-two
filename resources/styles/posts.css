@@ -8,3 +8,10 @@
 .blog .widget_search label {
     @apply sr-only;
 }
+
+.single-post {
+    .lpe-contrib:hover {
+        -webkit-text-fill-color: black;
+        -webkit-text-stroke-width: 0;
+    }
+}

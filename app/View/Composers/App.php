@@ -69,11 +69,13 @@ class App extends Composer
         $contributorsInArticle = get_field('_author', get_the_ID());
             if(is_array($contributorsInArticle)) {
                 foreach ($contributorsInArticle as $contributorID) {
+                    setup_postdata($contributorID);
                     $contributors[] = (object)[
                         'name' => get_the_title($contributorID),
                         'url' => get_permalink($contributorID),
-                        'excerpt' => apply_filters('the_excerpt', get_post_field('post_excerpt', $contributorID)),
+                        'excerpt' => get_the_content( $contributorID ),
                     ];
+                    wp_reset_postdata();
                 }
 
                 return $contributors;
