@@ -17,19 +17,6 @@ class Page extends Composer
     ];
 
     /**
-     * Skinny top image
-     * Returns the url of the featured header common image
-     * Image is not tied to the featured post, ie, not a "post_thumbnail"
-     *
-     * @return string
-     */
-
-     public function featuredPageImage()
-     {
-         return \App\filler_image('header');
-     }
-
-    /**
      * Check to see if we're in a page that wants to show a menu
      * 
      * @return boolean 
@@ -53,7 +40,6 @@ class Page extends Composer
     public function with()
     {
         return [
-            'featuredPageImage' => $this->featuredPageImage(),
             'showMenu' => $this->showMenu(),
         ];
     }

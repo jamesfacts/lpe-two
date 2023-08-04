@@ -16,6 +16,7 @@ class LoopItems extends Composer
      */
     protected static $views = [
         'partials.content-post',
+        'partials.content-student_group',
     ];
 
     /**

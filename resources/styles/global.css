@@ -15,6 +15,21 @@ body {
     @apply font-rubik bg-white;
 }
 
+.black-outline {
+    color: #000;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+.generic-button {
+    @apply border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block;
+
+    &:hover {
+        @apply border-tahini-500 text-tahini-500;
+    }
+}
+
 .nav-primary {
     height: 100vh;
 }

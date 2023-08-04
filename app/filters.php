@@ -440,7 +440,7 @@ function lpe_pre_get_posts_overrides($query)
 
    // speaker archive and taxonomy pages get extra posts
    if (is_post_type_archive('student_group')) {
-       $query->set('posts_per_page', 21);
+       $query->set('posts_per_page', 52);
        $query->set('orderby', 'title');
        $query->set('order', 'ASC');
    }
