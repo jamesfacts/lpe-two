@@ -18,4 +18,8 @@
     .lpe-bios a {
         @apply text-tahini-700 underline;
     }
+
+    .lpe-bios a:hover {
+        @apply text-black;
+    }
 }

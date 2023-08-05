@@ -56,26 +56,24 @@
 </section>
 
 
-<section class="">
-
+<section class="bg-beige-200 px-4 pt-8 pb-24">
+<div class="max-w-1400 lg:flex">
   @if( $relatedPosts )
-    <div class="hed">
+    <div class="font-necto text-center uppercase mb-6 lg:w-1/3 xl:w-1/4">
       <span>Related Content</span>
     </div>
-    <div class="read-more-container">
+    <div class="lg:w-2/3 xl:w-3/4 xl:grid xl:grid-cols-3 xl:gap-6">
       @foreach( $relatedPosts as $post )
-        <article class="read-more-single col-12 col-lg-4">
+        <article class="w-full max-w-sm mb-8 mx-auto">
           @include('components/thumb-figure',
             ['aspect_ratio' => '65%', 'img_url' => $post->img_url, 'url' => $post->url, 'alt' => $post->alt] )
-          <div class="story-meta">
-            <h4 class="related-story-hed">
-              <a href="{!! $post->url !!}">{!! $post->title !!}</a>
+            <h4 class="mt-4 mb-2">
+              <a href="{!! $post->url !!}" class="text-2xl font-bold uppercase tracking-tight leading-none hover:text-tahini-700">{!! $post->title !!}</a>
             </h4>
             @include('partials/static-authors', ['static_post_id' => $post->id])
-          </div>
         </article>
       @endforeach
     </div>
   @endif
-
+  </div>
 </section>
