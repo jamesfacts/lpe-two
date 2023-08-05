@@ -1,7 +1,5 @@
 export default {
     init() {
-        console.log("heyoooo");
-
         let quotes = $('.wp-block-pullquote p');
 
         quotes.each( (index, quote) => {
