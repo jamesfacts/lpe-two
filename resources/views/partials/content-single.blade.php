@@ -62,21 +62,19 @@
     <div class="hed">
       <span>Related Content</span>
     </div>
-    @dump($relatedPosts)
-
     <div class="read-more-container">
-      <!-- @foreach( $relatedPosts as $post )
+      @foreach( $relatedPosts as $post )
         <article class="read-more-single col-12 col-lg-4">
           @include('components/thumb-figure',
-            ['aspect_ratio' => '56.25%', 'img_url' => $post->img_url, 'url' => $post->url, 'alt' => $post->alt] )
+            ['aspect_ratio' => '65%', 'img_url' => $post->img_url, 'url' => $post->url, 'alt' => $post->alt] )
           <div class="story-meta">
             <h4 class="related-story-hed">
               <a href="{!! $post->url !!}">{!! $post->title !!}</a>
             </h4>
-            @include('partials/entry-authors', ['post_id' => $post->id])
+            @include('partials/static-authors', ['static_post_id' => $post->id])
           </div>
         </article>
-      @endforeach -->
+      @endforeach
     </div>
   @endif
 

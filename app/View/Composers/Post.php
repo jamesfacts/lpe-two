@@ -16,6 +16,7 @@ class Post extends Composer
         'partials.page-header',
         'partials.content',
         'partials.content-*',
+        'partials.static-authors',
     ];
 
     /**
@@ -29,7 +30,8 @@ class Post extends Composer
             'title' => $this->title(),
             'contributor' => $this->contributor(),
             'postCategories' => $this::postCategories(),
-            'relatedPosts' => $this::relatedPosts(),
+            'staticContributors' => $this->staticContributors(),
+            'relatedPosts' => $this->relatedPosts(),
             'conference_symposia' => false,
             'related_symposia_posts' => false,
         ];
@@ -100,6 +102,32 @@ class Post extends Composer
          return false;
      }
 
+    public function staticContributors() {
+
+        if (!function_exists('get_field')) {
+            return false;
+        }
+
+        $contributors = [];
+
+        $contributorsInArticle = get_field('_author', $this->data['static_post_id'] ? $this->data['static_post_id'] : get_the_ID());
+            if(is_array($contributorsInArticle)) {
+                foreach ($contributorsInArticle as $contributorID) {
+                    setup_postdata($contributorID);
+                    $contributors[] = (object)[
+                        'name' => get_the_title($contributorID),
+                        'url' => get_permalink($contributorID),
+                        'excerpt' => get_the_content( $contributorID ),
+                    ];
+                    wp_reset_postdata();
+                }
+
+                return $contributors;
+            }
+
+        return false;
+    }
+
     /**
     * Return a Laravel collection of categories that a post belongs to.
     * @return object
@@ -131,7 +159,7 @@ class Post extends Composer
         }
     }
  
-    public static function relatedPosts()
+    public function relatedPosts()
     {
         if (isset(self::$conferencePost->slug)) {
             return false;
@@ -167,10 +195,10 @@ class Post extends Composer
 
             $related_post = (object) [
                 'title' => wp_trim_words(get_the_title($post), 11, '...'),
-                'img_url' => get_the_post_thumbnail_url($post->ID, 'w450') ? get_the_post_thumbnail_url($post->ID, 'w450') : intval($post->ID),
+                'img_url' => get_the_post_thumbnail_url($post->ID, 'w450') ? get_the_post_thumbnail_url($post->ID, 'w450') : $filler_image['sizes']['w450'],
                 'url' => get_permalink($post),
                 'alt' => get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true) ?
-                         get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true) : $filler_image['url'],
+                         get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true) : false,
                 'id'=> $post->ID,
             ];
 
