@@ -9,6 +9,23 @@
     @apply sr-only;
 }
 
+.wp-block-pullquote p {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 3.2rem;
+    letter-spacing: -0.02rem;
+    text-align: left;
+
+    .pullquote-outline {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+    }
+}
+
 .single-post {
     .lpe-contrib:hover {
         -webkit-text-fill-color: black;
