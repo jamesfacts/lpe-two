@@ -17,7 +17,7 @@
     @if($lpeContributors)
         <div class="">
             @foreach ($lpeContributors as $lpeAuthor)
-            <a href="{!! $lpeAuthor->link !!}" rel="author" class="lpe-contrib black-outline text-4xl font-bold uppercase font-rubik tracking-tight leading-none">
+              <a href="{!! $lpeAuthor->url !!}" rel="author" class="lpe-contrib black-outline text-4xl font-bold uppercase font-rubik tracking-tight leading-none">
                 {{$lpeAuthor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
             @endforeach
         </div>
@@ -62,9 +62,10 @@
     <div class="hed">
       <span>Related Content</span>
     </div>
+    @dump($relatedPosts)
 
     <div class="read-more-container">
-      @foreach( $relatedPosts as $post )
+      <!-- @foreach( $relatedPosts as $post )
         <article class="read-more-single col-12 col-lg-4">
           @include('components/thumb-figure',
             ['aspect_ratio' => '56.25%', 'img_url' => $post->img_url, 'url' => $post->url, 'alt' => $post->alt] )
@@ -75,36 +76,8 @@
             @include('partials/entry-authors', ['post_id' => $post->id])
           </div>
         </article>
-      @endforeach
+      @endforeach -->
     </div>
   @endif
 
-  @if( $related_symposia_posts && count($related_symposia_posts) >= 1)
-    <span class="">Blog Symposia</span>
-    @if($conference_symposia->name && $conference_symposia->count >= 2 )
-      <span class="">{{$conference_symposia->name}}</span>
-    @endif
-
-    <div class="">
-      @foreach( $related_symposia_posts as $post )
-        <article class="">
-          @include('components/thumb-figure',
-            ['aspect_ratio' => '56.25%', 'img_url' => $post->img_url, 'url' => $post->url] )
-          <div class="">
-            <h4 class="">
-              <a href="{!! $post->url !!}">{!! $post->title !!}</a>
-            </h4>
-            @include('partials/entry-authors', ['post_id' => $post->id])
-            <a href="{!! $post->url !!}" class="px-3 py-2" aria-label="Continue to Full Story">
-              <span>Read More</span>
-              <svg width="22" height="16" viewBox="0 0 28 21" aria-hidden="true" tabindex="0" class="pl-1">
-                <path d="M12 0.5L26.5 10M26.5 10L12 20M26.5 10H0" stroke="currentColor"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-      @endforeach
-    </div>
-
-  @endif
 </section>

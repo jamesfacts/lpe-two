@@ -4,7 +4,7 @@
         {{ __('By ', 'sage') }}
         </span>
         @foreach ($lpeContributors as $lpeAuthor)
-        <a href="{!! $lpeAuthor->link !!}" rel="author" class="">
+        <a href="{!! $lpeAuthor->url !!}" rel="author" class="">
             {{$lpeAuthor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
         @endforeach
     </div>
