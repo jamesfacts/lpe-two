@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors: {
         tahini: { 
-          500: '#d4a45e' 
+          500: '#d4a45e',
+          700: '#a16b00'
         },
         sunshine: {
           500: '#ffbf00'

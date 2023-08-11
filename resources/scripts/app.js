@@ -3,6 +3,7 @@ import Alpine from 'alpinejs';
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 import homeTemplate from './forms.js';
+import postTemplate from './posts.js';
 
 /**
  * app.main
@@ -16,7 +17,8 @@ const main = async (err) => {
   // application code
   window.Alpine = Alpine
   Alpine.start()
-  homeTemplate.init()  
+  homeTemplate.init()
+  postTemplate.init()  
 };
 
 /**

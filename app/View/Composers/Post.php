@@ -3,6 +3,7 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
+use WP_Query;
 
 class Post extends Composer
 {
@@ -15,6 +16,7 @@ class Post extends Composer
         'partials.page-header',
         'partials.content',
         'partials.content-*',
+        'partials.static-authors',
     ];
 
     /**
@@ -27,7 +29,11 @@ class Post extends Composer
         return [
             'title' => $this->title(),
             'contributor' => $this->contributor(),
-            'postCategories' => $this->postCategories(),
+            'postCategories' => $this::postCategories(),
+            'staticContributors' => $this->staticContributors(),
+            'relatedPosts' => $this->relatedPosts(),
+            'conference_symposia' => false,
+            'related_symposia_posts' => false,
         ];
     }
 
@@ -96,12 +102,38 @@ class Post extends Composer
          return false;
      }
 
+    public function staticContributors() {
+
+        if (!function_exists('get_field')) {
+            return false;
+        }
+
+        $contributors = [];
+
+        $contributorsInArticle = get_field('_author', $this->data['static_post_id'] ? $this->data['static_post_id'] : get_the_ID());
+            if(is_array($contributorsInArticle)) {
+                foreach ($contributorsInArticle as $contributorID) {
+                    setup_postdata($contributorID);
+                    $contributors[] = (object)[
+                        'name' => get_the_title($contributorID),
+                        'url' => get_permalink($contributorID),
+                        'excerpt' => get_the_content( $contributorID ),
+                    ];
+                    wp_reset_postdata();
+                }
+
+                return $contributors;
+            }
+
+        return false;
+    }
+
     /**
     * Return a Laravel collection of categories that a post belongs to.
     * @return object
     */
 
-    public function postCategories()
+    public static function postCategories()
     {
         if (is_archive()) {
             // no category output inside archive pages
@@ -127,6 +159,53 @@ class Post extends Composer
         }
     }
  
+    public function relatedPosts()
+    {
+        if (isset(self::$conferencePost->slug)) {
+            return false;
+        }
+
+        $category_selection = collect(self::postCategories())->first();
+
+        $cat_string = (!empty($category_selection->slug)) ? $category_selection->slug : false;
+
+        $cat_items = get_category(get_cat_ID($cat_string));
+
+        $args = [
+            'post_type' => 'post',
+            'posts_per_page' => '15',
+            'offset'        => '1',
+            'post_status' => 'publish',
+            'orderby'     => 'date',
+            'order'       => 'DESC'
+        ];
+
+        // make sure we have at least three posts in the same category
+        // otherwise don't restrict query to same category
+        if ($cat_items->count > 3) {
+            $args['category'] = $cat_string;
+        }
+
+        $relatedPostQuery = new WP_Query($args);
+        $relatedPosts = $relatedPostQuery->posts;
+
+        return collect($relatedPosts)->map(function ($post) {
+            setup_postdata($post);
+            $filler_image = \App\filler_image();
+
+            $related_post = (object) [
+                'title' => wp_trim_words(get_the_title($post), 11, '...'),
+                'img_url' => get_the_post_thumbnail_url($post->ID, 'w450') ? get_the_post_thumbnail_url($post->ID, 'w450') : $filler_image['sizes']['w450'],
+                'url' => get_permalink($post),
+                'alt' => get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true) ?
+                         get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true) : false,
+                'id'=> $post->ID,
+            ];
+
+            wp_reset_postdata();
+            return $related_post;
+        })->shuffle()->take(3);
+    }
 
     /**
      * Data to be passed to view before rendering.
