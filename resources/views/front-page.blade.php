@@ -58,7 +58,7 @@
 
   <section class="mx-4 my-12 sm:mx-8 max-w-1400 lg:flex lg:flex-row lg:mb-32 xl:mx-32 xl:mt-20">
     @if($blogFeed)
-      <div class="w-full lg:w-1/2 xl:w-2/3 xl:grid xl:grid-cols-2 xl:gap-4">
+      <div class="w-full sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-1 lg:w-1/2 xl:grid-cols-2 xl:w-2/3">
         @foreach($blogFeed as $item)
         <article class="max-w-sm mx-auto mb-10 lg:ml-0">
             @if($loop->index < 2)
