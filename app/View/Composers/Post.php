@@ -16,7 +16,7 @@ class Post extends Composer
         'partials.page-header',
         'partials.content',
         'partials.content-*',
-        'partials.static-authors',
+        'partials.static-authors'
     ];
 
     /**

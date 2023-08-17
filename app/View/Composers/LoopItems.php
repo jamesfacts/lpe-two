@@ -17,6 +17,7 @@ class LoopItems extends Composer
     protected static $views = [
         'partials.content-post',
         'partials.content-student_group',
+        'partials.content-syllabi',
     ];
 
     /**
@@ -29,6 +30,7 @@ class LoopItems extends Composer
         return [
             'postImage' => $this->postImage(),
             'loopContributors' => $this->loopContributors(),
+            'loopSyllabi' => $this->loopSyllabi(),
         ];
     }
 
@@ -66,5 +68,16 @@ class LoopItems extends Composer
             }
 
         return false;
+    }
+
+    public function loopSyllabi() {
+        return (object) [
+            'name' => get_the_title(get_the_ID()),
+            'url' => get_the_permalink(get_the_ID()),
+            'excerpt' => get_the_excerpt(),
+            'professor' => get_field('syllabus_professor'),
+            'school' => get_field('syllabus_school'),
+            'download_url' => get_field('syllabus_attachment') ? get_field('syllabus_attachment') : '#'
+        ];
     }
 }
