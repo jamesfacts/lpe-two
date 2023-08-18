@@ -28,7 +28,7 @@ class Symposia extends Composer
 
             $args = [
                 'post_status'       => 'publish',
-                'posts_per_page' => 1,
+                'posts_per_page' => -1,
                 'tax_query' => [
                     [ 
                         'taxonomy' => 'symposia',
@@ -40,18 +40,35 @@ class Symposia extends Composer
             ];
 
             wp_reset_query();
-            $newestQuery = new WP_Query($args);
-            $newestPost = $newestQuery->posts;
-            $newestDate = $newestPost[0]->post_date;
+            $symposiaQuery = new WP_Query($args);
+            $symposiaPosts = $symposiaQuery->posts;
+            $newestDate = $symposiaPosts[0]->post_date;
             $dateObj = \DateTime::createFromFormat( 'Y-m-d H:i:s', $newestDate );
 
+            $authors = collect($symposiaPosts)->map(function($symposiaPost){
+                $contributors = [];
+
+                $contributorsInArticle = get_field('_author', $symposiaPost->ID );
+                    if(is_array($contributorsInArticle)) {
+                        foreach ($contributorsInArticle as $contributorID) {
+                            setup_postdata($contributorID);
+                            $contributors[] = (object)[
+                                'name' => get_the_title($contributorID),
+                            ];
+                            wp_reset_postdata();
+                        }
+        
+                        return $contributors;
+                    }
+
+            })->flatten(1);
 
             $symposia_term = (object)[
                 'title' => $symposia_term->name,
                 'url' => home_url('/symposia') . '/' . $symposia_term->slug,
                 'excerpt' => 'Why focus on what we call law and political economy, and why now? In the last decade, inequality has become impossible to ignore.',
                 'newest_post' => $dateObj->format('F Y'),
-                'term_date' => '',
+                'featuring' => $authors,
             ];
             return $symposia_term;
         });

@@ -28,9 +28,12 @@
             </a>
           </h2>
           <span class="block font-necto mt-2 mb-3">{{ $symposium->newest_post }}</span>
-          <span class="uppercase font-semibold block my-2">Featuring:</span>
-          <span class="mb-3 block">Luke Norris, Jennifer Klein, Amanda Shanor, Katherine Jackson, Aziz Rana, William E. Forbath, Joseph Fishkin</span>
           
+          @if(count($symposium->featuring) > 0 )
+          <span class="uppercase font-semibold block my-2">Featuring:</span>
+          <span class="mb-3 block">@foreach($symposium->featuring as $author){!! $author->name !!}@if(!($loop->last)){{ __(', ', 'sage') }}@endif @endforeach
+          </span>
+          @endif
           </article>
         @endforeach
       @endif
