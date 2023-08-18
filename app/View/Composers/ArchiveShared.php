@@ -13,6 +13,7 @@ class ArchiveShared extends Composer
      */
     protected static $views = [
         'partials.archive-header',
+        'archive'
     ];
 
     public function fetchArchiveCopy() {
@@ -23,6 +24,10 @@ class ArchiveShared extends Composer
             if ( !empty($pageobj) ) {
                 return $pageobj->post_content;
             }
+        }
+
+        if( is_archive() ) {
+            return term_description();
         }
         
        return false;
@@ -36,6 +41,10 @@ class ArchiveShared extends Composer
             if ( !empty($pageobj) ) {
                 return $pageobj->post_title;
             }
+        }
+
+        if( is_archive() ) {
+            return get_the_archive_title();
         }
         
        return false;
