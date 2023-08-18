@@ -21,13 +21,16 @@
     <div class="w-full grid gap-6 mt-6 sm:grid-cols-2 mr-5 md:w-2/3 md:ml-10 xl:gap-10 xl:grid-cols-3">
       @if($allSymposia)
         @foreach($allSymposia as $symposium)
-          <article class="border-b border-black mb-5">
+          <article class="border-b border-black mb-5 pb-2">
           <h2 class="">
             <a href="{{ $symposium->url }}" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl">
               {{ $symposium->title }}
             </a>
           </h2>
-          <span class="block mb-4">{{ $symposium->newest_post }}</span>
+          <span class="block font-necto mt-2 mb-3">{{ $symposium->newest_post }}</span>
+          <span class="uppercase font-semibold block my-2">Featuring:</span>
+          <span class="mb-3 block">Luke Norris, Jennifer Klein, Amanda Shanor, Katherine Jackson, Aziz Rana, William E. Forbath, Joseph Fishkin</span>
+          
           </article>
         @endforeach
       @endif
