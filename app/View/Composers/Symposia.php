@@ -3,6 +3,7 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
+use WP_Query;
 
 class Symposia extends Composer
 {
@@ -12,42 +13,54 @@ class Symposia extends Composer
      * @var array
      */
     protected static $views = [
-        'template-symposia',
+        'page-symposia',
     ];
 
-    /**
-     * Return set of objects representing all our symposia
-     * @return array
-     */
+    public static $max_pages;
 
-     public function blogFeed()
-     {
-         $args = ['taxonomy' => 'symposia'];
+    public function fetchSymposia()
+    {
+        $paged = get_query_var('work') ?? 1;
 
-         return collect(get_posts([
-             'post_type' => ['post', 'lpe_event'],
-             'numberposts' => '4',
-             'post_status' => 'publish',
-             'orderby'     => 'date',
-             'order'       => 'DESC',
-         ]))->map(function ($post) {
-             setup_postdata($post);
-             $blog_post = (object) [
-                 'title' => wp_trim_words(get_the_title($post), 11, '...'),
-                 'post_id' => $post->ID,
-                 'img_url' => get_the_post_thumbnail_url($post->ID, 'w450')
-                              ? get_the_post_thumbnail_url($post->ID, 'w450')
-                              : \App\filler_image(),
-                 'alt' =>    get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true) ?
-                             get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true) : get_the_title($post),
-                 'url' => get_permalink($post),
-                 'content_type' => (get_post_type($post) === 'post' ? 'article' : 'event'),
-                 'excerpt' => get_the_excerpt($post)
-             ];
-             wp_reset_postdata();
-             return $blog_post;
-         });
-     }
+        // return get_terms('symposia');
+
+        $symposia = collect(get_terms('symposia'))->map(function($symposia_term) {
+
+            $args = [
+                'post_status'       => 'publish',
+                'posts_per_page' => 1,
+                'tax_query' => [
+                    [ 
+                        'taxonomy' => 'symposia',
+                        'field' => 'slug',
+                        'terms' => $symposia_term->slug,
+                    ],
+                ],   
+                'order'             => 'DESC',
+            ];
+
+            wp_reset_query();
+            $newestQuery = new WP_Query($args);
+            $newestPost = $newestQuery->posts;
+            $newestDate = $newestPost[0]->post_date;
+            $dateObj = \DateTime::createFromFormat( 'Y-m-d H:i:s', $newestDate );
+
+
+            $symposia_term = (object)[
+                'title' => $symposia_term->name,
+                'url' => home_url('/symposia') . '/' . $symposia_term->slug,
+                'excerpt' => 'Why focus on what we call law and political economy, and why now? In the last decade, inequality has become impossible to ignore.',
+                'newest_post' => $dateObj->format('F Y'),
+                'term_date' => '',
+            ];
+            return $symposia_term;
+        });
+
+
+
+        return $symposia;
+        
+    }
 
      public function getSymposia()
      {
@@ -64,7 +77,7 @@ class Symposia extends Composer
     public function with()
     {
         return [
-            'allSymposia' => $this->getSymposia(),
+            'allSymposia' => $this->fetchSymposia(),
         ];
     }
 }

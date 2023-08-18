@@ -16,7 +16,7 @@
         @endforeach
       @endif
     </section>
-    @dump($lpeAuthorWork)
+
     @if($lpeAuthorWorkNav)
     <nav class="navigation posts-navigation" role="navigation" aria-label="Posts navigation" role="navigation">
       <div class="nav-links">
