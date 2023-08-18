@@ -56,7 +56,7 @@ class LpeAuthor extends Composer
                     'url' => get_permalink($lpe_author_post),
                     'img_url' => get_the_post_thumbnail_url($lpe_author_post->ID, 'w450')
                                 ? get_the_post_thumbnail_url($lpe_author_post->ID, 'w450')
-                                            : \App\filler_image(),
+                                            : \App\filler_image()['url'],
                     'alt' => get_post_meta(get_post_thumbnail_id($lpe_author_post->ID), '_wp_attachment_image_alt', true),
                     'excerpt' => get_the_excerpt($lpe_author_post),
                     'post_id' => $lpe_author_post->ID

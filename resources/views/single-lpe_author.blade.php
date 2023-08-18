@@ -11,9 +11,8 @@
   <div class="col-12 col-lg-8 blog-feed">
     <section class="row">
       @if( $lpe_author_work )
-      hi
         @foreach ( $lpe_author_work as $work )
-          @include('partials/content')
+          @include('partials/content-author', ['work' => $work])
         @endforeach
       @endif
     </section>
