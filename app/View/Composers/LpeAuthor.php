@@ -100,7 +100,8 @@ class LpeAuthor extends Composer
     public function with()
     {
         return [
-            'lpe_author_work' => $this->lpeAuthorWork(),
+            'lpeAuthorWork' => $this->lpeAuthorWork(),
+            'lpeAuthorWorkNav' => $this->lpeAuthorWorkNav(),
         ];
     }
 }
