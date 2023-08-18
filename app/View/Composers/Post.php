@@ -76,6 +76,19 @@ class Post extends Composer
     }
 
     /**
+     * 
+     */
+
+     public function homeBase() 
+     {
+        if (!function_exists('get_field')) {
+            return false;
+        }
+
+        return get_post_meta( get_the_ID(), 'home_base', true);
+     }
+
+    /**
      * Are there any contributors available here?
      */
 
@@ -215,7 +228,7 @@ class Post extends Composer
     public function with()
     {
         return [
-            //
+            'homeBase' => $this->homeBase(),
         ];
     }
 }
