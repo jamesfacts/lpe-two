@@ -6,6 +6,7 @@
 
 @section('content')
   @while(have_posts()) @php(the_post())
+  well well well
     @dump($allSymposia)
     @include('partials.content-page')
   @endwhile
