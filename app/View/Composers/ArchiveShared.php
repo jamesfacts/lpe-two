@@ -18,11 +18,14 @@ class ArchiveShared extends Composer
 
     public static $archiveOptions = [
                                         [ 'endpoint' => 'speakers',
-                                        'cpt_name' => 'lpe_speaker',
+                                          'cpt_name' => 'lpe_speaker',
                                         ],
                                         [ 'endpoint' => 'student-groups',
-                                        'cpt_name' => 'student_group',
-                                        ]
+                                          'cpt_name' => 'student_group',
+                                        ],
+                                        [ 'endpoint' => 'syllabi',
+                                          'cpt_name' => 'syllabi',
+                                        ],
                                     ];
 
     public static $archiveSlug;
@@ -53,6 +56,13 @@ class ArchiveShared extends Composer
         if( is_archive() ) {
             return term_description();
         }
+
+        if( $this->data['archive_page_slug'] ) {
+            $pageobj = get_page_by_path($this->data['archive_page_slug']);
+            if ( !empty($pageobj) ) {
+                return $pageobj->post_content;
+            }
+        }
         
        return false;
     }
@@ -64,6 +74,13 @@ class ArchiveShared extends Composer
 
         if( is_archive() ) {
             return get_the_archive_title();
+        }
+
+        if( $this->data['archive_page_slug'] ) {
+            $pageobj = get_page_by_path($this->data['archive_page_slug']);
+            if ( !empty($pageobj) ) {
+                return $pageobj->post_title;
+            }
         }
         
        return false;
