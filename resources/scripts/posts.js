@@ -12,5 +12,9 @@ export default {
             
             $(quote).html(text);
         });
+
+        let emailBtn = $('#botanica');
+        let speakerEmail = emailBtn.data('omega') + '@' + emailBtn.data('alpha');
+        emailBtn.on('click', () => { location.href='mailto:' + speakerEmail });
     },
 };

@@ -145,5 +145,5 @@ class App extends Composer
 
         return Navi::build('about_navigation')->toArray();
     }
-    
+ 
 }
