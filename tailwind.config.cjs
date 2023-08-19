@@ -20,6 +20,7 @@ module.exports = {
         necto: ['Necto Mono', 'monospace'],
       },
       spacing: {
+        '100': '24rem',
         '120': '29rem',
         '150': '36rem',
         '168': '42rem',
