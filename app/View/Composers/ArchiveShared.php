@@ -16,14 +16,35 @@ class ArchiveShared extends Composer
         'archive'
     ];
 
-    public function fetchArchiveCopy() {
-        $query = get_queried_object();
+    public static $archiveOptions = ['speakers', 'student_group'];
 
-        if( $this->data['archive_page_slug'] ) {
-            $pageobj = get_page_by_path($this->data['archive_page_slug']);
-            if ( !empty($pageobj) ) {
-                return $pageobj->post_content;
+    public static $archiveSlug;
+    public static $archiveTitle;
+    public static $archiveCopy;
+
+    public function __construct()
+    {
+        $currentName = get_queried_object()->name;
+
+        foreach( self::$archiveOptions as $archiveOption ) {
+            var_dump( $archiveOption );
+            var_dump( $currentName );
+            if( $archiveOption == $currentName ){
+                $thisSlug = str_replace('_', '-', $archiveOption);
+                var_dump("*********");
+                $pageobj = get_page_by_path($thisSlug);
+                if ( !empty($pageobj) ) {
+                    self::$archiveTitle = $pageobj->post_title;
+                    self::$archiveCopy = $pageobj->post_content;
+                }
             }
+        }
+
+    }
+
+    public function fetchArchiveCopy() {
+        if ( !empty(self::$archiveCopy) ) {
+            return self::$archiveCopy;
         }
 
         if( is_archive() ) {
@@ -34,13 +55,8 @@ class ArchiveShared extends Composer
     }
 
     public function fetchArchiveTitle() {
-        $query = get_queried_object();
-
-        if( $this->data['archive_page_slug'] ) {
-            $pageobj = get_page_by_path($this->data['archive_page_slug']);
-            if ( !empty($pageobj) ) {
-                return $pageobj->post_title;
-            }
+        if ( !empty(self::$archiveTitle) ) {
+            return self::$archiveTitle;
         }
 
         if( is_archive() ) {
