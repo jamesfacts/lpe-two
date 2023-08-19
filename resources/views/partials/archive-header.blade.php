@@ -3,6 +3,8 @@
         {{$archiveTitle}}
       </h1>
       @if($archiveCopy)
-        {!! $archiveCopy !!}
+        <div class="prose">
+          {!! $archiveCopy !!}
+        </div>
       @endif
 </div>

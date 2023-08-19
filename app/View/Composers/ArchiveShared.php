@@ -26,6 +26,9 @@ class ArchiveShared extends Composer
                                         [ 'endpoint' => 'syllabi',
                                           'cpt_name' => 'syllabi',
                                         ],
+                                        [ 'endpoint' => 'primers',
+                                          'cpt_name' => 'primers',
+                                        ],
                                     ];
 
     public static $archiveSlug;

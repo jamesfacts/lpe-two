@@ -18,6 +18,7 @@ class LoopItems extends Composer
         'partials.content-post',
         'partials.content-student_group',
         'partials.content-syllabi',
+        'partials.content-primers',
     ];
 
     /**
@@ -80,4 +81,5 @@ class LoopItems extends Composer
             'download_url' => get_field('syllabus_attachment') ? get_field('syllabus_attachment') : '#'
         ];
     }
+    
 }
