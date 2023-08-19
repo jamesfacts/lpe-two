@@ -16,7 +16,14 @@ class ArchiveShared extends Composer
         'archive'
     ];
 
-    public static $archiveOptions = ['speakers', 'student_group'];
+    public static $archiveOptions = [
+                                        [ 'endpoint' => 'speakers',
+                                        'cpt_name' => 'lpe_speaker',
+                                        ],
+                                        [ 'endpoint' => 'student-groups',
+                                        'cpt_name' => 'student_group',
+                                        ]
+                                    ];
 
     public static $archiveSlug;
     public static $archiveTitle;
@@ -27,12 +34,8 @@ class ArchiveShared extends Composer
         $currentName = get_queried_object()->name;
 
         foreach( self::$archiveOptions as $archiveOption ) {
-            var_dump( $archiveOption );
-            var_dump( $currentName );
-            if( $archiveOption == $currentName ){
-                $thisSlug = str_replace('_', '-', $archiveOption);
-                var_dump("*********");
-                $pageobj = get_page_by_path($thisSlug);
+            if( $archiveOption['cpt_name'] == $currentName ){
+                $pageobj = get_page_by_path($archiveOption['endpoint']);
                 if ( !empty($pageobj) ) {
                     self::$archiveTitle = $pageobj->post_title;
                     self::$archiveCopy = $pageobj->post_content;
