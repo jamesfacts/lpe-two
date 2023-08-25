@@ -27,7 +27,7 @@
                                     <img src="{{ $featuredEvent->img_url }}" alt="{{ $featuredEvent->alt }}" class="my-4 w-full">
                                 </a>
                             </div>
-                            <div class="w-full flex flex-col-reverse xl:flex-row-reverse">
+                            <div class="w-full flex flex-col-reverse mb-16 xl:flex-row-reverse">
                                 <div class="w-full xl:w-2/6 xl:pl-8">
                                     <span class="text-xl font-semibold uppercase leading-none block mt-5 mb-1 font-rubik tracking-tighter">Location: </span>
                                     {{ $featuredEvent->venue_title }}
@@ -50,19 +50,24 @@
                 </div>
             </section>
         @endif
-        <section class="
+        <section class="p-10
             @if($upcomingEvents)
                 {{' bg-tahini-500 '}}
             @else
                 {{' bg-beige-200 '}}
             @endif
             ">
-            <h2>receive event updates</h2>
-            @include('components/horz-event-email')
+            <div class="max-w-1400 lg:flex">
+                <aside class="hidden lg:w-1/4 lg:block">&nbsp;</aside>
+            <div class="flex flex-col lg:w-3/4 lg:pl-16 xl:pl-10">
+                <h2 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none my-4 lg:leading-8">receive<br/>event updates</h2>
+                @include('components/horz-event-email')
+            </div>
+            </div>
         </section>
         @if($upcomingEvents)
             <section class="upcoming bg-beige-200 pt-10">
-                <div class="max-w-1400 px-10 lg:flex">
+                <div class="max-w-1400 px-10 lg:pt-8 lg:flex">
                     <aside class="w-full flex flex-col lg:w-1/4">
                         <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none my-4 lg:leading-8 ">Upcoming events</h1>
                     </aside>
@@ -101,19 +106,19 @@
         @endif
         
         <section class="bg-tahini-500">
-            <div class="max-w-1400 flex flex-wrap px-10">
-                <aside class="w-1/4">
-                    <h1>Past events</h1>
+            <div class="max-w-1400 flex flex-col px-6 pt-12 xl:flex-row xl:flex-wrap">
+                <aside class="w-full px-4 pb-6 xl:w-1/4">
+                <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none my-4 lg:leading-8 ">Past events</h1>
                 </aside>
-                <div class="w-3/4 grid grid-cols-3 gap-8">
+                <div class="w-full past-event-grid max-w-sm ml-0 mr-auto grid grid-cols-1 gap-2 md:max-w-full md:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:px-5 xl:w-3/4 xl:pl-18">
                     @if($pastEvents)
                         @foreach($pastEvents as $event)
                             @include('partials.content-lpe_event', ['event' => $event])
                         @endforeach
                     @endif
                 </div>
-                <div class="w-full bg-white">
-                    Button here
+                <div class="w-full archive-nav lg:w-3/4 lg:ml-auto lg:pl-18 pt-12 pb-20">
+                    @include('components/generic-btn', [ 'url' => $pastEventUrl, 'copy' => 'Past Events' ])
                 </div>
             </div>
         </section>

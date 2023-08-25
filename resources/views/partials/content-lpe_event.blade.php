@@ -22,8 +22,10 @@
 
 </header>
 
-<h2 class="entry-title my-3">
-    <a href="{{ $event->url ?? get_permalink() }}" class="text-2xl font-bold uppercase leading-none {{ is_paged() ? 'hover:text-tahini-500' : 'hover:text-white' }} font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl">
+<h2 class="entry-title mb-3 mt-6">
+    <a href="{{ $event->url ?? get_permalink() }}" 
+            class="text-2xl font-bold uppercase leading-none {{ is_paged() ? 'hover:text-tahini-500' : 'hover:text-white' }} 
+                    font-rubik tracking-tighter my-3 lg:leading-5 xl:text-2xl xl:leading-6 ">
     {!! $event->title ?? $title !!}
     </a>
 </h2>
@@ -32,7 +34,7 @@
 <span class="block font-necto">{{ $event->venue_title ?? get_field('venue_title') }}</span>
 
 
-<div class="entry-summary">
+<div class="entry-summary py-4">
   @php(the_excerpt())
 </div>
 </article>

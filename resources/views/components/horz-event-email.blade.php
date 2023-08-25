@@ -1,4 +1,4 @@
-<div class="events-form-mailpoet mailpoet_form mailpoet_form_widget mailpoet_form_position_ mailpoet_form_animation_ newsletter-contain" id="mailpoet_form_3" >
+<div class="events-form-mailpoet mailpoet_form mailpoet_form_widget mailpoet_form_position_ mailpoet_form_animation_ newsletter-contain xl:pl-1" id="mailpoet_form_3" >
 
     <div class="mailpoet_form_popup_overlay"></div>
   
@@ -11,14 +11,15 @@
     
         <label class="mailpoet_hp_email_label">Please leave this field empty<input type="email" name="data[email]"></label>
         
-        <div class="conf-field-wrap">
-          <div class="mailpoet_paragraph mp_input">
+        <div class="conf-field-wrap flex border-b border-black pb-1 max-w-xl xl:max-w-2xl">
+          <div class="mailpoet_paragraph mp_input w-5/6">
             <label class="mailpoet_text_label sr-only" data-automation-id="form_email_label">Email <span class="mailpoet_required">*</span></label>
-            <input type="email" class="mailpoet_text required email mc-input" name="data[form_field_YjhjMmQyNmU3MGJjX2VtYWls]" title="Email" value=""  data-automation-id="form_email" data-parsley-required="true" data-parsley-minlength="6" data-parsley-maxlength="150" data-parsley-error-message="Please specify a valid email address." data-parsley-required-message="This field is required."  aria-labelledby="newsletter-label" placeholder="Enter email address">
+            <input type="email" class="mailpoet_text required email mc-input bg-transparent h-full" name="data[form_field_YjhjMmQyNmU3MGJjX2VtYWls]" title="Email" value=""  data-automation-id="form_email" data-parsley-required="true" data-parsley-minlength="6" data-parsley-maxlength="150" data-parsley-error-message="Please specify a valid email address." data-parsley-required-message="This field is required."  aria-labelledby="newsletter-label" placeholder="Enter email address">
           </div>
       
-          <div class="mailpoet_paragraph mp_button last">
-            <button class="mailpoet_submit btn conference-button" data-automation-id="subscribe-submit-button">
+          <div class="mailpoet_paragraph mp_button last w-1/6 px-2">
+            <button class="mailpoet_submit btn conference-button ml-auto mr-0 block p-2 border border-transparent rounded hover:border-black" 
+                    data-automation-id="subscribe-submit-button">
               
                 <svg width="28" height="21" viewBox="0 0 28 21" aria-hidden="true" tabindex="0">
                   <path d="M12 0.5L26.5 10M26.5 10L12 20M26.5 10H0" stroke="currentColor"/>

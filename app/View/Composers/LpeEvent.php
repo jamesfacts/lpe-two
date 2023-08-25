@@ -27,6 +27,7 @@ class LpeEvent extends Composer
             'upcomingEvents' => $this->getUpcomingEvents(),
             'featuredEvents' => self::$featuredEvents,
             'pastEvents' => $this->getPastEvents(),
+            'pastEventUrl' => home_url('/events/page/2'),
         ];
     }
 

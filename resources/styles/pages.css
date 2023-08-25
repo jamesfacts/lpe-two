@@ -1,0 +1,5 @@
+.post-type-archive-lpe_event {
+    .archive-nav .generic-button:hover {
+        @apply border-white text-white;
+    }
+}
