@@ -7,7 +7,7 @@
         @if($featuredEvents)
             <section class="flex flex-col px-10 max-w-1400 pb-16 lg:flex-wrap lg:flex-row lg:pt-6">
                 <aside class="w-full flex flex-col-reverse lg:w-1/4 lg:flex-col">
-                    <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none my-4 lg:leading-8 xl:text-5xl">Featured events</h1>
+                    <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none my-4 lg:leading-8 ">Featured events</h1>
                     <ul class="">
                         <li><a href="" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-2xl">Upcoming Events</a></li>
                         <li><a href="" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-2xl">Past Events</a></li>
@@ -50,13 +50,55 @@
                 </div>
             </section>
         @endif
-        <section class="featured bg-beige-200">
+        <section class="
+            @if($upcomingEvents)
+                {{' bg-tahini-500 '}}
+            @else
+                {{' bg-beige-200 '}}
+            @endif
+            ">
             <h2>receive event updates</h2>
             @include('components/horz-event-email')
         </section>
-        <section class="upcoming">
-            @dump($upcomingEvents)
-        </section>
+        @if($upcomingEvents)
+            <section class="upcoming bg-beige-200 pt-10">
+                <div class="max-w-1400 px-10 lg:flex">
+                    <aside class="w-full flex flex-col lg:w-1/4">
+                        <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none my-4 lg:leading-8 ">Upcoming events</h1>
+                    </aside>
+                    <div class="w-full pb-10 lg:w-3/4 lg:pl-16">
+                        @foreach($upcomingEvents as $upcomingEvent)
+                            <article class="border-black border-t pb-10 max-w-xl xl:max-w-2xl">
+                                <div class="w-full md:flex xl:flex-row-reverse">
+                                    <div class="md:w-2/3">
+                                        <span class="text-xl font-bold uppercase leading-none block pt-5 font-rubik tracking-tighter my-3 lg:leading-none lg:text-2xl xl:hidden">{{ $upcomingEvent->event_start_date }}</span>
+                                        <h3><a href="{{ $upcomingEvent->url }}" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter block my-3 lg:leading-none lg:text-2xl xl:text-3xl xl:mt-6">
+                                            {{ $upcomingEvent->title }}</a>
+                                        </h3>
+                                        <p>{!! $upcomingEvent->excerpt !!}</p>
+                                        <div class="hidden xl:block">
+                                            <span class="text-xl font-semibold uppercase leading-none block mt-5 mb-2 font-rubik tracking-tighter">Location: </span>
+                                            <span>{{ $upcomingEvent->venue_title }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="md:w-1/3 md:pl-8 xl:p-0">
+                                        <div class="xl:hidden">
+                                            <span class="text-xl font-semibold uppercase leading-none block mt-5 mb-1 font-rubik tracking-tighter">Location: </span>
+                                            <span>{{ $upcomingEvent->venue_title }}</span>
+                                        </div>
+                                        <div class="hidden xl:block">
+                                            <span class="text-2xl font-bold uppercase leading-none block pt-5 font-rubik tracking-tighter my-3">{{ $upcomingEvent->event_start_date }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ $upcomingEvent->url }}"><img src="{{ $upcomingEvent->img_url }}" alt="{{ $upcomingEvent->alt }}" class="pt-6 xl:pt-10"></a>
+                                
+                            </article>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        @endif
         
         <section class="bg-tahini-500">
             <div class="max-w-1400 flex flex-wrap px-10">

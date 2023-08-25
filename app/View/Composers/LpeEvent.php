@@ -72,7 +72,7 @@ class LpeEvent extends Composer
 
             $eventStartDate = get_field('event_start_date', $post->ID) ? get_field('event_start_date', $post->ID) : '';
             if ( $eventStartDate ) {
-                $eventStartDate = \DateTime::createFromFormat( 'm/d/Y', $eventStartDate )->format('M j Y');
+                $eventStartDate = \DateTime::createFromFormat( 'm/d/Y', $eventStartDate )->format('M j, Y');
             }
 
             $featured_event = (object) [
@@ -141,6 +141,12 @@ class LpeEvent extends Composer
 
         return collect($upcomingEvents->posts)->map(function ($post) {
             setup_postdata($post);
+
+            $eventStartDate = get_field('event_start_date', $post->ID) ? get_field('event_start_date', $post->ID) : '';
+            if ( $eventStartDate ) {
+                $eventStartDate = \DateTime::createFromFormat( 'm/d/Y', $eventStartDate )->format('M j, Y');
+            }
+
             $upcoming_event = (object) [
                     'title' => get_the_title($post),
                     'url' => get_permalink($post),
@@ -151,7 +157,7 @@ class LpeEvent extends Composer
                              get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true) : get_the_title($post),
 
                     'event_end_date' => get_field('event_end_date', $post->ID),
-                    'event_start_date' => get_field('event_start_date', $post->ID),
+                    'event_start_date' => $eventStartDate,
                     'event_time' => get_field('event_time', $post->ID),
                     'event_day_of_the_week' => get_field('event_day_of_the_week', $post->ID),
                     'venue_title' => get_field('venue_title', $post->ID),
