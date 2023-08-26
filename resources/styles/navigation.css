@@ -1,3 +1,7 @@
+.navigation.posts-navigation {
+    @apply w-full;
+}
+
 nav .nav-links {
     @apply flex flex-row-reverse w-full justify-between my-12;
 }

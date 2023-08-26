@@ -19,6 +19,7 @@ class LoopItems extends Composer
         'partials.content-student_group',
         'partials.content-syllabi',
         'partials.content-primers',
+        'partials.content-lpe_event',
     ];
 
     /**

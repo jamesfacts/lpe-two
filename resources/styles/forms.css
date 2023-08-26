@@ -21,6 +21,12 @@
     }
 }
 
+.events-form-mailpoet input[type="email"] {
+    &::placeholder {
+        @apply text-gray-800;
+    }
+}
+
 /* aside sidebar widgets */
 
 .wp-block-search__inside-wrapper,
