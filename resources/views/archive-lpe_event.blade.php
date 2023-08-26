@@ -117,8 +117,8 @@
                         @endforeach
                     @endif
                 </div>
-                <div class="w-full archive-nav lg:w-3/4 lg:ml-auto lg:pl-18 pt-12 pb-20">
-                    @include('components/generic-btn', [ 'url' => $pastEventUrl, 'copy' => 'Past Events' ])
+                <div class="w-full archive-nav pl-5 md:ml-auto md:pl-16 lg:pl-6 xl:w-3/4 xl:pl-16 pt-12 pb-20">
+                    @include('components/generic-btn', [ 'url' => $pastEventUrl, 'copy' => 'View All Past Events' ])
                 </div>
             </div>
         </section>
