@@ -34,6 +34,7 @@ class Post extends Composer
             'relatedPosts' => $this->relatedPosts(),
             'conference_symposia' => false,
             'related_symposia_posts' => false,
+            'eventStartDate' => $this->niceFormatEventStart(),
         ];
     }
 
@@ -218,6 +219,19 @@ class Post extends Composer
             wp_reset_postdata();
             return $related_post;
         })->shuffle()->take(3);
+    }
+
+    public function niceFormatEventStart() {
+        if (!get_post_type(get_the_id()) === 'event') {
+            return false;
+        }
+
+        $eventStartDate = get_field('event_start_date') ? get_field('event_start_date') : '';
+        if ( $eventStartDate ) {
+            $eventStartDate = \DateTime::createFromFormat( 'm/d/Y', $eventStartDate )->format('M j, Y');
+        }
+
+        return $eventStartDate;
     }
 
     /**
