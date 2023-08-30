@@ -41,13 +41,13 @@
     }
 }
 
-.prose a { 
+/* .prose a { 
     @apply text-tahini-700 underline;
 
     &:hover {
         @apply no-underline;   
     }
-}
+} */
 
 .single-lpe_event .prose {
     @apply leading-6;
