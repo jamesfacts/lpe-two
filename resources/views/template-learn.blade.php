@@ -6,17 +6,18 @@
 
 @section('content')
   @while(have_posts()) @php(the_post())
-    <section>
-      <div class="max-w-1400">
-        <aside>
+    <section class="learn-header px-6 py-12 sm:px-8 lg:px-16 xl:px-24">
+      <div class="max-w-1400 md:flex lg:mt-12">
+        <aside class="mb-8 md:mr-12 lg:mr-auto lg:w-1/3">
+        <h1 class="text-5xl font-bold uppercase leading-none
+                            font-rubik tracking-tighter mb-10 lg:leading-6 lg:mb-16 lg:mt-3 xl:text-6xl">{!! the_title() !!}</h1>
           @if (has_nav_menu('learn_navigation'))
             {!! wp_nav_menu(['theme_location' => 'learn_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
           @endif
         </aside>
-        <div>
-          <h1>{!! the_title() !!}</h1>
-          <div>@php(the_content())</div>
-          <div class="">
+        <div class="md:px-6 lg:w-2/3 lg:pl-0 lg:ml-12">
+          <div class="max-w-xl">@php(the_content())</div>
+          <div class="mt-6">
           @include('components/generic-btn', [ 'url' => home_url('/lpe-manifesto/'), 'copy' => 'Learn More' ])
           </div>
         </div>
