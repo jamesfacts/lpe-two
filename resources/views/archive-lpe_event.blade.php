@@ -21,7 +21,7 @@
                                     <h2 class="">
                                         <a href="{{ $featuredEvent->url }}" class="text-xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter mb-3 mt-5 block lg:leading-none">{{ $featuredEvent->title }}</a>
                                     </h2>
-                                    <span class="font-necto">{{$featuredEvent->event_start_date}}</span>
+                                    <span class="font-necto block">{{$featuredEvent->event_start_date}}</span>
                                 </div>
                                 <a href="{{ $featuredEvent->url }}">
                                     <img src="{{ $featuredEvent->img_url }}" alt="{{ $featuredEvent->alt }}" class="my-4 w-full">
@@ -39,7 +39,7 @@
                                     <p>{!! $featuredEvent->excerpt !!}</p>
                                 </div>
                                 <div class="hidden lg:block xl:w-1/6">
-                                    <span class="font-necto text-lg">{{ $featuredEvent->event_start_date }}</span>
+                                    <span class="font-necto text-lg block xl:mt-1">{{ $featuredEvent->event_start_date }}</span>
                                     <h2 class="xl:hidden">
                                         <a href="{{ $featuredEvent->url }}" class="text-3xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter mb-3 mt-2 block lg:leading-7">{{ $featuredEvent->title }}</a>
                                     </h2>
