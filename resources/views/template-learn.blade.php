@@ -27,7 +27,40 @@
         <h2>LPE Videos</h2>
         <div class="">
           <div class="">@dump($lpeFeaturedVideo)</div>
-          <div class="">@dump($lpeVideos)</div>
+          @if($lpeFeaturedVideo)
+            <article>
+            @if(@isset($lpeFeaturedVideo->img_url))
+              @include('components/thumb-figure', [
+                'aspect_ratio' => '65%', 
+                'img_url' => $lpeFeaturedVideo->img_url, 
+                'url' => $lpeFeaturedVideo->url, 
+                'alt' => $lpeFeaturedVideo->alt
+              ])
+            @endif
+            <h2>
+              <a href="{!!$lpeFeaturedVideo->url!!}">{!!$lpeFeaturedVideo->name!!}</a>
+            </h2>
+            <span class="font-necto block">{!!$lpeFeaturedVideo->subtitle!!}</span>
+            </article>
+          @endif
+          <div class="">
+            @if($lpeVideos)
+              @foreach($lpeVideos as $lpeVideo)
+                <article>
+                  @if(@isset($lpeVideo->img_url))
+                    @include('components/thumb-figure', [
+                      'aspect_ratio' => '65%', 
+                      'img_url' => $lpeVideo->img_url, 
+                      'url' => $lpeVideo->url, 
+                      'alt' => $lpeVideo->alt
+                    ])
+                  @endif
+                  <h3>{!! $lpeVideo->name !!}</h3>
+                  <span class="font-necto">{!! $lpeVideo->subtitle !!}</span>
+                </article>
+              @endforeach
+            @endif
+          </div>
         </div>
       </div>
     </section>
