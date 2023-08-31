@@ -22,13 +22,13 @@
         </div>
       </div>
     </section>
-    <section class="bg-beige-200">
+    <section class="bg-beige-200 px-6 py-12 sm:px-8 lg:px-16 xl:px-24">
       <div class="max-w-1400">
-        <h2>LPE Videos</h2>
-        <div class="">
-          <div class="">@dump($lpeFeaturedVideo)</div>
+        <h1 class="text-5xl font-bold uppercase leading-none 
+                            font-rubik tracking-tighter mb-10 lg:leading-6 lg:mb-16">LPE Videos</h1>
+        <div class="lg:flex lg:flex-row-reverse">
           @if($lpeFeaturedVideo)
-            <article>
+            <article class="mb-8 max-w-xl lg:w-2/3 lg:max-w-3xl lg:ml-12 lg:mr-auto">
             @if(@isset($lpeFeaturedVideo->img_url))
               @include('components/thumb-figure', [
                 'aspect_ratio' => '65%', 
@@ -37,16 +37,19 @@
                 'alt' => $lpeFeaturedVideo->alt
               ])
             @endif
-            <h2>
-              <a href="{!!$lpeFeaturedVideo->url!!}">{!!$lpeFeaturedVideo->name!!}</a>
+            <h2 class="mt-4 w-5/6">
+              <a href="{!!$lpeFeaturedVideo->url!!}" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 block 
+                                                        font-rubik tracking-tighter my-3 lg:leading-8 lg:text-4xl lg:mt-5">
+                {!!$lpeFeaturedVideo->name!!}
+              </a>
             </h2>
-            <span class="font-necto block">{!!$lpeFeaturedVideo->subtitle!!}</span>
+            <span class="font-necto block w-5/6">{!!$lpeFeaturedVideo->subtitle!!}</span>
             </article>
           @endif
-          <div class="">
+          <div class="grid gap-6 sm:grid-cols-2 lg:w-1/3 lg:grid-cols-1 lg:mr-auto">
             @if($lpeVideos)
               @foreach($lpeVideos as $lpeVideo)
-                <article>
+                <article class="mb-8">
                   @if(@isset($lpeVideo->img_url))
                     @include('components/thumb-figure', [
                       'aspect_ratio' => '65%', 
@@ -55,7 +58,11 @@
                       'alt' => $lpeVideo->alt
                     ])
                   @endif
-                  <h3>{!! $lpeVideo->name !!}</h3>
+                  <h3 class="mt-4 w-5/6">
+                    <a href="{!! $lpeVideo->url !!}" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 
+                                                        font-rubik tracking-tighter my-3 lg:leading-6">
+                    {!! $lpeVideo->name !!}</a>
+                  </h3>
                   <span class="font-necto">{!! $lpeVideo->subtitle !!}</span>
                 </article>
               @endforeach
@@ -67,10 +74,33 @@
     <section>
       <div class="max-w-1400">
         <aside>
-          Syllabi blurb
+          <h1>Syllabi</h1>
         </aside>
         <div class="">
-          @dump($lpeSyllabi)
+          @if($lpeSyllabi)
+            @foreach($lpeSyllabi as $lpeSyllabus)
+            <article class="max-w-sm mx-auto px-5 lg:px-0">
+              <header>
+                  <h2 class="entry-title my-3">
+                  <a href="{{ $lpeSyllabus->url }}" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl">
+                      {!! $lpeSyllabus->name !!}
+                  </a>
+                  </h2>
+              <span class="font-necto block">{!! $lpeSyllabus->professor !!}</span>
+              <span class="font-necto block mb-4">{!! $lpeSyllabus->school !!}</span>
+
+              </header>
+
+            <div class="entry-summary">
+              {!! $lpeSyllabus->excerpt !!}
+            </div>
+            <div class="my-3 flex flex-row justify-between" style="max-width: 13rem;">
+              @include('components/generic-btn', [ 'url' => $lpeSyllabus->url, 'copy' => 'Learn More' ])
+              @include('components/generic-btn', [ 'url' => $lpeSyllabus->download_url, 'copy' => 'Download' ])
+            </div>
+          </article>
+            @endforeach
+          @endif
         </div>
       </div>
     </section>
