@@ -5,7 +5,9 @@
 }
 
 .primers-btn a:hover,
-.primers-nav a:hover {
+.primers-nav a:hover,
+.speakers-nav a:hover,
+.bg-tahini-500 a:hover {
     @apply border-white text-white;
 }
 
@@ -25,11 +27,13 @@
     @apply text-2xl font-bold uppercase leading-none block font-rubik tracking-tighter mb-4 mt-1;
 }
 
-.learn-header ul.nav a {
-    @apply text-xl font-bold uppercase leading-none block font-rubik tracking-tighter mb-1;
+.learn-header ul.nav a,
+.engage-header ul.nav a {
+    @apply text-xl font-semibold uppercase leading-none block font-rubik tracking-tighter mb-1;
 }
 
-.learn-header ul.nav a:hover {
+.learn-header ul.nav a:hover,
+.engage-header ul.nav a:hover {
     @apply text-tahini-500;
 }
 
