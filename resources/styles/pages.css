@@ -37,6 +37,18 @@
     @apply text-tahini-500;
 }
 
+.speakers-blurb p {
+    @apply mb-6;
+}
+
+.speakers-blurb p a {
+    @apply underline;
+}
+
+.speakers-blurb a:hover {
+    @apply text-tahini-500;
+}
+
 @media screen(lg) {
     .learn-header h2.wp-block-heading {
         @apply text-4xl mb-6;
