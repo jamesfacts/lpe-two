@@ -461,6 +461,8 @@ add_filter(
    2
 );
 
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string');
+
 add_filter('wp_trim_excerpt', __NAMESPACE__.'\wpse_custom_wp_trim_excerpt');
 
 function wpse_custom_wp_trim_excerpt($wpse_excerpt)
