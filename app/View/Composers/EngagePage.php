@@ -25,6 +25,7 @@ class EngagePage extends Composer
         return [
             'lpeSpeakers' => $this->getLpeSpeakers(),
             'lpeStudentGroups' => $this->getStudentGroups(),
+            'lpeSpeakerTopics' => $this->lpeSpeakerTopics(),
         ];
     }
 
@@ -74,5 +75,30 @@ class EngagePage extends Composer
           wp_reset_postdata();
           return $speaker;
       });
+    }
+
+    /**
+    * Return a Laravel collection of LPE speaker topics
+    * @return object
+    */
+    public function lpeSpeakerTopics() 
+    {
+        $args = "speaker_topics";
+
+        $topics = get_terms($args);
+        $topicOptions = [];
+        // minimum posts in category to display category
+        $min_count = 1;
+        
+        foreach ($topics as $topic):
+            if (($topic->count > $min_count)) {
+                $topicOptions[] = (object)[
+                    'url' => home_url('/speaker-topics/') . $topic->slug,
+                    'name' => $topic->name,
+                ];
+            }
+        endforeach;
+
+        return $topicOptions;
     }
 }

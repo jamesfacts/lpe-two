@@ -78,11 +78,15 @@
     <section class="bg-tahini-500 px-6 py-12 sm:px-8 lg:px-16 xl:px-24">
       <div class="max-w-1400 xl:flex">
         <aside class="max-w-lg lg:pr-6 xl:w-1/4 xl:mt-3">
-        <h1 class="text-4xl font-bold uppercase leading-none 
+          <h1 class="text-4xl font-bold uppercase leading-none 
                             font-rubik tracking-tighter mb-4 lg:leading-8 lg:mb-6">Speakers<br/>Bureau</h1>
           <div class="mb-8">
             {!! get_field('speakers_blurb') !!}
           </div>
+          @if($lpeSpeakerTopics)
+            @include('components/speakers-tax', ['topics' => $lpeSpeakerTopics])
+          @endif
+
         </aside>
         <div class="max-w-3xl mr-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-full xl:w-3/4 xl:pl-12">
           @if($lpeSpeakers)
