@@ -18,7 +18,7 @@ class ArchiveShared extends Composer
 
     public static $category;
 
-    public function titleTime()
+    public function twoTierTitle()
     {
         if (is_tax() || is_category() || is_tag()) {
             self::$category = get_queried_object();
@@ -114,12 +114,6 @@ class ArchiveShared extends Composer
        return false;
     }
 
-    public function archiveTitle() {
-        // blog topics or blog category or blog symposia
-
-
-    }
-
     public function navOverride() {
         $postType = get_post_type();
 
@@ -147,7 +141,7 @@ class ArchiveShared extends Composer
             'archiveCopy' => $this->fetchArchiveCopy(),
             'archiveTitle' => $this->fetchArchiveTitle(),
             'navOverride' => $this->navOverride(),
-            'titleTime' => $this->titleTime(),
+            'twoTierTitle' => $this->twoTierTitle(),
         ];
     }
 }
