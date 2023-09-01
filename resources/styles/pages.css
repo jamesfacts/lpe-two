@@ -49,6 +49,16 @@
     @apply text-tahini-500;
 }
 
+.speaker-topic-dropdown:hover {
+    svg {
+        @apply text-white;
+    }
+}
+
+a.topic-item:hover {
+    @apply text-black;
+}
+
 @media screen(lg) {
     .learn-header h2.wp-block-heading {
         @apply text-4xl mb-6;
