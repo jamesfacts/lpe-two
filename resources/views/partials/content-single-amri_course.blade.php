@@ -29,6 +29,7 @@
 
   </section>
 
+  @dump($all_fields)
   <section class="mx-0 reading-section">
     @if(is_object($required_reading))
     <div class="row mx-0 reading-row" style="max-width: 1150px;">
@@ -44,7 +45,7 @@
     @endif
   </section>
 
-  @if(strlen($lecture_oembed) > 0)
+  @if($lecture_oembed)
     <section class="mx-0 reading-section lecture">
         <div class="row mx-0 reading-row" style="max-width: 1150px;">
             <div class="px-0 col-12 col-lg-3 col-xl-4">
@@ -64,8 +65,11 @@
     </section>
   @endif
 
+
+<?php
+/*
   <section class="mx-0 reading-section">
-    @if(is_object($optional_reading))
+    @if($optional_reading)
     <div class="row mx-0 reading-row" style="max-width: 1150px;">
         <div class="px-0 col-12 col-lg-3 col-xl-4">
             <h2>Optional<br/>Reading</h2>
@@ -78,3 +82,4 @@
     </div>
     @endif
   </section>
+*/ ?>
