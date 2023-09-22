@@ -9,6 +9,7 @@ module.exports = {
           700: '#a16b00'
         },
         sunshine: {
+          400: '#ffc107',
           500: '#ffbf00'
         },
         beige: {
@@ -18,6 +19,7 @@ module.exports = {
       fontFamily: {
         rubik: ['Rubik', 'sans-serif'],
         necto: ['Necto Mono', 'monospace'],
+        tiempos: ['Tiempos Headline', 'serif'],
       },
       spacing: {
         '18': '4.5rem',
