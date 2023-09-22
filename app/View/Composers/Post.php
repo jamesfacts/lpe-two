@@ -179,6 +179,10 @@ class Post extends Composer
             return false;
         }
 
+        if (get_post_type() == 'amri_course') {
+            return false;
+        }
+
         $category_selection = collect(self::postCategories())->first();
 
         $cat_string = (!empty($category_selection->slug)) ? $category_selection->slug : false;
