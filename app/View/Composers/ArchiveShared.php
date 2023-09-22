@@ -16,6 +16,31 @@ class ArchiveShared extends Composer
         'archive'
     ];
 
+    public static $category;
+
+    public function twoTierTitle()
+    {
+        if (is_tax() || is_category() || is_tag()) {
+            self::$category = get_queried_object();
+            $cat_type = 'Blog';
+
+            if (self::$category->taxonomy === 'speaker_topics') {
+                $cat_type = 'Speakers <br/> Bureau';
+            };
+
+            if (self::$category->taxonomy === 'symposia') {
+                $cat_type = 'Symposia';
+            };
+
+            return (object)[
+                'type' => $cat_type,
+                'name' => self::$category->name
+            ];
+        } else {
+            return null;
+        }
+    }
+
     public static $archiveOptions = [
                                         [ 'endpoint' => 'speakers',
                                           'cpt_name' => 'lpe_speaker',
@@ -89,6 +114,22 @@ class ArchiveShared extends Composer
        return false;
     }
 
+    public function navOverride() {
+        $postType = get_post_type();
+
+        if($postType == 'lpe_video') {
+            return [
+                'prev_text' => 'Further Videos',
+                'next_text' => 'Previous Videos'
+            ];            
+        }
+
+        return [
+            'prev_text' => 'Further Posts',
+            'next_text' => 'Previous Posts'
+        ];
+    }
+
     /**
      * Data to be passed to view before rendering.
      *
@@ -99,6 +140,8 @@ class ArchiveShared extends Composer
         return [
             'archiveCopy' => $this->fetchArchiveCopy(),
             'archiveTitle' => $this->fetchArchiveTitle(),
+            'navOverride' => $this->navOverride(),
+            'twoTierTitle' => $this->twoTierTitle(),
         ];
     }
 }
