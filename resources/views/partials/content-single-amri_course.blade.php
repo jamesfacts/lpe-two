@@ -29,7 +29,6 @@
 
   </section>
 
-  @dump($all_fields)
   <section class="mx-0 reading-section">
     @if(is_object($required_reading))
     <div class="row mx-0 reading-row" style="max-width: 1150px;">

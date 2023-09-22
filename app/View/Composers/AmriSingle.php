@@ -26,15 +26,9 @@ class AmriSingle extends Composer
             'this_course_week' => $this->thisCourseWeek(),
             'faculty_list' => $this->facultyList(),
             'required_reading' => $this->requiredReading(),
-            'all_fields' => $this->allFields(),
             'lecture_oembed' => $this->lectureOembed(),
             'lecture_description' => $this->lectureDescription(),
         ];
-    }
-
-    public function allFields(){
-        $all_fields = get_fields(get_the_ID());
-        return $all_fields;
     }
 
     public function thisCourseWeek()
