@@ -1145,6 +1145,11 @@
           "color": "#a16b00"
         },
         {
+          "name": "Sunshine 400",
+          "slug": "sunshine-400",
+          "color": "#ffc107"
+        },
+        {
           "name": "Sunshine 500",
           "slug": "sunshine-500",
           "color": "#ffbf00"
@@ -1201,6 +1206,11 @@
           "name": "Necto Mono",
           "slug": "necto",
           "fontFamily": "Necto Mono,monospace"
+        },
+        {
+          "name": "Tiempos Headline",
+          "slug": "tiempos",
+          "fontFamily": "Tiempos Headline,serif"
         }
       ],
       "fontSizes": [

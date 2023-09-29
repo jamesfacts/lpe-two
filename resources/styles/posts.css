@@ -26,6 +26,66 @@
     }
 }
 
+.single-amri_course {
+
+    .faculty a {
+        @apply underline;
+
+        &:hover {
+            @apply no-underline;
+        }
+    }
+
+    article.post a {
+        @apply text-tahini-500;
+    }
+
+    article.post p {
+        @apply mb-6;
+    }
+
+    .progress-tracker button {
+        background-color: transparent;
+        border: 1px solid #000;
+        border-radius: 100%;
+        height: 45px;
+        width: 45px;
+        margin-left: .3rem;
+        margin-bottom: 2rem;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .progress-tracker.underway button::before {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border: 1px solid;
+        top: 9px;
+        left: 9px;
+        border-radius: 100%;
+    }
+    
+      .progress-tracker.complete button::before {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 9px;
+        left: 9px;
+        background-image: url("data:image/svg+xml,%3c%3fxml version='1.0' encoding='UTF-8' standalone='no'%3f%3e %3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e %3csvg width='100%25' height='100%25' viewBox='0 0 400 400' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd%3bclip-rule:evenodd%3bstroke-linecap:round%3bstroke-linejoin:round%3bstroke-miterlimit:1.5%3b'%3e%3cg transform='matrix(0.841576%2c0%2c0%2c0.841576%2c-96.1274%2c-53.8321)'%3e%3cpath d='M157%2c344L304%2c460' style='fill:none%3bstroke:black%3bstroke-width:19.01px%3b'/%3e%3cg transform='matrix(1.04314%2c-0.151875%2c0.0363229%2c1.06634%2c124.523%2c135.626)'%3e%3cpath d='M413%2c49L162%2c329' style='fill:none%3bstroke:black%3bstroke-width:19px%3b'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+    }
+}
+
+.embed-container {
+    position: relative;
+    /* padding-bottom: 56.25%; */
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+
 .single-post {
     .lpe-contrib:hover {
         -webkit-text-fill-color: black;
