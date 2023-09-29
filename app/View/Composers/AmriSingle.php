@@ -28,6 +28,7 @@ class AmriSingle extends Composer
             'required_reading' => $this->requiredReading(),
             'lecture_oembed' => $this->lectureOembed(),
             'lecture_description' => $this->lectureDescription(),
+            'optional_reading' => $this->optionalReading(),
         ];
     }
 

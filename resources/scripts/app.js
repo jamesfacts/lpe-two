@@ -4,6 +4,7 @@ import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 import homeTemplate from './forms.js';
 import postTemplate from './posts.js';
+import amriSingle from './amri-single.js';
 
 /**
  * app.main
@@ -19,6 +20,7 @@ const main = async (err) => {
   Alpine.start()
   homeTemplate.init()
   postTemplate.init()  
+  amriSingle.init()
 };
 
 /**

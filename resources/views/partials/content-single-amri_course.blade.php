@@ -21,7 +21,7 @@
 <div class="w-1/3">
 
 </div>
-<article @php post_class('post text-xl font-light w-2/3 pl-8 leading-6 tracking-lil-wide') @endphp>
+<article @php post_class('post text-xl font-light w-2/3 pl-8 leading-6 tracking-lil-wide mb-10') @endphp>
     @php the_content() @endphp
 </article>
 
@@ -43,12 +43,12 @@
 </section>
 
   @if($lecture_oembed)
-    <section class="mx-0 reading-section lecture">
-        <div class="row mx-0 reading-row" style="max-width: 1150px;">
-            <div class="px-0 col-12 col-lg-3 col-xl-4">
-                <h2>Recorded<br/>Lecture</h2>
+    <section class="mx-0 bg-sand-400 p-20">
+        <div class="mx-0 max-w-6xl flex border-t border-black pt-6">
+            <div class="lg:w-1/4 xl:w-1/3">
+                <h2 class="font-tiempos font-medium text-4.5xl leading-10 tracking-tight">Recorded<br/>Lecture</h2>
             </div>
-            <div class="px-0 col-12 col-lg-9 col-xl-8 reading-list">
+            <div class="px-0 lg:w-3/4 xl:w-2/3 relative">
                 <div class="embed-container">
                     {!! $lecture_oembed !!}
                 </div>
@@ -62,21 +62,17 @@
     </section>
   @endif
 
-
-<?php
-/*
-  <section class="mx-0 reading-section">
+<section class="mx-0 bg-sand-400 p-20">
     @if($optional_reading)
-    <div class="row mx-0 reading-row" style="max-width: 1150px;">
-        <div class="px-0 col-12 col-lg-3 col-xl-4">
-            <h2>Optional<br/>Reading</h2>
+        <div class="mx-0 max-w-6xl flex border-t border-black pt-6">
+            <div class="lg:w-1/4 xl:w-1/3">
+                <h2 class="font-tiempos font-medium text-4.5xl leading-10 tracking-tight">Optional<br/>Reading</h2>
+            </div>
+            <div class="px-0 lg:w-3/4 xl:w-2/3 reading-list">
+                @foreach($optional_reading as $item)
+                    @include('partials.amri-reading-item', ['item' => $item])
+                @endforeach
+            </div>
         </div>
-        <div class="px-0 col-12 col-lg-9 col-xl-8 reading-list">
-            @foreach($optional_reading as $item)
-               @include('partials.amri-reading-item', ['item' => $item])
-            @endforeach
-        </div>
-    </div>
     @endif
-  </section>
-*/ ?>
+</section>
