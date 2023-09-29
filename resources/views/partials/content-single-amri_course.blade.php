@@ -1,48 +1,46 @@
 <header style="margin-left: -2px;">
     @if($featuredHeaderImage)
     <span class="block w-full h-full bg-sunshine-400">
-        <figure class="h-100" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
+        <figure class="h-90" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
         </figure>
     </span>
     @endif
 
-    <div class="max-w-3xl p-20">
+    <div class="max-w-5xl p-4 m-20">
         <span class="uppercase font-rubik text-xl font-bold lg:tracking-tighter">AMRI Academy</span>
-        <h1 class="font-tiempos font-bold text-6xl">{!! get_the_title() !!}</h1>
-        <span class="font-tiempos text-6xl capitalize">{{ "week " . $this_course_week }}</span>
+        <h1 class="font-tiempos font-bold text-8xl leading-20 tracking-tight mb-2">{!! get_the_title() !!}</h1>
+        <span class="font-tiempos text-8xl leading-20 tracking-tight capitalize">{{ "week " . $this_course_week }}</span>
             @if($faculty_list)
-                <span class="faculty" style="max-width: 520px;">{!! "Faculty: " . $faculty_list !!}</span>
+                <span class="faculty block mt-3 text-xl font-thin" style="max-width: 520px;">{!! "Faculty: " . $faculty_list !!}</span>
             @endif
     </div>
 
 </header>
 
-  <section class="row mx-0" style="max-width: 1280px;">
-    <div class="col-lg-3 col-xl-4">
+<section class="flex max-w-6xl pr-12">
+<div class="w-1/3">
 
-    </div>
-    <article @php post_class('post col-lg-8') @endphp>
-      <div class="entry-content">
-        @php the_content() @endphp
-      </div>
-    </article>
+</div>
+<article @php post_class('post text-xl font-light w-2/3 pl-8 leading-6 tracking-lil-wide') @endphp>
+    @php the_content() @endphp
+</article>
 
-  </section>
+</section>
 
-  <section class="mx-0 reading-section">
+<section class="mx-0 bg-sand-400 p-20">
     @if(is_object($required_reading))
-    <div class="row mx-0 reading-row" style="max-width: 1150px;">
-        <div class="px-0 col-12 col-lg-3 col-xl-4">
-            <h2>Required<br/>Reading</h2>
+        <div class="mx-0 max-w-6xl flex border-t border-black pt-6">
+            <div class="lg:w-1/4 xl:w-1/3">
+                <h2 class="font-tiempos font-medium text-4.5xl leading-10 tracking-tight">Required<br/>Reading</h2>
+            </div>
+            <div class="px-0 lg:w-3/4 xl:w-2/3 reading-list">
+                @foreach($required_reading as $item)
+                    @include('partials.amri-reading-item', ['item' => $item])
+                @endforeach
+            </div>
         </div>
-        <div class="px-0 col-12 col-lg-9 col-xl-8 reading-list">
-            @foreach($required_reading as $item)
-               @include('partials.amri-reading-item', ['item' => $item])
-            @endforeach
-        </div>
-    </div>
     @endif
-  </section>
+</section>
 
   @if($lecture_oembed)
     <section class="mx-0 reading-section lecture">

@@ -15,6 +15,9 @@ module.exports = {
         beige: {
           200: '#faf6f1'
         },
+        sand: {
+          400: 'hsl(45deg 100% 65% / 20%)',
+        },
       }, // Extend Tailwind's default colors
       fontFamily: {
         rubik: ['Rubik', 'sans-serif'],
@@ -23,6 +26,7 @@ module.exports = {
       },
       spacing: {
         '18': '4.5rem',
+        '90': '22rem',
         '100': '24rem',
         '120': '29rem',
         '150': '36rem',
@@ -34,6 +38,17 @@ module.exports = {
       },
       maxWidth: {
         '1400': '1400px',
+      },
+      fontSize: {
+        '4.5xl': '2.625rem', 
+        '8xl': '5.125rem', //really 8.2xl
+      },
+      lineHeight: {
+        '20': '5rem',
+      },
+      letterSpacing: {
+        'lil-tight' : '-0.0125em',
+        'lil-wide' : '.0125em',
       },
     },
   },

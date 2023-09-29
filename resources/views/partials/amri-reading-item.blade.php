@@ -1,20 +1,20 @@
 @if($item->is_hed)
-    <h3>{!! $item->title !!}</h3>
+    <h3 class="font-rubik text-2xl uppercase font-bold mb-6">{!! $item->title !!}</h3>
 @else
-    <article class="flex reading-item" data-reading="{{$item->data_tag}}" >
-        <div class="reading-lh">
-        <a class="reading-item-text" href="{{ $item->url }}">
-            <span class="title">{!! $item->title !!}</span>
-            <span class="subtitle">{!! " " . $item->subtitle !!}</span>
+    <article class="flex reading-item mb-8 pb-4 border-b border-black" data-reading="{{$item->data_tag}}" >
+        <div class="reading-lh w-3/4">
+        <a class="reading-item-text hover:underline" href="{{ $item->url }}">
+            <span class="title text-2xl font-tiempos leading-6 font-bold tracking-lil-tight">{!! $item->title !!}</span>
+            <span class="subtitle text-2xl font-tiempos leading-6 tracking-lil-tight">{!! " " . $item->subtitle !!}</span>
         </a>
-        <span class="authors">{{ $item->authors }}</span>
+        <span class="authors block font-thin mt-1">{{ $item->authors }}</span>
         @if($item->notes)
             <span class="notes">{{ "• " . $item->notes }}</span>
         @endif
         </div>
-        <div class="progress-tracker">
+        <div class="progress-tracker w-1/4 flex flex-col justify-center items-center">
         <button></button>
-        <span class="reading-status">Not Started</span>
+        <span class="reading-status font-necto uppercase text-center block" style="font-size:12px;">Not Started</span>
     </div>
     </article>
 @endif
