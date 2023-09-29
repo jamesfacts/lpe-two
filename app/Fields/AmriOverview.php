@@ -109,6 +109,24 @@ class AmriOverview extends Field
             ]);
 
         $amriOverview
+            ->addWysiwyg('amri_part_one', [
+                'label' => 'AMRI Part One',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => [],
+                'wrapper' => [
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ],
+                'default_value' => '',
+                'tabs' => 'all',
+                'toolbar' => 'full',
+                'media_upload' => 1,
+                'delay' => 0,
+        ]);
+
+        $amriOverview
             ->addWysiwyg('amri_part_two', [
                 'label' => 'AMRI Part Two',
                 'instructions' => '',

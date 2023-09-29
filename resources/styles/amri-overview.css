@@ -22,4 +22,10 @@
         right: 0;
         bottom: 6%;
       }
+
+    .overview-copy p,
+    .part-copy p,
+    .download-copy p {
+       @apply mb-6; 
+    }
 }

@@ -7,37 +7,37 @@
 @section('content')
   @while(have_posts()) @php the_post() @endphp
     <div class="bg-sunshine-400" >
-        <div class="max-w-5xl p-5">
-            <h1 class="font-tiempos font-bold text-6xl">{!! the_title() !!}</h1>
+        <div class="max-w-6xl pl-24 pt-18 pb-16">
+            <h1 class="font-tiempos font-bold text-10xl leading-25 tracking-tight">{!! the_title() !!}</h1>
             @if($amri_overview_subhed)
-                <span class="font-tiempos text-6xl">{{ $amri_overview_subhed }}</span>
+                <span class="font-tiempos text-10xl leading-25 tracking-tight">{{ $amri_overview_subhed }}</span>
             @endif
         </div>
     </div>
 
     <section class="">
-        <div class="flex">
-            <div class="w-1/2">
+        <div class="flex pt-24 px-20 pb-28">
+            <div class="w-1/2 px-4">
                 @if($amri_overview_image)
                     <img src="{{ $amri_overview_image->src }}" alt="{{ $amri_overview_image->alt }}">
                 @endif
             </div>
-            <div class="w-1/2">
+            <div class="w-1/2 px-4 font-light text-lg overview-copy">
             @php the_content() @endphp
             </div>
         </div>
     </section>
 
-    <section class="p-10 bg-sunshine-400">
+    <section class="bg-sunshine-400 pt-24 px-20 pb-28">
         <div >
-            <h2 class="font-tiempos text-6xl mb-20">AMRI Course Overview</h2>
+            <h2 class="font-tiempos text-10xl leading-25 tracking-tight mb-20">AMRI Course Overview</h2>
         </div>
         <div class="flex" style="max-width: 1630px;">
             <div class="w-5/12">
                 <div class="max-w-sm">
                     <span class="font-rubik font-bold uppercase tracking-tightest">Part 1:</span>
                     <h3 class="font-tiempos text-5xl mb-10">AMRI Foundations</h3>
-                    <div class="font-light">
+                    <div class="font-light part-copy">
                         {!! $part_one_copy !!}
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                 @if($part_one)
                     <div class="grid grid-cols-2 border-l border-black">
                         @foreach($part_one as $course)
-                        <article class="course-item p-10 relative
+                        <article class="course-item p-10 relative flex flex-col justify-between
                             @if($loop->last)
                                 {{ "no-bottom" }}
                             @elseif(($loop->count % 2 === 0) && ($loop->iteration + 1 == $loop->count))
@@ -73,7 +73,7 @@
             <div class="max-w-sm">
                 <span class="font-rubik font-bold uppercase tracking-tightest">Part 2:</span>
                 <h3 class="font-tiempos text-5xl mb-10">Applications</h3>
-                <div class="font-light">
+                <div class="font-light part-copy">
                     {!! $part_two_copy !!}
                 </div>
             </div>
@@ -82,7 +82,7 @@
             @if($part_two)
                 <div class="grid grid-cols-2 border-l border-black">
                     @foreach($part_two as $course)
-                    <article class="course-item p-10 relative
+                    <article class="course-item p-10 relative flex flex-col justify-between
                         @if($loop->last)
                             {{ "no-bottom" }}
                         @elseif(($loop->count % 2 === 0) && ($loop->iteration + 1 == $loop->count))
@@ -105,7 +105,7 @@
     </div>
     </section>
 
-    <section class="p-12" style="max-width: 1550px;">
+    <section class="pt-24 px-20 pb-28" style="max-width: 1550px;">
         <div class="pb-10">
             <span class="uppercase font-rubik text-3xl font-bold lg:tracking-tighter">Additional Resources</span>
         </div>
@@ -114,7 +114,7 @@
                 <div class="max-w-md">
                     <span class="uppercase font-rubik text-2xl font-bold lg:tracking-tight">Organizational Resources:</span>
                     @if($org_copy)
-                    <div class="mb-8">
+                    <div class="mb-8 font-light text-lg download-copy">
                         {!! $org_copy !!}
                     </div>
                     @endif
@@ -126,7 +126,7 @@
                 <div class="max-w-md">
                     <span class="uppercase font-rubik text-2xl font-bold lg:tracking-tight">Expanded AMRI Reading List:</span>
                     @if($reading_copy)
-                    <div class="mb-8 font-light text-lg">
+                    <div class="mb-8 font-light text-lg download-copy">
                         {!! $reading_copy !!}
                     </div>
                     @endif

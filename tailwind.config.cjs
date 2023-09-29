@@ -42,9 +42,11 @@ module.exports = {
       fontSize: {
         '4.5xl': '2.625rem', 
         '8xl': '5.125rem', //really 8.2xl
+        '10xl': '6.3rem', 
       },
       lineHeight: {
         '20': '5rem',
+        '25': '6.1rem', 
       },
       letterSpacing: {
         'lil-tight' : '-0.0125em',
