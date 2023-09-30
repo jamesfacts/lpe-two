@@ -59,8 +59,24 @@ a.topic-item:hover {
     @apply text-black;
 }
 
+.page-template-template-conference {
+    .conf-copy p {
+        @apply mb-4;
+    }
+}
+
 @media screen(lg) {
     .learn-header h2.wp-block-heading {
         @apply text-4xl mb-6;
+    }
+
+    .page-template-template-conference .rounded-panel {
+        border-radius: 4rem;
+    }
+}
+
+@media screen(xl) {
+    .page-template-template-conference .rounded-panel {
+        border-radius: 5rem;
     }
 }
