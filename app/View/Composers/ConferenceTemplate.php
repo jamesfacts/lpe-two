@@ -29,13 +29,17 @@ class ConferenceTemplate extends Composer
 
         if(is_array($conference_events_list)) {
             return collect($conference_events_list)->map(function($item){
+                $date_str = $item['conf_event_time_picker'];
+                $date_obj = \DateTime::createFromFormat( 'Y-m-d H:i:s', $date_str );
+                
                 return (object)[
-                    'date' => $item['conf_event_time_picker'],
+                    'date' => $date_obj->format('l, F j, g:iA'),
                     'title' => $item['conf_event_title'],
                     'panelists' => $item['conf_event_speakers'],
                     'content' => $item['conference_copy'],
                     'future' => false,
                     'registration_url' => '#',
+                    'conference_video' => $item['conference_video'],
                 ];
             });
         }

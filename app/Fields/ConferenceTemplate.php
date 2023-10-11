@@ -83,8 +83,8 @@ class ConferenceTemplate extends Field
                     'maxlength' => '',
                 ])
                 ->addWysiwyg('conference_copy', [
-                    'label' => 'Organizational Resources Copy',
-                    'instructions' => 'A brief excerpt explaining what to expect in the organizational PDF',
+                    'label' => 'Event blurb',
+                    'instructions' => 'A brief excerpt describing the event',
                     'required' => 0,
                     'conditional_logic' => [],
                     'wrapper' => [

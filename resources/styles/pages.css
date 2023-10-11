@@ -65,6 +65,10 @@ a.topic-item:hover {
     }
 }
 
+.page-template-template-conference .rounded-panel {
+    border-radius: 2.5rem;
+}
+
 @media screen(lg) {
     .learn-header h2.wp-block-heading {
         @apply text-4xl mb-6;
