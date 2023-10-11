@@ -5,7 +5,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-black px-4 py-12">
+<div class="bg-black px-4 py-12" x-data="{selected:1}">
   @while(have_posts()) @php(the_post())
     <div class="max-w-7xl mt-12 rounded-panel p-12 bg-center bg-cover" style="background-image: url( {{ \Roots\asset('images/conf-texture-bg.png') }} );">
         <div class="max-w-5xl">
@@ -20,9 +20,11 @@
   @endwhile
 
   @if($panel_items)
+  <div class="grid grid-cols-2">
       @foreach($panel_items as $item)
           @include('partials/conference-panel', ['item' => $item, 'count' => $loop->iteration])
       @endforeach
+    </div>
   @endif
 </div>
 @endsection

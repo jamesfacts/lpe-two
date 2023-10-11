@@ -5,6 +5,7 @@ window.$ = window.jQuery = jQuery;
 import homeTemplate from './forms.js';
 import postTemplate from './posts.js';
 import amriSingle from './amri-single.js';
+// import conference from './conference.js';
 
 /**
  * app.main
@@ -17,10 +18,17 @@ const main = async (err) => {
 
   // application code
   window.Alpine = Alpine
+
+  function sayHello({ wrap, sequence }) {
+    console.log(sequence)
+  }
+
   Alpine.start()
   homeTemplate.init()
   postTemplate.init()  
   amriSingle.init()
+
+  
 };
 
 /**
