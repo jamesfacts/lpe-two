@@ -5,7 +5,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-black px-4 py-12" x-data="{selected:1}">
+<div class="bg-black px-4 py-12" x-data="{selected:null}">
   @while(have_posts()) @php(the_post())
     <div class="max-w-7xl mt-12 rounded-panel p-12 bg-center bg-cover" style="background-image: url( {{ \Roots\asset('images/conf-texture-bg.png') }} );">
         <div class="max-w-5xl">
