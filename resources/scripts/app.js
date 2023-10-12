@@ -1,4 +1,5 @@
 import {domReady} from '@roots/sage/client';
+import { wrapGrid } from 'animate-css-grid';
 import Alpine from 'alpinejs';
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
@@ -19,14 +20,13 @@ const main = async (err) => {
   // application code
   window.Alpine = Alpine
 
-  function sayHello({ wrap, sequence }) {
-    console.log(sequence)
-  }
-
   Alpine.start()
   homeTemplate.init()
   postTemplate.init()  
   amriSingle.init()
+  
+  const grid = document.querySelector(".conference-panels");
+  wrapGrid(grid);
 
   
 };

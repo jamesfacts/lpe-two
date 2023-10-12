@@ -1,8 +1,8 @@
 
 
 <div class="bg-white rounded-panel card panel-card pt-8 pb-12 px-5 mb-8 count_{{$count}} 
-    @if($item->future) {{"future-event"}} @else {{"past-event"}} @endif" id="{{$item->slug}}">
-    <div class="needed-for-animate-css-grid inner-card" style="transform-origin: 0px 0px;" >
+    @if($item->future) {{"future-event"}} @else {{"past-event"}} @endif" id="{{$item->slug}}" :class="selected == {{$loop->index}} ? 'card--expanded' : ''">
+    <div class="needed-for-animate-css-grid inner-card" style="transform-origin: 0px 0px 0px;" >
 
         <div class="meta-wrap">
             <div class="text-lg font-bold uppercase leading-none font-rubik tracking-tighter my-1">
@@ -34,7 +34,8 @@
 
         </div>
 
-        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container{{$loop->index}}" x-bind:style="selected == {{$loop->index}} ? 'max-height: ' + $refs.container{{$loop->index}}.scrollHeight + 'px' : ''">
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" 
+                    x-ref="container{{$loop->index}}" x-bind:style="selected == {{$loop->index}} ? 'max-height: ' + $refs.container{{$loop->index}}.scrollHeight + 'px' : ''">
             <div class="opacity-controls">
                 <div class="">
                     {!! $item->content !!}

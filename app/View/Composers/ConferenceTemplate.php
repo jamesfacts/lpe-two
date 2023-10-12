@@ -31,6 +31,9 @@ class ConferenceTemplate extends Composer
             return collect($conference_events_list)->map(function($item){
                 $date_str = $item['conf_event_time_picker'];
                 $date_obj = \DateTime::createFromFormat( 'Y-m-d H:i:s', $date_str );
+
+                $slug_data = str_replace  ("'", "", $item['conf_event_title']);
+                $slug_data = preg_replace ('/[^\p{L}\p{N}]/u', '_', $slug_data);
                 
                 return (object)[
                     'date' => $date_obj->format('l, F j, g:iA'),
@@ -40,6 +43,7 @@ class ConferenceTemplate extends Composer
                     'future' => false,
                     'registration_url' => '#',
                     'conference_video' => $item['conference_video'],
+                    'slug' => $slug_data,
                 ];
             });
         }

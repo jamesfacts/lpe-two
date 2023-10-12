@@ -20,7 +20,7 @@
   @endwhile
 
   @if($panel_items)
-  <div class="grid grid-cols-2">
+  <div class="conference-panels grid grid-cols-2">
       @foreach($panel_items as $item)
           @include('partials/conference-panel', ['item' => $item, 'count' => $loop->iteration])
       @endforeach

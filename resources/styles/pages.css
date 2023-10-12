@@ -69,6 +69,14 @@ a.topic-item:hover {
     border-radius: 2.5rem;
 }
 
+/* conf zone */
+
+.card--expanded {
+    grid-column: span 2;
+}
+
+
+
 @media screen(lg) {
     .learn-header h2.wp-block-heading {
         @apply text-4xl mb-6;
