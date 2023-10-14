@@ -75,7 +75,9 @@ a.topic-item:hover {
     grid-column: span 2;
 }
 
-
+.rounded-panel.odd {
+    @apply border-emerald-700 border-4;
+}
 
 @media screen(lg) {
     .learn-header h2.wp-block-heading {

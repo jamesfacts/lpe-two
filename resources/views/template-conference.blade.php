@@ -19,12 +19,19 @@
     </div>
   @endwhile
 
-  @if($panel_items)
-  <div class="conference-panels grid grid-cols-2">
+  <section class="max-w-7xl">
+    @if($panel_items)
+      <div class="conference-panels grid grid-cols-2 gap-6 mt-6">
       @foreach($panel_items as $item)
+        @if( $item->placeholder )
+          @include('partials/conference-placeholder')
+        @else
           @include('partials/conference-panel', ['item' => $item, 'count' => $loop->iteration])
+        @endif
       @endforeach
-    </div>
-  @endif
+      </div>
+    @endif
+  </section>
 </div>
+
 @endsection
