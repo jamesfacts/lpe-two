@@ -22,8 +22,8 @@
         </div>
         <div class="registration-pills mt-6 mb-3">
             <a href="javascript:void(0)" 
-                class="border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block hover:text-tahini-500 hover:border-tahini-500" 
-                aria-label="Read / Close Full Event Description" @click="selected !== {{$loop->index}} ? selected = {{$loop->index}} : selected = null">
+                class="expansion-toggle border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block hover:text-tahini-500 hover:border-tahini-500" 
+                aria-label="Read / Close Full Event Description" @click="selected !== {{$loop->index}} ? selected = {{$loop->index}} : selected = null" >
                 Learn More
             </a>
             <!-- <a href="javascript:void(0)" 
