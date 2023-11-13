@@ -21,7 +21,7 @@
 
   <section class="max-w-7xl">
     @if($panel_items)
-      <div class="conference-panels grid grid-cols-2 gap-6 mt-6">
+      <div class="conference-panels grid grid-cols-2 gap-6 mt-6 overflow-hidden">
       @foreach($panel_items as $item)
         @if( $item->placeholder )
           @include('partials/conference-placeholder')

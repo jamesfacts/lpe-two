@@ -24,11 +24,25 @@ const main = async (err) => {
   homeTemplate.init()
   postTemplate.init()  
   amriSingle.init()
-  
-  const grid = document.querySelector(".conference-panels");
-  wrapGrid(grid);
-
   conference.init()
+
+  const grid = document.querySelector(".conference-panels");
+  wrapGrid(grid,
+    {
+      // int: default is 0 ms
+      stagger: 30,
+      // int: default is 250 ms
+      duration: 350,
+      // string: default is 'easeInOut'
+      easing: 'anticipate',
+      // function: called with list of elements about to animate
+      onStart: (animatingElementList)=> {},
+      // function: called with list of elements that just finished animating
+      // cancelled animations will not trigger onEnd
+      onEnd: (animatingElementList)=> {}
+    });
+
+  
   
 };
 
