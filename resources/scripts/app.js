@@ -32,7 +32,7 @@ const main = async (err) => {
       // int: default is 0 ms
       stagger: 30,
       // int: default is 250 ms
-      duration: 350,
+      duration: 850,
       // string: default is 'easeInOut'
       easing: 'anticipate',
       // function: called with list of elements about to animate

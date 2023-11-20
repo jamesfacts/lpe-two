@@ -1,6 +1,6 @@
 
-
-<div class="bg-white rounded-panel card panel-card pt-8 pb-12 px-5 count_{{$count}} 
+<div class="needed-for-animate-css-grid">
+<div class="bg-white rounded-panel  card panel-card pt-8 pb-12 px-5 count_{{$count}} 
     @if($loop->index % 2 == 0)
         {{ 'even' }}
     @else
@@ -8,7 +8,7 @@
     @endif
 
     @if($item->future) {{"future-event"}} @else {{"past-event"}} @endif" id="{{$item->slug}}" :class="selected == {{$loop->index}} ? 'card--expanded' : ''">
-    <div class="needed-for-animate-css-grid inner-card" style="transform-origin: 0px 0px 0px;" >
+    <div class="bg-yellow-500 inner-card" style="transform-origin: 0px 0px 0px;" >
 
         <div class="meta-wrap">
             @dump($loop->index)
@@ -62,4 +62,5 @@
         </div>
         
     </div>
+</div>
 </div>
