@@ -19,16 +19,18 @@ export default {
         for (const closePanelBtn of closePanelBtns) {
             closePanelBtn.addEventListener('click', (ev) => {
                 let target = ev.target;
-                let scrollItem = $(target).closest('.panel-card').attr('id');
-
-                firstPlaceholder.classList.toggle('hidden');
+                let scrollItem = $(target).closest('.scroll-position').attr('id');
                 scrollToPanel(scrollItem);
+                firstPlaceholder.classList.toggle('hidden');
+                
             });
         }
 
         for (const closeEvenPanel of closeEvenPanelBtns) {
             closeEvenPanel.addEventListener('click', (ev) => {
-            //   scrollToPanel(scrollItem);
+                let target = ev.target;
+                let scrollItem = $(target).closest('.scroll-position').attr('id');
+                scrollToPanel(scrollItem);
                 firstPlaceholder.classList.remove('hidden');
             });
         }
