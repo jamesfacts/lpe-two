@@ -30,11 +30,11 @@ const main = async (err) => {
   wrapGrid(grid,
     {
       // int: default is 0 ms
-      stagger: 30,
+      stagger: 50,
       // int: default is 250 ms
-      duration: 850,
+      duration: 550,
       // string: default is 'easeInOut'
-      easing: 'anticipate',
+      easing: 'backInOut',
       // function: called with list of elements about to animate
       onStart: (animatingElementList)=> {},
       // function: called with list of elements that just finished animating

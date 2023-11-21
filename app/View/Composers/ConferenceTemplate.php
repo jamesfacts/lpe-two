@@ -74,6 +74,9 @@ class ConferenceTemplate extends Composer
                 $all_panels[] = $item;
             }
 
+            // TODO this should figure out how many placeholders are needed at the bottom
+            $all_panels[] = (object)['placeholder' => true];
+            // $all_panels[] = (object)['placeholder' => true];
             return $all_panels;
         }
 

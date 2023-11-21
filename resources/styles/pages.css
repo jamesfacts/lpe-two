@@ -79,13 +79,17 @@ a.topic-item:hover {
     @apply border-emerald-700 border-4;
 } */
 
+.event-body p {
+    @apply mb-6;
+}
+
 .scroll-position .inner-card {
     @apply h-full;
     max-height: 380px;
 }
 
 .scroll-position.card--expanded .inner-card {
-    max-height: 1500px;
+    max-height: 2500px;
 }
 
 @media screen(lg) {
