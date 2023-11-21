@@ -75,8 +75,17 @@ a.topic-item:hover {
     grid-column: span 2;
 }
 
-.rounded-panel.odd {
+/* .rounded-panel.odd {
     @apply border-emerald-700 border-4;
+} */
+
+.scroll-position .inner-card {
+    @apply h-full;
+    max-height: 380px;
+}
+
+.scroll-position.card--expanded .inner-card {
+    max-height: 1500px;
 }
 
 @media screen(lg) {
