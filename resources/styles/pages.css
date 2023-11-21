@@ -59,8 +59,51 @@ a.topic-item:hover {
     @apply text-black;
 }
 
+.page-template-template-conference {
+    .conf-copy p {
+        @apply mb-4;
+    }
+}
+
+.page-template-template-conference .rounded-panel {
+    border-radius: 2.5rem;
+}
+
+/* conf zone */
+
+.card--expanded {
+    grid-column: span 2;
+}
+
+/* .rounded-panel.odd {
+    @apply border-emerald-700 border-4;
+} */
+
+.event-body p {
+    @apply mb-6;
+}
+
+.scroll-position .inner-card {
+    @apply h-full;
+    max-height: 380px;
+}
+
+.scroll-position.card--expanded .inner-card {
+    max-height: 2500px;
+}
+
 @media screen(lg) {
     .learn-header h2.wp-block-heading {
         @apply text-4xl mb-6;
+    }
+
+    .page-template-template-conference .rounded-panel {
+        border-radius: 4rem;
+    }
+}
+
+@media screen(xl) {
+    .page-template-template-conference .rounded-panel {
+        border-radius: 5rem;
     }
 }

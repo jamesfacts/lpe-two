@@ -1158,6 +1158,11 @@
           "name": "Beige 200",
           "slug": "beige-200",
           "color": "#faf6f1"
+        },
+        {
+          "name": "Sand 400",
+          "slug": "sand-400",
+          "color": "hsl(45deg 100% 65% / 20%)"
         }
       ]
     },
@@ -1267,17 +1272,27 @@
         {
           "name": "7xl",
           "slug": "7xl",
-          "size": "4.5rem"
+          "size": "5rem"
         },
         {
           "name": "8xl",
           "slug": "8xl",
-          "size": "6rem"
+          "size": "5.125rem"
         },
         {
           "name": "9xl",
           "slug": "9xl",
           "size": "8rem"
+        },
+        {
+          "name": "4.5xl",
+          "slug": "4.5xl",
+          "size": "2.625rem"
+        },
+        {
+          "name": "10xl",
+          "slug": "10xl",
+          "size": "6.3rem"
         }
       ]
     }
