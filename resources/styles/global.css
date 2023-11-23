@@ -48,8 +48,19 @@ body {
     }
 }
 
+.nav-wrapper {
+    height: 120px;
+}
+
 .nav-primary {
     height: 100vh;
+    width: 100vw;
+    transform: translateY(-110vh);
+    transition: transform .35s ease-in;
+}
+
+.nav-primary.nav--expanded {
+    transform: translateY(0);
 }
 
 .nav-primary #menu-primary a {
