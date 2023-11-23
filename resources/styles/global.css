@@ -131,6 +131,11 @@ body {
 
     .nav-primary {
         margin-left: 100px;
+        transform: translateX(-110vw);
+    }
+    
+    .nav-primary.nav--expanded {
+        transform: translateX(0);
     }
 
     .nav-primary #menu-primary a,
