@@ -1,4 +1,4 @@
-<header class="nav-wrapper bg-black block lg:h-full lg:flex lg:space-between" x-data="{ open: false }" :class="open ? 'navigating' : ''">
+<header class="nav-wrapper bg-black block lg:flex lg:h-full lg:space-between" x-data="{ open: false }" :class="open ? 'navigating' : ''">
   <div class="nav-header nav-buttons bg-black py-6 lg:flex lg:flex-col lg:px-2 lg:justify-between">
     <button id="menuCollapse" class="absolute lg:relative" type="button" x-on:click=" open = ! open " >
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 30" version="1.1" x="0px" y="0px" class="menu-burger fill-white px-5" style="height:38px;>
@@ -18,7 +18,8 @@
   </div>
 
   @if (has_nav_menu('primary_navigation'))
-    <nav class="nav-primary pt-8 pl-8 bg-black text-white w-full lg:flex lg:items-center lg:p-0" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}" x-show="open" >
+    <nav class="nav-primary pt-8 pl-8 bg-yellow-100 text-white w-full z-5 lg:flex lg:h-full lg:items-center lg:p-0" 
+         aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}" :class="open ? 'nav--expanded' : ''" >
       <div class="lg:w-168 lg:mx-auto" aria-modal="true" role="dialog">
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
         {!! get_search_form(false) !!}
