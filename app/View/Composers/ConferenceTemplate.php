@@ -30,6 +30,10 @@ class ConferenceTemplate extends Composer
 
         $conference_events_list = get_field('conference_events');
 
+        if (!is_int($conference_events_list)) {
+            return false;
+        }
+
         $conf_count = count($conference_events_list);
         self::$placeholders_to_add = collect(array_filter(self::$placeholderArr, function ($value) use ($conf_count) {
             return $value < $conf_count;
