@@ -30,7 +30,7 @@
                             <div class="w-full flex flex-col-reverse mb-16 xl:flex-row-reverse">
                                 <div class="w-full xl:w-2/6 xl:pl-8">
                                     <span class="text-xl font-semibold uppercase leading-none block mt-5 mb-1 font-rubik tracking-tighter">Location: </span>
-                                    {{ $featuredEvent->venue_title }}
+                                    {!! $featuredEvent->venue_title !!}
                                 </div>
                                 <div class="w-full xl:w-3/6">
                                     <h2 class="hidden xl:block">
@@ -78,7 +78,7 @@
                                     <div class="md:w-2/3">
                                         <span class="text-xl font-bold uppercase leading-none block pt-5 font-rubik tracking-tighter my-3 lg:leading-none lg:text-2xl xl:hidden">{{ $upcomingEvent->event_start_date }}</span>
                                         <h3><a href="{{ $upcomingEvent->url }}" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter block my-3 lg:leading-none lg:text-2xl xl:text-3xl xl:mt-6">
-                                            {{ $upcomingEvent->title }}</a>
+                                            {!! $upcomingEvent->title !!}</a>
                                         </h3>
                                         <p>{!! $upcomingEvent->excerpt !!}</p>
                                         <div class="hidden xl:block">
