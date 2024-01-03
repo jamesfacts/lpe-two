@@ -88,6 +88,37 @@ class ConferenceTemplate extends Composer
     }
 
     /**
+     * Are there various symposia buckets associated with the conference?
+     */
+
+     public function get_conf_symposia()
+     {
+        $args = [
+            'taxonomy' => 'symposia',
+            'order' => 'DESC',
+            'hide_empty' => false,
+            'hierarchical' => true,
+            'meta_key' => 'conference_year',
+            'meta_value' => 'null',
+            'meta_compare' => '!=',
+        ];
+
+        $symposia = get_terms($args);
+
+        return collect($symposia)->map(function ($term) {
+            return (object)[
+                'title' => $term->name,
+                'id' => $term->term_id,
+                'img' => 'symposia-texture-' . rand(1, 3) . '.png',
+                'slug' => $term->slug,
+                'subhed' => get_term_meta($term->term_id, 'symposia_subhed', true),
+                'features' => get_term_meta($term->term_id, 'symposia_features', true),
+                'clickable' => ($term->count > 0)
+            ];
+        })->take(6);
+     }
+
+    /**
      * Data to be passed to view before rendering.
      *
      * @return array
@@ -98,6 +129,7 @@ class ConferenceTemplate extends Composer
             'title' => get_the_title(),
             'panel_items' =>$this->get_panel_items(),
             'placeholder_positions' => [1, 4, 8, 10, 13, 15, 17, 20],
+            'symposiaItems' => $this->get_conf_symposia(),
         ];
     }
 }

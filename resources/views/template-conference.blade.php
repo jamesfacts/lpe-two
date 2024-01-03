@@ -64,4 +64,22 @@
   </section>
 </div>
 
+<div class="p-6" style="background-color: #e2e2e2;">
+@if($symposiaItems)
+  <div class="max-w-lg lg:py-6">
+    <h3 class="font-tiempos text-3xl mb-4">Blog Symposia</h3>
+        @if( get_field('symposia_blurb') )
+        <p>
+          {{get_field('symposia_blurb')}}
+        </p>
+        @endif
+  </div>
+  <div class="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2 md:max-w-3xl lg:grid-cols-3 lg:max-w-screen-xl">
+    @foreach($symposiaItems as $item)
+      @include('partials/conference-symposia')
+    @endforeach
+  </div>
+@endif
+</div>
+
 @endsection
