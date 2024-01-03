@@ -10,7 +10,9 @@
     <div class="max-w-7xl rounded-panel bg-center bg-cover p-4 sm:pt-8 md:p-12" style="background-image: url( {{ \Roots\asset('images/conf-texture-bg.png') }} );">
         <div class="max-w-5xl">
             <h1 class="text-4xl leading-9 font-bold font-tiempos tracking-tight sm:text-6xl sm:leading-16 md:text-7xl md:leading-18">{!! $title !!}</h1>
-            <h2 class="text-4xl font-tiempos tracking-tight sm:text-6xl sm:leading-16 md:text-7xl md:leading-18 lg:mt-3">Spring 2023</h2>
+            @if($confSubtitle)
+              <h2 class="text-4xl font-tiempos tracking-tight sm:text-6xl sm:leading-16 md:text-7xl md:leading-18 lg:mt-3">{{ $confSubtitle }}</h2>
+            @endif
 
             <div class="max-w-xl mx-1 pr-4 mt-10 mb-12 lg:max-w-4xl lg:pr-8 lg:mt-16 xl:max-w-6xl" x-data="{confExpanded:null}">
                 <div class="conf-copy lg:hidden">
@@ -64,7 +66,7 @@
   </section>
 </div>
 
-<div class="p-6" style="background-color: #e2e2e2;">
+<div class="p-6 pb-18" style="background-color: #e2e2e2;">
 @if($symposiaItems)
   <div class="max-w-lg lg:py-6">
     <h3 class="font-tiempos text-3xl mb-4">Blog Symposia</h3>
