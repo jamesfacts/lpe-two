@@ -73,12 +73,6 @@ a.topic-item:hover {
     border-radius: 2.5rem;
 }
 
-/* conf zone */
-
-.card--expanded {
-    grid-column: span 2;
-}
-
 /* .rounded-panel.odd {
     @apply border-emerald-700 border-4;
 } */
@@ -87,22 +81,34 @@ a.topic-item:hover {
     @apply mb-6;
 }
 
-.scroll-position .inner-card {
-    @apply h-full;
-    max-height: 380px;
-}
-
 .scroll-position.card--expanded .inner-card {
     max-height: 2500px;
 }
+
+@media (max-width: 1024px) {
+    .page-template-template-conference .grid-placeholder  {
+        height: 300px;
+    }
+}  
 
 @media screen(lg) {
     .learn-header h2.wp-block-heading {
         @apply text-4xl mb-6;
     }
 
+    /* conf zone */
+
+    .card--expanded {
+        grid-column: span 2;
+    }
+
     .page-template-template-conference .rounded-panel {
         border-radius: 4rem;
+    }
+
+    .scroll-position .inner-card {
+        @apply h-full;
+        max-height: 380px;
     }
 }
 

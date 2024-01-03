@@ -21,7 +21,10 @@ export default {
                 let target = ev.target;
                 let scrollItem = $(target).closest('.scroll-position').attr('id');
                 scrollToPanel(scrollItem);
-                firstPlaceholder.classList.toggle('hidden');
+                if ($( window ).width() > 1023) {
+                    firstPlaceholder.classList.toggle('hidden');
+                }
+                
                 
             });
         }
@@ -31,7 +34,9 @@ export default {
                 let target = ev.target;
                 let scrollItem = $(target).closest('.scroll-position').attr('id');
                 scrollToPanel(scrollItem);
-                firstPlaceholder.classList.remove('hidden');
+                if ($( window ).width() > 1023) {
+                    firstPlaceholder.classList.remove('hidden');
+                }
             });
         }
     }

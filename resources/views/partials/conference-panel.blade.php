@@ -41,7 +41,12 @@
                     <div class="opacity-controls">
                         <div class="event-body">
                             {!! $item->content !!}
-                            {!! $item->conference_video !!}
+
+                            @if($item->conference_video)
+                                <div class="video-wrap">
+                                {!! $item->conference_video !!}
+                                </div>
+                            @endif
                         </div>
                     
 
