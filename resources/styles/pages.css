@@ -61,18 +61,16 @@ a.topic-item:hover {
 
 .page-template-template-conference {
     .conf-copy p {
-        @apply mb-4;
+        @apply mb-4 leading-5;
+    }
+
+    .conf-copy a {
+        @apply text-tahini-700 underline;
     }
 }
 
 .page-template-template-conference .rounded-panel {
     border-radius: 2.5rem;
-}
-
-/* conf zone */
-
-.card--expanded {
-    grid-column: span 2;
 }
 
 /* .rounded-panel.odd {
@@ -83,22 +81,38 @@ a.topic-item:hover {
     @apply mb-6;
 }
 
-.scroll-position .inner-card {
-    @apply h-full;
-    max-height: 380px;
-}
-
 .scroll-position.card--expanded .inner-card {
     max-height: 2500px;
 }
+
+@media (max-width: 1023px) {
+    .page-template-template-conference .grid-placeholder  {
+        height: 300px;
+    }
+}  
 
 @media screen(lg) {
     .learn-header h2.wp-block-heading {
         @apply text-4xl mb-6;
     }
 
+    /* conf zone */
+
+    .page-template-template-conference  .conf-copy p {
+        @apply mb-6 leading-6;
+    }
+
+    .card--expanded {
+        grid-column: span 2;
+    }
+
     .page-template-template-conference .rounded-panel {
         border-radius: 4rem;
+    }
+
+    .scroll-position .inner-card {
+        @apply h-full;
+        max-height: 380px;
     }
 }
 

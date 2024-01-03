@@ -46,6 +46,8 @@ module.exports = {
         '10xl': '6.3rem', 
       },
       lineHeight: {
+        '16': '4rem',
+        '18': '4.5rem',
         '20': '5rem',
         '23': '5.5rem',
         '25': '6.1rem', 

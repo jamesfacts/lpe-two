@@ -414,6 +414,21 @@ function lpe_remove_blog_prefix_from_categories($cat_rewrite_patterns)
    return $new_cat_rules;
 }
 
+/**
+* Remove 'blog' prefix from category urls inside category dropdown menu
+* @return string $url
+*/
+
+add_filter('term_link', function( $url, $term, $taxonomy ) {
+
+    if( $taxonomy == 'category' ) {
+        $cat_prefix_as_regex = '/blog\//';
+        $url = preg_replace($cat_prefix_as_regex, '', $url);
+    };
+
+    return $url;
+}, 10, 3);
+
 function lpe_pre_get_posts_overrides($query)
 {
    if (is_admin()) {
