@@ -85,7 +85,7 @@ a.topic-item:hover {
     max-height: 2500px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     .page-template-template-conference .grid-placeholder  {
         height: 300px;
     }
@@ -97,6 +97,10 @@ a.topic-item:hover {
     }
 
     /* conf zone */
+
+    .page-template-template-conference  .conf-copy p {
+        @apply mb-6 leading-6;
+    }
 
     .card--expanded {
         grid-column: span 2;
