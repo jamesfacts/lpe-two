@@ -1,6 +1,6 @@
 
 <div class="needed-for-animate-css-grid scroll-position h-full" id="{{$item->slug}}" :class="selected == {{$loop->index}} ? 'card--expanded' : ''" >
-    <div class="bg-white rounded-panel h-full pt-8 pb-12 px-5 count_{{$count}} 
+    <div class="bg-white rounded-panel h-full pt-8 pb-12 px-5 lg:px-7 xl:px-10 count_{{$count}} 
         @if($loop->index % 2 == 0)
             {{ 'even' }}
         @else
@@ -19,7 +19,7 @@
                     {!! $item->panelists !!}
                 </span>
             </div>
-            <div class="max-w-2xl mx-auto">
+            <div class="max-w-3xl mx-auto">
                 <div class="registration-pills my-6">
                     <a href="javascript:void(0)" 
                         class="expansion-toggle border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block hover:text-tahini-500 hover:border-tahini-500" 
