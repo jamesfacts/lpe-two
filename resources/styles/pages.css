@@ -61,7 +61,11 @@ a.topic-item:hover {
 
 .page-template-template-conference {
     .conf-copy p {
-        @apply mb-4;
+        @apply mb-4 leading-5;
+    }
+
+    .conf-copy a {
+        @apply text-tahini-700 underline;
     }
 }
 

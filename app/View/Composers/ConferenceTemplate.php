@@ -30,7 +30,7 @@ class ConferenceTemplate extends Composer
 
         $conference_events_list = get_field('conference_events');
 
-        if (!is_int($conference_events_list)) {
+        if (!is_int(count($conference_events_list))) {
             return false;
         }
 
