@@ -1,7 +1,7 @@
 <div class="hidden basis-full lg:p-12 lg:block">
     <h1 class="uppercase text-6xl font-bold ">{!! $title !!}</h1>
 </div>
-<div class="flex flex-col lg:grid lg:grid-cols-4 lg:px-12 lg:pt-8">
+<div class="flex flex-col lg:grid lg:grid-cols-4 lg:px-12 lg:pt-2">
     <h1 class="uppercase text-4xl font-bold lg:hidden lg:basis-full">{!! $title !!}</h1>
     <div class="lg:col-span-1">
         
@@ -20,7 +20,7 @@
         @endif
         
     </div>
-    <section class="page-content prose leading-6 pb-28 lg:col-span-3">
+    <section class="page-content prose leading-6 pb-28 lg:pl-6 lg:col-span-3">
         @php(the_content())
     </section>
 </div>
