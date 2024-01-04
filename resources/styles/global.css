@@ -1,5 +1,5 @@
 html {
-    @apply min-h-screen bg-black;
+    @apply min-h-screen bg-black overflow-x-hidden;
 }
 
 @font-face {
@@ -40,12 +40,19 @@ body {
     -webkit-text-stroke-color: #000;
 }
 
+a.wp-block-button__link,
 .generic-button {
-    @apply border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block;
+    @apply border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block no-underline;
 
     &:hover {
         @apply border-tahini-500 text-tahini-500;
     }
+}
+
+a.wp-block-button__link {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    @apply bg-white;
 }
 
 .nav-wrapper {

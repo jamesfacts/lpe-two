@@ -85,15 +85,54 @@ a.topic-item:hover {
     max-height: 2500px;
 }
 
+.manifesto-block h2 {
+    @apply uppercase text-4xl font-bold mb-3;
+}
+
+.manifesto-block h2,
+.manifesto-block p,
+.manifesto-block .wp-block-buttons {
+    @apply px-5;
+}
+
+.manifesto-block .wp-block-image {
+    width: 105vw;
+    margin-left: -2rem;
+    overflow: hidden;
+}
+
+.manifesto-block .wp-block-image img {
+    width: 100%;
+}
+
 @media (max-width: 1023px) {
     .page-template-template-conference .grid-placeholder  {
         height: 300px;
     }
 }  
 
+@media (min-width: 782px) {
+    .manifesto-block {
+        margin-top: -2rem !important;
+        width: 135%;
+    }
+
+    .manifesto-block .wp-block-image img {
+        margin-left: 0;
+    }
+}  
+
 @media screen(lg) {
     .learn-header h2.wp-block-heading {
         @apply text-4xl mb-6;
+    }
+
+    .manifesto-block {
+        @apply -ml-48;
+    }
+
+    .manifesto-block .wp-block-image img {
+        width: auto;
     }
 
     /* conf zone */
@@ -119,5 +158,23 @@ a.topic-item:hover {
 @media screen(xl) {
     .page-template-template-conference .rounded-panel {
         border-radius: 5rem;
+    }
+
+    .manifesto-block {
+        width: 150%;
+    }
+
+    .manifesto-block h2 {
+        @apply mt-36 text-6xl leading-14 mb-10;
+    }
+
+    .manifesto-block .wp-block-image img {
+        margin-left: 0;
+        margin-right: -2rem;
+    }
+
+    .manifesto-block .wp-block-image {
+        margin-left: 0;
+        margin-right: -2rem;
     }
 }
