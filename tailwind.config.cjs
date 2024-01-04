@@ -32,6 +32,7 @@ module.exports = {
         '150': '36rem',
         '168': '42rem',
         '200': '50rem',
+        '300': '75rem',
       },
       lineHeight: {
         '12': '3rem',
