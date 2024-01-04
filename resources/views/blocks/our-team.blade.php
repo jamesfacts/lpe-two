@@ -1,23 +1,31 @@
-<div class="w-full bg-black">
-    <h2 class="text-3xl text-white">Our Team</h2>
-    @isset($teamMembers)
+@php( $split = floor( count($teamMembers) / 2 ) - 1 )
+
+<div class="w-full bg-black relative">
+  <div class="bg-black absolute top-0 -left-10 h-full w-20" style="width: 200vw;"></div>
+  <div class="z-10 relative px-8 py-24 grid justify-items-start lg:gap-10 lg:w-200 lg:grid-cols-3 xl:grid-cols-4 xl:w-300 xl:py-40">
+    <h2 class="hidden text-5xl text-white uppercase tracking-tight mt-0 pr-8 xl:block ">Our Team</h2>
+      @isset($teamMembers)
+        <div class="xl:pl-5 xl:border-l xl:border-white">
+        <h2 class="text-4xl text-white uppercase tracking-tight mt-6 xl:hidden">Our Team</h2>
         @foreach($teamMembers as $member)
-          <div class="text-white font-necto">
-            <a href="{{ $member->url }}" class="text-white">{{ $member->name }}</a>
-            <span class=""> {!! $member->position !!} </span>
+          <div class="mb-5">
+            <a href="{{ $member->url }}" class="block text-white font-necto uppercase no-underline hover:text-tahini-700">{{ $member->name }}</a>
+            <span class="text-white font-necto"> {!! $member->position !!} </span>
           </div>
+          @if($loop->index == $split) {!! '</div><div class="split xl:pl-5 xl:border-l xl:border-white">' !!} @endif
         @endforeach
+        </div><!-- end split -->
     @endisset
 
     @isset($studentEditors)
-        <div class="">
-          <span class="d-block team-position team-hed">Student Editors</span>
+        <div class="xl:pl-5 xl:border-l xl:border-white">
+          <span class="block text-white font-necto uppercase pt-6 mb-5 lg:pt-0">Student Editors</span>
           @foreach($studentEditors as $member)
           <div class="">
-            <a href="{{ $member->url }}" class="text-white">{{ $member->name }}</a>
+            <a href="{{ $member->url }}" class="block text-white font-necto uppercase no-underline hover:text-tahini-700">{{ $member->name }}</a>
           </div>
           @endforeach
         </div>
     @endisset
-      
+  </div>
 </div>

@@ -118,6 +118,11 @@ class ConferenceTemplate extends Composer
         })->take(6);
      }
 
+     public function conference_subtitle()
+     {
+        return get_field('conference_subtitle');
+     }
+
     /**
      * Data to be passed to view before rendering.
      *
@@ -130,6 +135,7 @@ class ConferenceTemplate extends Composer
             'panel_items' =>$this->get_panel_items(),
             'placeholder_positions' => [1, 4, 8, 10, 13, 15, 17, 20],
             'symposiaItems' => $this->get_conf_symposia(),
+            'confSubtitle' => $this->conference_subtitle(),
         ];
     }
 }

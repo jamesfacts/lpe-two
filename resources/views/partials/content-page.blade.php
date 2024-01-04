@@ -8,7 +8,7 @@
     <div class="order-1">
         
         @if($aboutNavigation && $showMenu)
-            <h2 class="text-3xl uppercase font-bold">{!! wp_get_nav_menu_name('about_navigation') !!}</h2>
+            <h2 class="text-4xl uppercase font-bold">{!! wp_get_nav_menu_name('about_navigation') !!}</h2>
             
             <ul class="mt-2 mb-8">
             @foreach ($aboutNavigation as $item)
