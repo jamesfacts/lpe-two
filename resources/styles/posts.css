@@ -122,6 +122,14 @@
     @apply leading-6;
 }
 
+.single-lpe_author aside a {
+    @apply text-tahini-700 underline;
+
+    &:hover {
+        @apply no-underline;
+    }
+}
+
 @media screen(sm) {
     .single-post {
         h2.wp-block-heading {
