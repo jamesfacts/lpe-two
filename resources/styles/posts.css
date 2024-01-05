@@ -41,7 +41,7 @@
     }
 
     article.post p {
-        @apply mb-6;
+        @apply text-base mb-6;
     }
 
     .progress-tracker button {
@@ -111,4 +111,20 @@
 
 .single-lpe_event .prose {
     @apply leading-6;
+}
+
+@media screen(md) {
+    .single-amri_course {    
+        article.post p {
+            @apply text-lg leading-8;
+        }
+    }
+}
+
+@media screen(lg) {
+    .single-amri_course {    
+        article.post p {
+            @apply text-xl;
+        }
+    }
 }

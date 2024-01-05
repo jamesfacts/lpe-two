@@ -22,13 +22,13 @@
     </div>
 
     <section class="">
-        <div class="flex flex-col px-6 py-10 xl:flex-row xl:pt-24 xl:px-20 xl:pb-28">
-            <div class="w-full xl:w-1/2 px-4">
+        <div class="flex flex-col px-6 py-10 lg:flex-row lg:px-12 lg:pt-16 xl:pt-24 xl:px-20 xl:pb-28">
+            <div class="w-full px-4 lg:w-1/2 xl:pl-0">
                 @if($amri_overview_image)
                     <img src="{{ $amri_overview_image->src }}" alt="{{ $amri_overview_image->alt }}" class="w-full">
                 @endif
             </div>
-            <div class="w-full pt-6 max-w-2xl px-4 font-light text-lg overview-copy md:text-base xl:pt-0 xl:text-lg xl:leading-7 xl:w-1/2">
+            <div class="w-full pt-6 max-w-2xl px-4 font-light text-lg overview-copy md:text-base lg:w-1/2 lg:pt-0 xl:text-lg xl:leading-7">
                 @php the_content() @endphp
             </div>
         </div>
