@@ -100,6 +100,10 @@ class ArchiveShared extends Composer
             return self::$archiveTitle;
         }
 
+        if( is_archive() && ( get_post_type() == 'lpe_author' ) ) {
+            return 'LPE Contributors';
+        }
+
         if( is_archive() ) {
             return get_the_archive_title();
         }

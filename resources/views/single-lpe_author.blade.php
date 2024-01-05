@@ -12,7 +12,7 @@
     <section class="row">
       @if( $lpeAuthorWork )
         @foreach ( $lpeAuthorWork as $work )
-          @include('partials/content-author', ['work' => $work])
+          @include('partials/content-lpe_author', ['work' => $work])
         @endforeach
       @endif
     </section>
