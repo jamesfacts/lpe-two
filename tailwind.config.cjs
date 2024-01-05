@@ -34,9 +34,6 @@ module.exports = {
         '200': '50rem',
         '300': '75rem',
       },
-      lineHeight: {
-        '12': '3rem',
-      },
       maxWidth: {
         '1400': '1400px',
       },
@@ -47,6 +44,9 @@ module.exports = {
         '10xl': '6.3rem', 
       },
       lineHeight: {
+        '11': '2.75rem',
+        '12': '3rem',
+        '14': '3.5rem',
         '16': '4rem',
         '18': '4.5rem',
         '20': '5rem',
