@@ -1,7 +1,7 @@
 <header style="margin-left: -2px;">
   @if($featuredHeaderImage)
     <span class="block w-full h-full" style="background-color: #d5f0e5;">
-        <figure class="h-80" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
+        <figure class="h-80 xl:bg-cover" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
         </figure>
     </span>
   @endif
@@ -42,8 +42,8 @@
       @include('partials.entry-author-bio')
     </div>
   </div>
-  <article @php post_class('mt-8 prose') @endphp>
-    <div class="">
+  <article @php post_class('mt-8') @endphp>
+    <div class="px-4">
       @php the_content() @endphp
     </div>
     <div class="my-10">
