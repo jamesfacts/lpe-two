@@ -6,7 +6,7 @@
     </span>
   @endif
 
-  <div class="mx-4 lg:mx-8 max-w-xl">
+  <div class="px-4 max-w-xl sm:px-8 md:px-16 md:pt-12 lg:mx-0 lg:max-w-3xl lg:pl-8 xl:px-16 xl:pb-16">
     @if($conference_symposia)
       <span class="">
         <a href="{{ home_url('/symposia/') . $conference_symposia->slug }}">{!! $conference_symposia->name !!}</a>
@@ -29,25 +29,25 @@
 
 </header>
 
-<section class="mx-4 flex flex-col-reverse mb-32 lg:flex-row">
-  <div class="lg:mt-12 lg:ml-4 lg:mr-16 lg:flex lg:flex-col lg:justify-between">
+<section class="mx-4 flex flex-col-reverse mb-32 lg:flex-row xl:px-8">
+  <div class="lg:mt-8 lg:mx-4 lg:flex lg:flex-col lg:justify-between xl:max-w-sm xl:pr-8">
     <div class="hidden lg:block">
       @include('partials.entry-author-bio')
       <span class="py-3 lg:block"></span>
       @include('components.time-updated')
     </div>
-    <div class="">
+    <div class="px-4 sm:pl-8 md:pl-16 lg:pr-0">
       @include('components.share', ['parent_view' => 'Single'])
       <span class="py-2 block"></span>
       @include('partials.entry-author-bio')
     </div>
   </div>
-  <article @php post_class('mt-8') @endphp>
-    <div class="px-4">
+  <article @php post_class('mt-8 max-w-2xl') @endphp>
+    <div class="px-4 sm:pl-8 md:pl-16 lg:pl-12 lg:pr-3">
       @php the_content() @endphp
     </div>
-    <div class="my-10">
-        <a class="generic-button no-underline" href="{{home_url('/blog/')}}" aria-label="View All Blog Posts">
+    <div class="my-10 px-4 sm:pl-8 md:pl-16 lg:pl-12">
+        <a class="generic-button !no-underline !text-black hover:!text-tahini-500" href="{{home_url('/blog/')}}" aria-label="View All Blog Posts">
             Back to the Blog Homepage
         </a>
     </div>
