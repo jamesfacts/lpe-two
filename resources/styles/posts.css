@@ -92,25 +92,42 @@
         -webkit-text-stroke-width: 0;
     }
 
+    article.post a,
     .lpe-bios a {
         @apply text-tahini-700 underline;
+
+        &:hover {
+            @apply no-underline;
+        }
     }
 
     .lpe-bios a:hover {
         @apply text-black;
     }
-}
 
-/* .prose a { 
-    @apply text-tahini-700 underline;
-
-    &:hover {
-        @apply no-underline;   
+    article.post p {
+        @apply mb-6;
     }
-} */
+
+    h2.wp-block-heading {
+        @apply uppercase font-bold text-3xl leading-7 mb-4 mt-10;
+    }
+
+    blockquote.wp-block-quote p {
+        @apply pl-6 leading-5 my-10 text-slate-600;
+    }
+}
 
 .single-lpe_event .prose {
     @apply leading-6;
+}
+
+@media screen(sm) {
+    .single-post {
+        h2.wp-block-heading {
+            @apply text-4xl leading-8;
+        }
+    }
 }
 
 @media screen(md) {
