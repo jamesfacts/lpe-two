@@ -45,7 +45,7 @@ class EngagePage extends Composer
           $student_group = (object) [
           'name' => get_the_title($post),
           'url' => get_permalink($post),
-          'img_url' => $img ? get_the_post_thumbnail_url($post->ID, 'w450') : \App\filler_image('thumb', 'w450'),
+          'img_url' => $img ? get_the_post_thumbnail_url($post->ID, 'w450') : \App\filler_image('thumb', 'w450')['url'],
           'alt' => $img ? get_post_meta($img, '_wp_attachment_image_alt', true) : get_the_title($post),
           'school' => get_field('school_affiliation', $post->ID)
         ];

@@ -10,31 +10,24 @@
     </span>
   @endif
 
-  <div class="mx-4 lg:mx-8 max-w-xl">
+  <div class="mx-4 sm:mx-8 max-w-xl lg:px-16 lg:pt-12">
     <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none mt-8 mb-1">{!! get_the_title() !!}</h1>
     <span class="lpe-contrib black-outline text-4xl font-bold uppercase font-rubik tracking-tight leading-none">{!! get_field('home_base') !!}</span>
   </div>
 
 </header>
 
-<section class="mx-4 flex flex-col-reverse mb-32 lg:flex-row">
-  <div class="lg:mt-12 lg:ml-4 lg:mr-16 lg:flex lg:flex-col lg:justify-between">
-    <div class="hidden lg:block">
-      @include('partials.entry-author-bio')
-      <span class="py-3 lg:block"></span>
-      
-    </div>
-    <div class="">
+<section class="mx-4 sm:mx-8 flex flex-col-reverse mb-32 lg:flex-row lg:px-16 lg:pt-16">
+  <div class="lg:pr-16 lg:flex lg:flex-col-reverse lg:max-w-xs lg:justify-between">
+    
       @include('components.share', ['parent_view' => 'Single'])
-      <span class="py-2 block"></span>
-      @include('partials.entry-author-bio')
-    </div>
+    
   </div>
   <article @php post_class('mt-8 prose') @endphp>
     <div class="">
       @php the_content() @endphp
     </div>
-    <div class="mt-10 mb-40">
+    <div class="mt-10 mb-0">
         <a class="generic-button no-underline" id="botanica"
            href="#" aria-label="Contact an LPE Speaker"
            @if(!empty($contact_array))

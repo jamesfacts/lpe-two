@@ -33,17 +33,17 @@
             @foreach($lpeStudentGroups as $group)
               <article class="w-full max-w-sm mx-auto">
                 @if(@isset($group->img_url))
-                    @include('components/thumb-figure', [
+                  @include('components/thumb-figure', [
                     'aspect_ratio' => '65%', 
                     'img_url' => $group->img_url, 
                     'url' => $group->url, 
                     'alt' => $group->alt
-                    ])
+                  ])
                 @endif
 
                 <header>
                   <h2 class="entry-title my-3">
-                    <a href="{{ get_permalink() }}" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl">
+                    <a href="{{ $group->url }}" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl">
                       {!! $group->name !!}
                     </a>
                   </h2>

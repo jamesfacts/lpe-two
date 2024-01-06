@@ -13,7 +13,7 @@
         </h1>
       @endif
       @if($archiveCopy)
-        <div class="prose">
+        <div class="">
           {!! $archiveCopy !!}
         </div>
       @endif

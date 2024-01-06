@@ -11,12 +11,12 @@
           @include('components/thumb-figure', [
             'aspect_ratio' => '65%', 
             'img_url' => $postImage->src, 
-            'url' => get_permalink(), 
+            'url' => $work->url, 
             'alt' => $postImage->alt
           ])
     @endif
     <h2 class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl">
-      <a href="{{ get_permalink() }}">
+      <a href="{{ $work->url }}">
         {!! $work->title ?? $title !!}
       </a>
     </h2>
