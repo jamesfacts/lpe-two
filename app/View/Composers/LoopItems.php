@@ -21,6 +21,7 @@ class LoopItems extends Composer
         'partials.content-primers',
         'partials.content-lpe_event',
         'partials.content-lpe_video',
+        'partials.content-lpe_author',
     ];
 
     /**

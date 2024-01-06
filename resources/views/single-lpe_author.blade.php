@@ -2,17 +2,17 @@
 
 @section('content')
 
-<section class="row blog-wrap mr-0 ml-0">
-  <div class="">
-    <h1 class="single-author-hed">{!! get_the_title() !!}</h1>
+<section class="px-8 lg:flex lg:py-12">
+  <aside class="py-12 max-w-md lg:w-1/3 lg:py-0 lg:pl-8">
+    <h1 class="text-4xl font-bold uppercase leading-none mb-8">{!! get_the_title() !!}</h1>
     @php the_post() @endphp
     @php the_content() @endphp
-  </div>
-  <div class="col-12 col-lg-8 blog-feed">
-    <section class="row">
+  </aside>
+  <div class="lg:w-2/3">
+    <section class="max-w-4xl lg:grid lg:gap-8 xl:grid-cols-2 xl:mr-auto xl:pl-16">
       @if( $lpeAuthorWork )
         @foreach ( $lpeAuthorWork as $work )
-          @include('partials/content-author', ['work' => $work])
+          @include('partials/content-lpe_author', ['work' => $work])
         @endforeach
       @endif
     </section>
@@ -33,7 +33,7 @@
   </div>
 </section>
 
-<section class="row search-wrap">
+<section class="search-wrap">
   {!! get_search_form(false) !!}
 </section>
 @endsection

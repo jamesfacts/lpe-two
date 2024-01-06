@@ -11,6 +11,7 @@
     margin-left: auto;
     margin-right: 10px;
 }
+
 .search-field {
     letter-spacing: 0.02em;
 
@@ -28,6 +29,28 @@
 }
 
 /* aside sidebar widgets */
+
+.blog aside .input-group-append {
+    @apply hidden;
+}
+
+.blog aside .author-results.show {
+    @apply border border-black border-t-0 py-4 w-full bg-white absolute z-10 max-w-sm bg-gray-400;
+
+    top: 47px;
+}
+
+.blog aside .author-results .author-li a {
+    @apply px-4;
+
+    &:hover {
+        @apply bg-gray-300 cursor-pointer;
+    }
+}
+
+.blog aside .author-results a.selected {
+    @apply bg-gray-200 cursor-pointer;
+}
 
 .wp-block-search__inside-wrapper,
 #author-search {

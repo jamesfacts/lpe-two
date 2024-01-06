@@ -6,15 +6,17 @@ export default {
   
         let hideAuthorResults = () => {
           $('.author-li').remove();
-          $('.author-item').remove();
           $('#author-search').focus();
           $('.author-results').removeClass('show');
+          // $('#authorSearchList').remove();
         }
   
+        // this is the handler that comes in when an author is already selected
         let authorItemKeyHandler = (event) => {
           if (event.key === 'ArrowDown') {
             let selected = $('.selected');
   
+            console.log($(selected).parent().next());
             // only do something if there is another item to go further down
             if ($(selected).parent().next().length > 0) {
               $('.author-item.selected').removeClass('selected');
@@ -43,11 +45,12 @@ export default {
           }
         };
   
-        $('#author-search').bind('keyup cut paste',
-          (event) => {
+        // this is the handler that moves the selection from the input box to the drop-down area
+
+        $('#author-search').on( 'keyup', (event) => {
             if (event.key === 'Escape') {
-               $('.author-results').removeClass('show');
-               // extraneous return for clarity
+                hideAuthorResults();
+                // extraneous return for clarity
                return false;
             } else if ( event.key === 'ArrowDown' ) {
   
@@ -58,7 +61,6 @@ export default {
             } else {
               //wipe out the old results
               $('.author-li').remove();
-              $('.author-item').remove();
   
               $.ajax({
                   url: baseUrl + urlEndpoint,
@@ -83,29 +85,24 @@ export default {
                     }
                 },
                 error: function (error) {
+                  console.log(error);
                   let errorMsg = (error.responseJSON.message) ? error.responseJSON.message : 'Sorry, no authors found.';
-                  let errorMarkup = $('<span>', {class: 'author-item', text: errorMsg});
-                  $('.author-results').append(errorMarkup);
-                  if( $('.author-results.show').length < 1) {
-                    $('.author-results').addClass('show');
-                  }
+                  let errorMarkup = $('<li>', {class: 'author-li pl-4', text: errorMsg});
+                  $('#authorSearchList').addClass('show').append(errorMarkup);
                 },
             });
+
+            if ($('#author-search').serialize() == 's=') {
+              hideAuthorResults();
+            }
             return false;
           }
       });
   
       $('#author-search').bind('blur', function (target) {
         if (! $(target.relatedTarget).is('a.author-item')) {
-          $('.author-results').removeClass('show');
-        }
-      });
-  
-      $('.masthead-wrap .col-md-3').each(function(column){
-        $(this).addClass('col-' . column);
-  
-        if( (column > 3) && ( (column-1) % 3 === 0 ) ) {
-          $(this).addClass('offset-md-3');
+          // $('.author-results').removeClass('show');
+          hideAuthorResults();
         }
       });
 
