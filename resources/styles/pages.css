@@ -8,6 +8,10 @@
     @apply break-all;
 }
 
+.archive .sidebar p {
+    @apply mb-6 leading-snug;
+}
+
 .primers-btn a:hover,
 .primers-nav a:hover,
 .speakers-nav a:hover,
