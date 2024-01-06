@@ -32,7 +32,10 @@
         <span class="by-text  uppercase font-necto leading-tight tracking-wide mb-3">
           {{ __('By ', 'sage') }}
         </span>
-        <!-- postContributors -->
+        
+        @if(count($loopContributors) == 0 )
+            <a href="javascript:void(0)" class="uppercase font-necto leading-tight tracking-wide mb-3 ">LPE Editors</a>
+        @endif
         @foreach ($loopContributors as $s_contributor)
           <a href="{!! $s_contributor->url !!}" rel="author" class="uppercase font-necto leading-tight tracking-wide mb-3 hover:text-tahini-500">
             {{$s_contributor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
