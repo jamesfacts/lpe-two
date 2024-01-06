@@ -5,7 +5,7 @@
 }
 
 .archive .entry-summary {
-    @apply break-all;
+    @apply overflow-x-hidden;
 }
 
 .archive .sidebar p {
