@@ -65,7 +65,7 @@
             </div>
             </div>
         </section>
-        @if($upcomingEvents)
+        @if(isset($upcomingEvents) && count($upcomingEvents)>0)
             <section class="upcoming bg-beige-200 pt-10">
                 <div class="max-w-1400 px-10 lg:pt-8 lg:flex">
                     <aside class="w-full flex flex-col lg:w-1/4">

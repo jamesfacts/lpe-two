@@ -1,5 +1,5 @@
 
-<article @php(post_class('max-w-sm mx-auto md:max-w-md'))>
+<article @php(post_class('max-w-sm mx-auto md:max-w-full'))>
   @if(@isset($postImage))
     @include('components/thumb-figure', [
       'aspect_ratio' => '65%', 

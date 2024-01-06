@@ -1,14 +1,13 @@
-<div class="sidebar">
+<div class="sidebar w-full">
       @if($twoTierTitle)
-       @dump($twoTierTitle)
-        <h1 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none mt-8 mb-4 lg:mt-3 xl:text-4xl">
+        <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none mt-8 mb-4 lg:text-5xl lg:mt-3 ">
           {!! $twoTierTitle->type !!}
         </h1>
-        <h2>
+        <h2 class="ml-6 font-bold uppercase text-2xl lg:text-3xl">
           {!! $twoTierTitle->name !!}
         </h2>
       @else
-        <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none mt-8 mb-4 lg:mt-3 xl:text-5xl">
+        <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none mt-8 mb-4 lg:text-5xl lg:mt-3 ">
           {!! $archiveTitle !!}
         </h1>
       @endif
