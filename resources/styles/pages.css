@@ -4,6 +4,10 @@
     }
 }
 
+.archive .entry-summary {
+    @apply break-all;
+}
+
 .primers-btn a:hover,
 .primers-nav a:hover,
 .speakers-nav a:hover,
