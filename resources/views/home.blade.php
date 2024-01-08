@@ -101,7 +101,7 @@
     @include('partials.masthead')
   </section>
   @endif
-  <section class="p-8 max-w-1400 lg:p-12 xl:p-24 xl:pl-32 xl:pr-8">
-    @include('partials.searchbar')
+  <section class="p-8 max-w-1400 flex justify-center xl:justify-end">
+    @include('forms.search')
   </section>
 @endsection
