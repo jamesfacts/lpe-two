@@ -16,7 +16,8 @@ class Post extends Composer
         'partials.page-header',
         'partials.content',
         'partials.content-*',
-        'partials.static-authors'
+        'partials.static-authors',
+        'single',
     ];
 
     /**
@@ -31,11 +32,38 @@ class Post extends Composer
             'contributor' => $this->contributor(),
             'postCategories' => $this::postCategories(),
             'staticContributors' => $this->staticContributors(),
-            'relatedPosts' => $this->relatedPosts(),
-            'conference_symposia' => false,
+            'relatedPosts' => $this->relatedSymposiaPosts() ? $this->relatedSymposiaPosts() : $this->relatedPosts(),
+            'conference_symposia' => self::$conferencePost,
             'related_symposia_posts' => false,
             'eventStartDate' => $this->niceFormatEventStart(),
         ];
+    }
+
+    public static $conferencePost;
+
+    public function __construct()
+    {
+        if (is_numeric(get_the_ID()) && function_exists('get_field')) {
+            $symposia = get_the_terms(get_the_ID(), 'symposia');
+
+            $conferenceValues = collect($symposia)->map(function ($symposium) {
+                if (get_field('conference_year', $symposium)) {
+                    return $symposium;
+                }
+            })->reject(function ($symposium) {
+                return empty($symposium);
+            });
+
+            if (count($conferenceValues) > 0) {
+                $postsInThisSymposium = count(get_posts(['symposia' => $conferenceValues->first()->slug]));
+                self::$conferencePost =
+                    (object)[
+                        'slug' => $conferenceValues->first()->slug,
+                        'name' => $conferenceValues->first()->name,
+                        'term_id' => $conferenceValues->first()->term_id,
+                        'count' => $postsInThisSymposium ];
+            }
+        }
     }
 
     /**
@@ -236,6 +264,65 @@ class Post extends Composer
         }
 
         return $eventStartDate;
+    }
+
+    public function relatedSymposiaPosts()
+    {
+        // first check if this post belongs to a symposium
+        if (!isset(self::$conferencePost->slug)) {
+            return false;
+        }
+
+        // check that we have ACF
+        if (!function_exists('get_field')) {
+            return false;
+        }
+
+        $postsInSymposium = count(get_posts(['symposia' => self::$conferencePost->slug]));
+
+        $confSymposia = [];
+        $allSymposia = get_terms('symposia');
+
+        foreach ($allSymposia as $symposium) {
+            if (get_field('conference_year', $symposium)) {
+                $confSymposia[] = $symposium->slug;
+            }
+        }
+        
+        $exclude = get_the_ID();
+
+        $args = [
+            'post_type' => 'post',
+            'post__not_in'  => array($exclude),
+            'posts_per_page' => '15',
+            'post_status' => 'publish',
+            'orderby'     => 'date',
+            'order'       => 'DESC',
+        ];
+
+        if ($postsInSymposium >= 2) {
+            $args['symposia'] = self::$conferencePost->slug;
+        } else {
+            $args['symposia'] = $confSymposia;
+        }
+
+        $relatedSymposiaQuery = new \WP_Query($args);
+        $relatedSymposiaPosts = $relatedSymposiaQuery->posts;
+
+        return collect($relatedSymposiaPosts)->map(function ($post) {
+            setup_postdata($post);
+
+            $related_post = (object) [
+                'title' => get_the_title($post),
+                'img_url' =>  \App\filler_image('thumb')['url'],
+                'url' => get_permalink($post),
+                'alt' => false,
+                'id'=> $post->ID
+            ];
+
+            wp_reset_postdata();
+            return $related_post;
+        });
     }
 
     /**

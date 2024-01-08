@@ -61,7 +61,7 @@
     }
 }
 
-.widget_categories form {
+.widget_categories .wp-block-categories {
     @apply border border-black w-full p-1 bg-white mb-4;
 }
 
@@ -70,7 +70,8 @@
 }
 
 .wp-block-search__inside-wrapper:hover,
-#author-search:hover {
+#author-search:hover,
+.widget_categories .wp-block-categories:hover {
     @apply border-tahini-500;
 }
 
@@ -86,7 +87,8 @@
     }
 }
 
-.widget-hed {
+.widget-hed,
+.widget_text {
     @apply uppercase block mb-1;
 }
 

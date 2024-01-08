@@ -27,7 +27,7 @@
             
             @include('partials/fixed-authors', ['featured_id' => $featured_post->post_id])
             <p class="featured-snippet">{!! $featured_post->excerpt !!}</p>
-            <a href="{!! $featured_post->url !!}" class="border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block mt-4 hover:bg-black hover:text-white" aria-label="Full post: {{ $featured_post->title }}">Continue Reading</a>
+            <a href="{!! $featured_post->url !!}" class="border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block mt-4 hover:bg-black hover:text-white hover:!border-black" aria-label="Full post: {{ $featured_post->title }}">Continue Reading</a>
           </article>  
         </div>
       @endforeach
@@ -101,7 +101,7 @@
     @include('partials.masthead')
   </section>
   @endif
-  <section class="p-8 max-w-1400 lg:p-12 xl:p-24 xl:pl-32 xl:pr-8">
-    @include('partials.searchbar')
+  <section class="p-8 max-w-1400 flex justify-center xl:justify-end">
+    @include('forms.search')
   </section>
 @endsection
