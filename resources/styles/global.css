@@ -148,7 +148,8 @@ a.wp-block-button__link {
 }
 
 @media screen(lg) {
-    .nav-wrapper {
+    .nav-wrapper,
+    .nav-header {
         width: 100px;
         position: fixed;
         z-index: 999;
