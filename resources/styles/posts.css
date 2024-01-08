@@ -1,5 +1,6 @@
 .author-wrap span,
-.author-wrap a {
+.author-wrap a,
+.contrib-meta {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
