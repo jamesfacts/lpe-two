@@ -132,7 +132,11 @@
                 @while(have_posts()) @php(the_post())
                     @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
                 @endwhile
-                {!! get_the_posts_navigation() !!}
+            </div>
+        </div>
+        <div class="w-full max-w-1400">
+            <div class="w-full px-6 md:px-20 lg:px-8 lg:w-3/4 lg:ml-auto lg:pl-32 xl:pl-36">
+                {!! get_the_posts_navigation($navOverride) !!}
             </div>
         </div>
     @endif
