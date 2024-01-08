@@ -13,6 +13,7 @@ class ArchiveShared extends Composer
      */
     protected static $views = [
         'partials.archive-header',
+        'archive-lpe_event',
         'archive'
     ];
 
@@ -125,6 +126,48 @@ class ArchiveShared extends Composer
             return [
                 'prev_text' => 'Further Videos',
                 'next_text' => 'Previous Videos'
+            ];            
+        }
+
+        if($postType == 'lpe_author') {
+            return [
+                'prev_text' => 'Further Contributors',
+                'next_text' => 'Previous Contributors'
+            ];            
+        }
+
+        if($postType == 'student_group') {
+            return [
+                'prev_text' => 'Further Groups',
+                'next_text' => 'Previous Groups'
+            ];            
+        }
+
+        if($postType == 'lpe_speaker') {
+            return [
+                'prev_text' => 'Further Speakers',
+                'next_text' => 'Previous Speakers'
+            ];            
+        }
+
+        if($postType == 'syllabi') {
+            return [
+                'prev_text' => 'Further Syllabi',
+                'next_text' => 'Previous Syllabi'
+            ];            
+        }
+
+        if($postType == 'primers') {
+            return [
+                'prev_text' => 'Further Primers',
+                'next_text' => 'Previous Primers'
+            ];            
+        }
+
+        if($postType == 'lpe_event') {
+            return [
+                'prev_text' => 'Older Events',
+                'next_text' => 'Newer Events'
             ];            
         }
 
