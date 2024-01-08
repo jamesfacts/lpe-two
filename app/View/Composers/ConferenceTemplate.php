@@ -93,6 +93,13 @@ class ConferenceTemplate extends Composer
 
      public function get_conf_symposia()
      {
+        $date_of_conf = get_the_date('Y');
+        // $date_obj = \DateTime::createFromFormat( 'Y-m-d H:i:s', $date_of_conf );
+
+        if ( intval($date_of_conf) > 2022 ) {
+            return false;
+        }
+
         $args = [
             'taxonomy' => 'symposia',
             'order' => 'DESC',
