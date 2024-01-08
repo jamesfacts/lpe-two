@@ -55,10 +55,6 @@ a.wp-block-button__link {
     @apply bg-white;
 }
 
-.nav-wrapper {
-    height: 120px;
-}
-
 .nav-primary {
     height: 100vh;
     width: 100vw;
@@ -84,8 +80,8 @@ a.wp-block-button__link {
     border: 1px solid #ffffff;
     border-top: none;
     border-left: none;
-    width: 1305px;
-    max-width: 82%;
+    /* width: 1305px;*/
+    width: 82%; 
     display: flex;
     justify-content: space-between;
     padding: 0 1rem 0.4rem 0;
@@ -94,6 +90,21 @@ a.wp-block-button__link {
 .nav-primary .search-form .search-field {
     padding: 0 0 0 0.2rem;
     @apply bg-black text-4xl w-full uppercase font-rubik font-bold tracking-tight;
+
+    &::placeholder {
+        -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+        letter-spacing: 0.05rem;
+    }
+}
+
+.nav-primary .search-form .search-submit svg {
+    stroke: white;
+} 
+
+.nav-primary .search-form .search-submit svg:hover {
+    stroke: #d4a45e;
 }
 
 .img-fill {
@@ -137,14 +148,15 @@ a.wp-block-button__link {
 }
 
 @media screen(lg) {
-    .nav-wrapper {
+    .nav-wrapper,
+    .nav-header {
         width: 100px;
         position: fixed;
         z-index: 999;
     }
 
     .navigating .nav-primary {
-        @apply w-screen absolute left-0;
+        @apply w-screen absolute left-0 bg-black;
     }
 
     .nav-header {
