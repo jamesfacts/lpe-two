@@ -1,4 +1,4 @@
-<form role="search" method="get" class="search-form p-10 md:p-16 lg:max-w-6xl lg:px-32" action="{{ esc_url( home_url( '/' ) ) }}">
+<form role="search" method="get" class="search-form p-10 max-w-xl md:p-16 lg:max-w-6xl lg:px-32" action="{{ esc_url( home_url( '/' ) ) }}">
     <div class="border-b border-r border-black flex">
       <label class="block" style="max-width: 75%;">
         <span class="screen-reader-text">{{ _x( 'Search for:', 'label' ) }}</span>
