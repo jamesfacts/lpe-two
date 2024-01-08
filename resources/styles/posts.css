@@ -101,6 +101,10 @@
         }
     }
 
+    .lpe-bios p {
+        @apply mb-6;
+    }
+
     .lpe-bios a:hover {
         @apply text-black;
     }
@@ -116,6 +120,20 @@
     blockquote.wp-block-quote p {
         @apply pl-6 leading-5 my-10 text-slate-600;
     }
+
+    .conf-related {
+        img {
+            @apply rounded-[2.6rem];
+        }
+
+        h4 {
+            @apply font-tiempos font-medium capitalize text-2.5xl leading-7;
+        }
+
+        .bylines {
+            @apply font-necto;
+        }
+    } 
 }
 
 .single-lpe_event .prose {
@@ -129,6 +147,49 @@
         @apply no-underline;
     }
 }
+
+/* conf blog post */
+
+
+.single-post .conf-symposia {
+    @apply bg-conference-200;
+}
+
+header.conf-symposia {
+
+    .decorative-img {
+        @apply p-6;
+    }
+
+    figure {
+        @apply rounded-[2.6rem];
+    }
+
+    h1,
+    .lpe-contrib {
+        @apply font-tiempos capitalize;
+    }
+
+    h1 {
+        @apply mb-6;
+    }
+
+    .header-text {
+        @apply px-10;
+    }
+
+    .lpe-contrib,
+    .contrib-meta {
+        -webkit-text-fill-color: black;
+        -webkit-text-stroke-width: 0;
+
+        @apply font-medium;
+    }
+
+    .timestamp {
+        @apply text-base;
+    }
+}   
 
 @media screen(sm) {
     .single-post {
@@ -150,6 +211,17 @@
     .single-amri_course {    
         article.post p {
             @apply text-xl;
+        }
+    }
+}
+
+@media screen(xl) {
+    .single-post .conf-related {
+        @apply flex-wrap;
+
+        .related-hed,
+        .related-items {
+            @apply w-full;
         }
     }
 }

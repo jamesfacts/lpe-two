@@ -12,6 +12,9 @@ module.exports = {
           400: '#ffc107',
           500: '#ffbf00'
         },
+        conference: {
+          200: '#eeefff'
+        },
         beige: {
           200: '#faf6f1'
         },
@@ -39,6 +42,7 @@ module.exports = {
         '1400': '1400px',
       },
       fontSize: {
+        '2.5xl': '1.65rem', 
         '4.5xl': '2.625rem', 
         '7xl': '5rem',
         '8xl': '5.125rem', //really 8.2xl
