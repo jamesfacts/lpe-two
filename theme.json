@@ -1155,6 +1155,11 @@
           "color": "#ffbf00"
         },
         {
+          "name": "Conference 200",
+          "slug": "conference-200",
+          "color": "#eeefff"
+        },
+        {
           "name": "Beige 200",
           "slug": "beige-200",
           "color": "#faf6f1"
@@ -1283,6 +1288,11 @@
           "name": "9xl",
           "slug": "9xl",
           "size": "8rem"
+        },
+        {
+          "name": "2.5xl",
+          "slug": "2.5xl",
+          "size": "1.65rem"
         },
         {
           "name": "4.5xl",
