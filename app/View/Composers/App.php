@@ -32,7 +32,16 @@ class App extends Composer
             'aboutNavigation' => $this->aboutNavigation(),
             'shareUrl' => $this->shareUrl(),
             'shareTitle' => $this->shareTitle(),
+            'localDev' => $this->localDev(),
         ];
+    }
+
+    public function localDev()
+    {
+        if (str_contains(base_path(), 'jfwhite')) {
+            return true;
+        }
+        return false;
     }
 
     /**
