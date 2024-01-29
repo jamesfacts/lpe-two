@@ -45,21 +45,26 @@ class ArchiveShared extends Composer
     public static $archiveOptions = [
                                         [ 'endpoint' => 'speakers',
                                           'cpt_name' => 'lpe_speaker',
+                                          'taxonomy' => 'speaker_topics',
                                         ],
                                         [ 'endpoint' => 'student-groups',
                                           'cpt_name' => 'student_group',
+                                          'taxonomy' => 'speaker_topics',
                                         ],
                                         [ 'endpoint' => 'syllabi',
                                           'cpt_name' => 'syllabi',
+                                          'taxonomy' => 'speaker_topics',
                                         ],
                                         [ 'endpoint' => 'primers',
                                           'cpt_name' => 'primers',
+                                          'taxonomy' => 'speaker_topics',
                                         ],
                                     ];
 
     public static $archiveSlug;
     public static $archiveTitle;
     public static $archiveCopy;
+    public static $archiveTax;
 
     public function __construct()
     {
@@ -67,6 +72,7 @@ class ArchiveShared extends Composer
 
         foreach( self::$archiveOptions as $archiveOption ) {
             if( $archiveOption['cpt_name'] == $currentName ){
+                self::$archiveTax = $archiveOption['taxonomy'];
                 $pageobj = get_page_by_path($archiveOption['endpoint']);
                 if ( !empty($pageobj) ) {
                     self::$archiveTitle = $pageobj->post_title;
@@ -177,6 +183,31 @@ class ArchiveShared extends Composer
         ];
     }
 
+    public function archiveTaxDropdown()
+    {
+        $args = self::$archiveTax;
+
+        $topics = get_terms($args);
+        // minimum posts in category to display category
+        $min_count = 1;
+
+        // $html = '<div class="dropdown">';
+        // $html .= '<button class="btn speakers-dropdown dropdown-toggle" type="button" id="dropdownMenuSpeakersCats" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+        // $html .= 'Speaker Topics';
+        // $html .= '</button>';
+        // $html .= ' <div class="dropdown-menu" aria-labelledby="dropdownMenuSpeakersCats">';
+
+        
+        return collect($topics)->map(function ($topic) {
+            if( $topic->count > $min_count ) {
+                return (object) [
+                    'name' => $topic->name,
+                    'url' => home_url(self::$archiveSlug) . $topic->slug,
+                ];   
+            }
+        });
+    }
+
     /**
      * Data to be passed to view before rendering.
      *
@@ -189,6 +220,7 @@ class ArchiveShared extends Composer
             'archiveTitle' => $this->fetchArchiveTitle(),
             'navOverride' => $this->navOverride(),
             'twoTierTitle' => $this->twoTierTitle(),
+            'archiveTaxDropdown' => $this->archiveTaxDropdown(),
         ];
     }
 }
