@@ -23,19 +23,6 @@
             @endforeach
           </select>
         </div>
-        <script type="text/javascript">
-          /* <![CDATA[ */
-          ( function() {
-            var dropdown = document.getElementById( 'archive-tax-dropdown' );
-            function onCatChange() {
-              if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
-                location.href = dropdown.options[ dropdown.selectedIndex ].value;
-              }
-            }
-            dropdown.onchange = onCatChange;
-          })();
-          /* ]]> */
-        </script>
       @endif
     </aside>
     <div class="w-full px-6 grid gap-6 mt-6 sm:grid-cols-2 mr-5 md:ml-10 md:pr-16 lg:w-2/3 lg:ml-0 xl:grid-cols-3 xl:gap-10">
