@@ -10,7 +10,8 @@
         {!! get_search_form(false) !!}
     @endif
   <div class="w-full flex flex-col mb-32 max-w-1400 lg:flex-row lg:pt-10">
-    <aside class="px-5 w-108 mx-auto mb-12 sm:ml-0 md:mx-11 md:mt-5 lg:max-w-lg lg:mx-0 lg:mt-3 lg:w-1/3 lg:mx-4">
+    <aside class="px-5 mb-12 sm:w-3/4 sm:ml-0 md:mx-11 md:mt-5 lg:max-w-lg lg:mx-0 lg:mt-3 lg:w-1/3 lg:mx-4 lg:w-108"> 
+      <!-- mx-auto -->
       @include('partials.archive-header', ['archive_page_slug' => $archiveSlugCheck])
       @if($archiveTaxDropdown)
 
