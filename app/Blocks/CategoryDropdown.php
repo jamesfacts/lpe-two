@@ -5,21 +5,21 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class TopicDropdown extends Block
+class CategoryDropdown extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Topic Dropdown';
+    public $name = 'Category Dropdown';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Topic Dropdown block.';
+    public $description = 'A simple Category Dropdown block.';
 
     /**
      * The block category.
@@ -139,11 +139,8 @@ class TopicDropdown extends Block
     {
         return [
             'topics' => $this->archiveTaxDropdown(),
-            'title' => $this->title,
         ];
     }
-
-    public $topicDropdownTitle = 'Blog Topics';
 
     /**
      * The block field group.
@@ -152,31 +149,17 @@ class TopicDropdown extends Block
      */
     public function fields()
     {
-        $topicDropdown = new FieldsBuilder('topic_dropdown');
+        $categoryDropdown = new FieldsBuilder('category_dropdown');
 
-        $topicDropdown
-            ->addText('topic_dropdown_title', [
-                'label' => 'Topic dropdown title',
-                'instructions' => '',
-                'required' => 0,
-                'wrapper' => [
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ],
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'maxlength' => '',
-            ]);
+        $categoryDropdown
+            ->addText('Category dropdown');
 
-        return $topicDropdown->build();
+        return $categoryDropdown->build();
     }
 
     public function archiveTaxDropdown()
     {
-        $args = ['taxonomy' => 'post_tag'];
+        $args = ['taxonomy' => 'category'];
 
         $topics = get_terms($args);
         $min_count = 1;
@@ -185,7 +168,7 @@ class TopicDropdown extends Block
             if( $topic->count > $min_count ) {
                 return (object) [
                     'name' => $topic->name,
-                    'url' => home_url('/topics/') . $topic->slug . '/',
+                    'url' => home_url('/category/') . $topic->slug . '/',
                 ];   
             }
         });

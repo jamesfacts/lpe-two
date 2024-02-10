@@ -5,21 +5,21 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class TopicDropdown extends Block
+class SymposiaDropdown extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Topic Dropdown';
+    public $name = 'Symposia Dropdown';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Topic Dropdown block.';
+    public $description = 'A simple Symposia Dropdown block.';
 
     /**
      * The block category.
@@ -143,8 +143,6 @@ class TopicDropdown extends Block
         ];
     }
 
-    public $topicDropdownTitle = 'Blog Topics';
-
     /**
      * The block field group.
      *
@@ -152,11 +150,11 @@ class TopicDropdown extends Block
      */
     public function fields()
     {
-        $topicDropdown = new FieldsBuilder('topic_dropdown');
+        $symposiaDropdown = new FieldsBuilder('symposia_dropdown');
 
-        $topicDropdown
-            ->addText('topic_dropdown_title', [
-                'label' => 'Topic dropdown title',
+        $symposiaDropdown
+            ->addText('symposia_dropdown_title', [
+                'label' => 'Symposia dropdown title',
                 'instructions' => '',
                 'required' => 0,
                 'wrapper' => [
@@ -171,12 +169,12 @@ class TopicDropdown extends Block
                 'maxlength' => '',
             ]);
 
-        return $topicDropdown->build();
+        return $symposiaDropdown->build();
     }
 
     public function archiveTaxDropdown()
     {
-        $args = ['taxonomy' => 'post_tag'];
+        $args = ['taxonomy' => 'symposia'];
 
         $topics = get_terms($args);
         $min_count = 1;
@@ -185,7 +183,7 @@ class TopicDropdown extends Block
             if( $topic->count > $min_count ) {
                 return (object) [
                     'name' => $topic->name,
-                    'url' => home_url('/topics/') . $topic->slug . '/',
+                    'url' => home_url('/symposia/') . $topic->slug . '/',
                 ];   
             }
         });
