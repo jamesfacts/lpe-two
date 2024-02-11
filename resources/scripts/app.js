@@ -7,6 +7,7 @@ import homeTemplate from './forms.js';
 import postTemplate from './posts.js';
 import amriSingle from './amri-single.js';
 import conference from './conference.js';
+import archive from './archive.js';
 
 /**
  * app.main
@@ -25,6 +26,7 @@ const main = async (err) => {
   postTemplate.init()  
   amriSingle.init()
   conference.init()
+  archive.init()
 
   const grid = document.querySelector(".conference-panels");
   wrapGrid(grid,

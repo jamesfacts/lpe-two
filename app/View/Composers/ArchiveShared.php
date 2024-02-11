@@ -46,18 +46,22 @@ class ArchiveShared extends Composer
                                         [ 'endpoint' => 'speakers',
                                           'cpt_name' => 'lpe_speaker',
                                           'taxonomy' => 'speaker_topics',
+                                          'archive_slug' => 'speaker-topics',
                                         ],
                                         [ 'endpoint' => 'student-groups',
                                           'cpt_name' => 'student_group',
                                           'taxonomy' => 'speaker_topics',
+                                          'archive_slug' => 'speaker-topics',
                                         ],
                                         [ 'endpoint' => 'syllabi',
                                           'cpt_name' => 'syllabi',
                                           'taxonomy' => 'speaker_topics',
+                                          'archive_slug' => 'speaker-topics',
                                         ],
                                         [ 'endpoint' => 'primers',
                                           'cpt_name' => 'primers',
                                           'taxonomy' => 'speaker_topics',
+                                          'archive_slug' => 'speaker-topics',
                                         ],
                                     ];
 
@@ -69,10 +73,12 @@ class ArchiveShared extends Composer
     public function __construct()
     {
         $currentName = get_queried_object()->name;
+        $currentTax = get_queried_object()->taxonomy;
 
         foreach( self::$archiveOptions as $archiveOption ) {
-            if( $archiveOption['cpt_name'] == $currentName ){
+            if( $archiveOption['taxonomy'] == $currentTax || $archiveOption['cpt_name'] == $currentName ){
                 self::$archiveTax = $archiveOption['taxonomy'];
+                self::$archiveSlug = $archiveOption['archive_slug'];
                 $pageobj = get_page_by_path($archiveOption['endpoint']);
                 if ( !empty($pageobj) ) {
                     self::$archiveTitle = $pageobj->post_title;
@@ -202,7 +208,7 @@ class ArchiveShared extends Composer
             if( $topic->count > $min_count ) {
                 return (object) [
                     'name' => $topic->name,
-                    'url' => home_url(self::$archiveSlug) . $topic->slug,
+                    'url' => home_url('/') . self::$archiveSlug . '/' . $topic->slug,
                 ];   
             }
         });

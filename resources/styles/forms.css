@@ -50,11 +50,11 @@
 
 .wp-block-search__inside-wrapper,
 #author-search {
-    @apply border border-black w-full p-1 bg-white mb-4;
+    @apply border border-black w-full h-8 p-1 bg-white mb-4;
 }
 
 #author-search {
-    @apply h-12 p-2 uppercase text-black;
+    @apply h-8 px-2 p-1 uppercase text-black text-sm;
 
     &::placeholder {
         @apply text-black;
@@ -75,15 +75,25 @@
     @apply border-tahini-500;
 }
 
+#author-search:hover {
+  &::placeholder {
+    @apply text-tahini-500;
+  }
+}
+
+aside .sidebar-button a {
+    @apply text-black text-lg font-semibold;
+}
+
 .wp-block-search__label {
     @apply !relative uppercase;
 }
 
 .wp-block-search__input {
-    @apply !py-0 h-10 w-full border-none;
+    @apply !py-0 w-full border-none;
 
     &::placeholder {
-        @apply text-black;
+        @apply text-black text-sm;
     }
 }
 
