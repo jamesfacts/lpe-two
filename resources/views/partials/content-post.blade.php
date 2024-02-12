@@ -21,7 +21,7 @@
   </div>
 
   <header>
-    <h2 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none my-3 lg:leading-6 lg:text-2xl xl:leading-8 xl:text-3xl">
+    <h2 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none my-3 lg:leading-6 lg:text-2xl xl:text-2xl xl:leading-6">
       <a href="{{ get_permalink() }}" class="hover:text-tahini-500">
         {!! $title !!}
       </a>

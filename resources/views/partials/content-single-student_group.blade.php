@@ -15,14 +15,9 @@
 
 <section class="mx-5 mb-20 flex flex-col-reverse sm:mx-10 lg:ml-20 lg:mb-40 lg:flex-row lg:mt-12">
     <div class="lg:flex lg:flex-col lg:max-w-xs lg:pr-12 ">
-        <div class="lg:mt-6 lg:order-2">
         @include('components.view-all-btn', ['content_type' => 'Student Groups', 'slug' => 'student-groups'])
-        </div>
-        <div class="mt-6 lg:mt-0 lg:order-1">
-        @include('components.share', ['parent_view' => 'Single'])
-        </div>
     </div>
-    <article @php post_class('max-w-md') @endphp>
+    <article @php post_class('max-w-md lg:max-w-3xl xl:pr-4') @endphp>
         <div class="mb-6">
         @php the_content() @endphp
         </div>

@@ -27,6 +27,10 @@
     }
 }
 
+.single-student_group article p {
+    @apply mb-6;
+}
+
 .single-amri_course {
 
     .faculty a {
