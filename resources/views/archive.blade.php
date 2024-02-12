@@ -13,6 +13,7 @@
     <aside class="px-5 mb-12 sm:w-3/4 sm:ml-0 md:mx-11 md:mt-5 lg:max-w-lg lg:mx-0 lg:mt-3 lg:w-1/3 lg:mx-4 lg:w-108"> 
       <!-- mx-auto -->
       @include('partials.archive-header', ['archive_page_slug' => $archiveSlugCheck])
+
       @if($archiveTaxDropdown)
 
         <div class="flex relative inline-block text-left max-w-md mt-6">

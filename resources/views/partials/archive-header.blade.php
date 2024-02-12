@@ -12,7 +12,7 @@
         </h1>
       @endif
       @if($archiveCopy)
-        <div class="beep">
+        <div class="">
           {!! $archiveCopy !!}
         </div>
       @endif

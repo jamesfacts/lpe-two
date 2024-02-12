@@ -48,21 +48,6 @@ class ArchiveShared extends Composer
                                           'taxonomy' => 'speaker_topics',
                                           'archive_slug' => 'speaker-topics',
                                         ],
-                                        [ 'endpoint' => 'student-groups',
-                                          'cpt_name' => 'student_group',
-                                          'taxonomy' => 'speaker_topics',
-                                          'archive_slug' => 'speaker-topics',
-                                        ],
-                                        [ 'endpoint' => 'syllabi',
-                                          'cpt_name' => 'syllabi',
-                                          'taxonomy' => 'speaker_topics',
-                                          'archive_slug' => 'speaker-topics',
-                                        ],
-                                        [ 'endpoint' => 'primers',
-                                          'cpt_name' => 'primers',
-                                          'taxonomy' => 'speaker_topics',
-                                          'archive_slug' => 'speaker-topics',
-                                        ],
                                         [ 'endpoint' => 'symposia',
                                           'cpt_name' => 'post',
                                           'taxonomy' => 'symposia',
@@ -79,6 +64,7 @@ class ArchiveShared extends Composer
     {
         $currentName = get_queried_object()->name;
         $currentTax = get_queried_object()->taxonomy;
+
 
         foreach( self::$archiveOptions as $archiveOption ) {
             if( $archiveOption['taxonomy'] == $currentTax || $archiveOption['cpt_name'] == $currentName ){
@@ -196,17 +182,16 @@ class ArchiveShared extends Composer
 
     public function archiveTaxDropdown()
     {
+
+        if(!self::$archiveTax) {
+            return false;
+        }
+
         $args = self::$archiveTax;
 
         $topics = get_terms($args);
         // minimum posts in category to display category
         $min_count = 1;
-
-        // $html = '<div class="dropdown">';
-        // $html .= '<button class="btn speakers-dropdown dropdown-toggle" type="button" id="dropdownMenuSpeakersCats" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
-        // $html .= 'Speaker Topics';
-        // $html .= '</button>';
-        // $html .= ' <div class="dropdown-menu" aria-labelledby="dropdownMenuSpeakersCats">';
 
         
         return collect($topics)->map(function ($topic) {

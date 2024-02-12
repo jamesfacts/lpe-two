@@ -31,6 +31,18 @@
     @apply mb-6;
 }
 
+.single-lpe_speaker article .entry-body a {
+    @apply text-tahini-700;
+
+    &:hover {
+        @apply no-underline;
+    }
+}
+
+.single-lpe_speaker .prose {
+    max-width: 68ch;
+}
+
 .single-amri_course {
 
     .faculty a {
