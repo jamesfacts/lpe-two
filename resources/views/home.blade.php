@@ -61,7 +61,7 @@
             <span class="border-t border-black text-left w-full block uppercase my-4">Recent</span>
           </section>
 
-          <div class=" md:grid md:grid-cols-2 md:gap-6 xl:grid-cols-3">
+          <div class="grid gap-10 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
             @while(have_posts()) @php(the_post())
               @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
             @endwhile
@@ -83,7 +83,7 @@
               <span class="border-t border-black text-left w-full block uppercase my-4">Recent</span>
             </section>
           @endif
-        <div class=" md:grid md:grid-cols-2 md:gap-6 xl:grid-cols-3">
+        <div class="grid gap-10 md:grid md:grid-cols-2 md:gap-6 xl:grid-cols-3">
           @while(have_posts()) @php(the_post())
             @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
           @endwhile

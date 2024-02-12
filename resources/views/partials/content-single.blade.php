@@ -1,23 +1,23 @@
 <header style="margin-left: -2px;" class="@if($conference_symposia){{'conf-symposia'}}@endif">
   @if($featuredHeaderImage)
     <span class="decorative-img block w-full h-full" style="@if(!($conference_symposia)){{'background-color: #d5f0e5;'}}@endif ">
-        <figure class="h-80 xl:bg-cover" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
+        <figure class="h-[367px] bg-center bg-no-repeat bg-cover " style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
         </figure>
     </span>
   @endif
 
-  <div class="header-text px-4 max-w-xl text-xl sm:px-8 md:px-16 md:pt-12 lg:mx-0 lg:max-w-3xl lg:pl-8 xl:px-16 xl:pb-16">
+  <div class="header-text px-4 max-w-xl text-xl sm:px-8 md:px-16 md:pt-12 lg:mx-0 lg:pl-20 lg:max-w-3xl xl:pb-16 xl:pt-20">
     @if($conference_symposia)
       <span class="uppercase font-bold block mt-8">
         <a href="{{ home_url('/symposia/') . $conference_symposia->slug }}" class=" hover:underline">{!! $conference_symposia->name !!}</a>
       </span>
     @endif
 
-    <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none mt-8 mb-1">{!! get_the_title() !!}</h1>
+    <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none mt-8 mb-1 lg:text-4.5xl lg:leading-10 lg:tracking-lil-tight">{!! get_the_title() !!}</h1>
     @if($lpeContributors)
-        <div class="contrib-meta text-4xl font-bold">
+        <div class="contrib-meta text-4xl font-bold mt-2">
             @foreach ($lpeContributors as $lpeAuthor)
-              <a href="{!! $lpeAuthor->url !!}" rel="author" class="lpe-contrib black-outline text-4xl font-bold uppercase font-rubik tracking-tight leading-none">
+              <a href="{!! $lpeAuthor->url !!}" rel="author" class="lpe-contrib black-outline text-4xl font-bold uppercase font-rubik tracking-lil-tight leading-none lg:text-4.5xl lg:leading-10 lg:tracking-tight">
                 {{$lpeAuthor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
             @endforeach
         </div>
@@ -29,8 +29,8 @@
 
 </header>
 
-<section class="px-4 flex flex-col-reverse pb-32 @if($conference_symposia){{'conf-symposia'}}@endif lg:flex-row xl:px-8">
-  <div class="lg:mt-8 lg:mx-4 lg:flex lg:flex-col lg:justify-between xl:max-w-sm xl:pr-8">
+<section class="px-4 flex flex-col-reverse pb-32 @if($conference_symposia){{'conf-symposia'}}@endif lg:flex-row lg:pl-16 lg:pr-14 xl:pl-8">
+  <div class="lg:mt-8 lg:mx-4 lg:flex lg:flex-col lg:justify-between lg:w-[220px] xl:max-w-sm xl:pr-0 xl:mr-0 xl:pl-8 xl:w-[250px]">
     <div class="hidden lg:block">
       @include('partials.entry-author-bio')
       <span class="py-3 lg:block"></span>
@@ -42,8 +42,8 @@
       @include('partials.entry-author-bio')
     </div>
   </div>
-  <article @php post_class('mt-8 max-w-2xl') @endphp>
-    <div class="px-4 sm:pl-8 md:pl-16 lg:pl-12 lg:pr-3">
+  <article @php post_class('mt-8 max-w-2xl lg:pl-2 xl:pl-8') @endphp>
+    <div class="px-4 sm:pl-8 md:pl-16 lg:pl-24 lg:pr-3 xl:pl-16">
       @php the_content() @endphp
     </div>
     <div class="my-10 px-4 sm:pl-8 md:pl-16 lg:pl-12">

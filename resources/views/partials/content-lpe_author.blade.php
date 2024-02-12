@@ -1,4 +1,4 @@
-<article class="mb-5 pb-2 max-w-sm mx-auto">
+<article class="mb-5 pb-2 max-w-sm mx-auto single-lai">
   <header>
     @if($work->img_url)
         @include('components/thumb-figure', [
@@ -15,8 +15,8 @@
             'alt' => $postImage->alt
           ])
     @endif
-    <h2 class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl">
-      <a href="{{ $work->url }}">
+    <h2 class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl xl:text-2xl">
+      <a href="{{ $work->url ?? get_the_permalink() }}">
         {!! $work->title ?? $title !!}
       </a>
     </h2>
