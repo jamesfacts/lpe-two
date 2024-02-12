@@ -122,6 +122,10 @@
         @apply pl-6 leading-5 my-10 text-slate-600;
     }
 
+    .bylines {
+        @apply font-necto;
+    }
+    
     .conf-related {
         img {
             @apply rounded-[2.6rem];
@@ -129,10 +133,6 @@
 
         h4 {
             @apply font-tiempos font-medium capitalize text-2.5xl leading-7;
-        }
-
-        .bylines {
-            @apply font-necto;
         }
     } 
 }
