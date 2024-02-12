@@ -63,6 +63,11 @@ class ArchiveShared extends Composer
                                           'taxonomy' => 'speaker_topics',
                                           'archive_slug' => 'speaker-topics',
                                         ],
+                                        [ 'endpoint' => 'symposia',
+                                          'cpt_name' => 'post',
+                                          'taxonomy' => 'symposia',
+                                          'archive_slug' => 'symposia',
+                                        ],
                                     ];
 
     public static $archiveSlug;

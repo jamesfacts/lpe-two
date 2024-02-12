@@ -23,8 +23,10 @@
         @foreach($allSymposia as $symposium)
           <article class="border-b border-black mb-5 pb-2">
           <h2 class="">
-            <a href="{{ $symposium->url }}" class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl">
-              {{ $symposium->title }}
+            <a href="{{ $symposium->url }}" 
+              class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 
+                     lg:leading-none lg:text-3xl xl:text-2xl xl:leading-5">
+              {!! $symposium->title !!}
             </a>
           </h2>
           <span class="block font-necto mt-2 mb-3">{{ $symposium->newest_post }}</span>
