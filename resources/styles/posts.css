@@ -175,10 +175,6 @@ header.conf-symposia {
         @apply mb-6;
     }
 
-    .header-text {
-        @apply px-10;
-    }
-
     .lpe-contrib,
     .contrib-meta {
         -webkit-text-fill-color: black;
@@ -212,6 +208,12 @@ header.conf-symposia {
     .single-amri_course {    
         article.post p {
             @apply text-xl;
+        }
+    }
+
+    header.conf-symposia {
+        .header-text {
+            @apply pb-10;            
         }
     }
 }
