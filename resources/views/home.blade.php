@@ -20,7 +20,7 @@
             @endif
             <span class="sr-only">{!! $featured_post->title !!}</span>
           </div>
-          <article class="py-6 mx-auto max-w-sm sm:py-12 md:max-w-lg lg:w-1/2 lg:px-12 xl:max-w-xl xl:ml-0">
+          <article class="px-4 py-6 mx-auto max-w-sm sm:py-12 md:max-w-lg md:px-0 lg:w-1/2 lg:px-12 xl:max-w-xl xl:ml-0">
             <h1 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none mb-3 xl:text-5xl">
               <a href="{!! $featured_post->url !!}">{!! $featured_post->title !!}</a>
             </h1>
@@ -41,7 +41,7 @@
         </aside>
         <div class="lg:w-2/3 xl:w-3/4">
           @if($stickyPosts)
-          <section class="mx-4 sm:mx-0 max-w-1400">
+          <section class="mx-0 max-w-1400">
             <span class="border-t border-black text-left w-full block uppercase my-4">Featured</span>
           </section>
           @endif
