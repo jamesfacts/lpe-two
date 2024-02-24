@@ -36,7 +36,7 @@
       <span class="py-3 lg:block"></span>
       @include('components.time-updated')
     </div>
-    <div class="px-4 sm:pl-8 md:pl-16 lg:pr-0">
+    <div class="px-4 sm:pl-8 md:pl-16 lg:px-0">
       @include('components.share', ['parent_view' => 'Single'])
       <span class="py-2 block"></span>
       @include('partials.entry-author-bio')
