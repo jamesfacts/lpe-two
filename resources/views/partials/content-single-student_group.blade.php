@@ -7,7 +7,7 @@
 </span>
 @endif
 <div class="mx-5 mb-5 max-w-md sm:mx-10 lg:mt-12 lg:ml-20">
-    <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none mt-8 mb-1 lg:mt-3 lg:text-4xl">{!! get_the_title() !!}</h1>
+    <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none mt-8 mb-1 lg:mt-3 lg:text-5xl">{!! get_the_title() !!}</h1>
     <div class="black-outline uppercase text-4xl font-bold">{!! get_field('school_affiliation') !!}</div>
 </div>
 
