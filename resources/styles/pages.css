@@ -4,6 +4,14 @@
     }
 }
 
+.post-type-archive aside .archive-copy a {
+    @apply text-tahini-700 underline;
+}
+
+.post-type-archive aside .archive-copy a:hover {
+    @apply no-underline;
+}
+
 .archive .entry-summary {
     @apply overflow-x-hidden;
 }
