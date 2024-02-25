@@ -2,7 +2,7 @@
 <header class="" style="margin-left: -2px;">
 @if($featuredHeaderImage)
 <span class="block w-full h-full" style="background-color: #c7dbe8;">
-    <figure class="h-80" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
+    <figure class="h-[420px] bg-center bg-no-repeat bg-cover xl:h-[39vh]" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
     </figure>
 </span>
 @endif

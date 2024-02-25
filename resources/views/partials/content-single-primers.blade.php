@@ -1,7 +1,7 @@
 <header style="margin-left: -2px;">
   @if($featuredHeaderImage)
     <span class="block w-full h-full" style="background-color: #0085ff;">
-        <figure class="h-[337px]" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
+        <figure class="h-[420px] bg-center bg-no-repeat bg-cover xl:h-[39vh]" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
         </figure>
     </span>
   @endif

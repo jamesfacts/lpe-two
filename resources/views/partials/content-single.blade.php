@@ -1,7 +1,7 @@
 <header style="margin-left: -2px;" class="@if($conference_symposia){{'conf-symposia'}}@endif">
   @if($featuredHeaderImage)
     <span class="decorative-img block w-full h-full" style="@if(!($conference_symposia)){{'background-color: #d5f0e5;'}}@endif ">
-        <figure class="h-[367px] bg-center bg-no-repeat bg-cover " style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
+        <figure class="h-[367px] bg-center bg-no-repeat bg-cover xl:h-[30vh]" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
         </figure>
     </span>
   @endif
