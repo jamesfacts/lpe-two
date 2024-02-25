@@ -1,14 +1,14 @@
 <header style="margin-left: -2px;">
   @if($featuredHeaderImage)
     <span class="block w-full h-full" style="background-color: #0085ff;">
-        <figure class="h-[420px] bg-center bg-no-repeat bg-cover xl:h-[39vh]" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
+        <figure class="h-[420px] bg-center bg-no-repeat bg-cover xl:h-[29vh]" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
         </figure>
     </span>
   @endif
 
   <div class="mx-4 pt-2 sm:mx-8 lg:mx-12 lg:pt-14 max-w-xl">
     <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none mt-8 mb-1 lg:text-[2.8rem] lg:leading-10 lg:mb-4 lg:tracking-tight">{!! get_the_title() !!}</h1>
-    <span class="lpe-contrib black-outline text-4xl font-bold uppercase font-rubik tracking-tight leading-none">{!! get_field('syllabus_professor') !!}</span>
+    <span class="lpe-contrib black-outline text-4xl font-bold uppercase font-rubik leading-none">{!! get_field('syllabus_professor') !!}</span>
     <div class="">
       <span class="font-necto mr-6">Date added: <time class="font-necto" datetime="{{ get_post_time('c', true) }}">{{ get_the_date() }}</time></span>
     </div>
