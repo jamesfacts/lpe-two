@@ -1,3 +1,17 @@
+.page-template-default .page-content {
+    p {
+        @apply mb-2;
+    }
+
+    a {
+        @apply text-tahini-700 underline;
+    }
+    
+    a:hover {
+        @apply no-underline;
+    }
+}
+
 .post-type-archive-lpe_event {
     .archive-nav .generic-button:hover {
         @apply border-white text-white;
@@ -97,10 +111,6 @@ a.topic-item:hover {
     border-radius: 2.5rem;
 }
 
-/* .rounded-panel.odd {
-    @apply border-emerald-700 border-4;
-} */
-
 .event-body p {
     @apply mb-6;
 }
@@ -110,7 +120,7 @@ a.topic-item:hover {
 }
 
 .manifesto-block h2 {
-    @apply uppercase text-4xl font-bold mb-3;
+    @apply uppercase text-4xl font-bold mb-8 mt-12 leading-8;
 }
 
 .manifesto-block h2,
@@ -127,6 +137,18 @@ a.topic-item:hover {
 
 .manifesto-block .wp-block-image img {
     width: 100%;
+}
+
+.manifesto-block .wp-block-buttons {
+    @apply mb-10 mt-8;
+
+    a {
+        @apply text-black no-underline;
+    }
+
+    a:hover {
+        @apply text-tahini-500;
+    }
 }
 
 .page-template-template-emerging-scholars {
@@ -162,6 +184,10 @@ a.topic-item:hover {
         width: 135%;
     }
 
+    .manifesto-block h2 {
+        @apply mt-24;
+    }
+
     .manifesto-block .wp-block-image img {
         margin-left: 0;
     }
@@ -173,11 +199,12 @@ a.topic-item:hover {
     }
 
     .manifesto-block {
-        @apply -ml-48;
+        @apply -ml-64;
     }
 
     .manifesto-block .wp-block-image img {
         width: auto;
+        @apply pl-16;
     }
 
     /* conf zone */
