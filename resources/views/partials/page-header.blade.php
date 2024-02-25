@@ -1,7 +1,6 @@
 <div class="page-header" style="margin-left: -2px;">
   @if(!empty($featuredHeaderImage))
-    <figure class="featured-image img-fill"
-      style="background-image: url( {!! $featuredHeaderImage['url'] !!} ); height: 300px;">
+    <figure class="h-[300px] bg-center bg-no-repeat bg-cover " style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
     </figure>
   @else
     <span class="featured-image"></span>

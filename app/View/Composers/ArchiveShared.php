@@ -85,12 +85,17 @@ class ArchiveShared extends Composer
             return self::$archiveCopy;
         }
 
-        if( is_archive() ) {
-            return term_description();
-        }
+        // if( is_archive() ) {
+        //     return term_description();
+        // }
 
-        if( $this->data['archive_page_slug'] ) {
-            $pageobj = get_page_by_path($this->data['archive_page_slug']);
+        $post_type = get_post_type();
+
+        if( $post_type ) {
+            $post_type_data = get_post_type_object( $post_type );
+            $post_type_slug = $post_type_data->rewrite['slug'];
+            
+            $pageobj = get_page_by_path($post_type_slug);
             if ( !empty($pageobj) ) {
                 return $pageobj->post_content;
             }
@@ -194,7 +199,7 @@ class ArchiveShared extends Composer
         $min_count = 1;
 
         
-        return collect($topics)->map(function ($topic) {
+        $collection = collect($topics)->map(function ($topic) {
             if( $topic->count > $min_count ) {
                 return (object) [
                     'name' => $topic->name,
@@ -202,6 +207,15 @@ class ArchiveShared extends Composer
                 ];   
             }
         });
+
+        if ( self::$archiveTax == 'symposia' ) {
+            $collection->prepend( (object) [
+                'name' => 'All Symposia',
+                'url' => home_url('/symposia/'),
+            ]);
+        }
+
+        return $collection;
     }
 
     /**

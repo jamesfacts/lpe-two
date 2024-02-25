@@ -1,3 +1,7 @@
+.error404 form.search-form {
+    @apply mx-auto;
+}
+
 .search-submit {
     @apply ml-auto mr-2;
 

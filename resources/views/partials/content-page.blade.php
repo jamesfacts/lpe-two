@@ -1,14 +1,13 @@
 <div class="hidden basis-full lg:p-12 lg:block">
-    <h1 class="uppercase text-6xl font-bold ">{!! $title !!}</h1>
+    <h1 class="uppercase text-6xl font-bold max-w-md leading-13">{!! $title !!}</h1>
 </div>
-<div class="flex flex-col lg:grid lg:grid-cols-4 lg:px-12 lg:pt-2">
-    <h1 class="uppercase text-4xl font-bold lg:hidden lg:basis-full">{!! $title !!}</h1>
-    <div class="lg:col-span-1">
+<div class="flex flex-col max-w-xl lg:flex-row lg:pl-12 lg:pr-2 lg:pt-2 lg:max-w-6xl">
+    <aside class="lg:w-full lg:max-w-[260px] ">
         
         @if($aboutNavigation && $showMenu)
-            <h2 class="text-4xl uppercase font-bold">{!! wp_get_nav_menu_name('about_navigation') !!}</h2>
+            <span class="text-4xl uppercase font-bold lg:leading-8">{!! wp_get_nav_menu_name('about_navigation') !!}</span>
             
-            <ul class="mt-2 mb-8">
+            <ul class="mt-2 mb-8 lg:mt-6">
             @foreach ($aboutNavigation as $item)
             <li class="">
                 <a href="{{ $item->url }}" class="text-2xl uppercase font-semibold leading-6 hover:text-tahini-500">
@@ -19,8 +18,9 @@
         </ul>
         @endif
         
-    </div>
-    <section class="page-content prose leading-6 pb-28 lg:pl-6 lg:col-span-3">
+    </aside>
+    <h1 class="uppercase text-4.5xl font-bold lg:hidden lg:basis-full">{!! $title !!}</h1>
+    <section class="page-content pb-28 w-full lg:max-w-[620px] xl:pl-16">
         @php(the_content())
     </section>
 </div>

@@ -1,7 +1,7 @@
 <header style="margin-left: -2px;" class="@if($conference_symposia){{'conf-symposia'}}@endif">
   @if($featuredHeaderImage)
     <span class="decorative-img block w-full h-full" style="@if(!($conference_symposia)){{'background-color: #d5f0e5;'}}@endif ">
-        <figure class="h-[367px] bg-center bg-no-repeat bg-cover " style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
+        <figure class="h-[367px] bg-center bg-no-repeat bg-cover xl:h-[27vh]" style="background-image: url( '{!! $featuredHeaderImage['url'] !!}' )">
         </figure>
     </span>
   @endif
@@ -36,7 +36,7 @@
       <span class="py-3 lg:block"></span>
       @include('components.time-updated')
     </div>
-    <div class="px-4 sm:pl-8 md:pl-16 lg:pr-0">
+    <div class="px-4 sm:pl-8 md:pl-16 lg:px-0">
       @include('components.share', ['parent_view' => 'Single'])
       <span class="py-2 block"></span>
       @include('partials.entry-author-bio')
