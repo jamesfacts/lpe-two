@@ -12,7 +12,7 @@
   <div class="w-full flex flex-col mb-32 max-w-1400 lg:flex-row lg:pt-10">
     <aside class="px-5 mb-12 sm:w-3/4 sm:ml-0 md:mx-11 md:mt-5 lg:max-w-lg lg:mx-0 lg:mt-3 lg:w-1/3 lg:mx-4 lg:w-108"> 
       <!-- mx-auto -->
-      @include('partials.archive-header', ['archive_page_slug' => $archiveSlugCheck])
+      @include('partials.archive-header')
 
       @if($archiveTaxDropdown)
 
@@ -81,8 +81,6 @@
               @endforeach
               </div>
           </div>
-
-
       @endif
     </aside>
     <div class="w-full px-6 grid gap-6 mt-6 sm:grid-cols-2 mr-5 md:ml-10 md:pr-16 lg:w-2/3 lg:ml-0 xl:grid-cols-3 xl:gap-10">

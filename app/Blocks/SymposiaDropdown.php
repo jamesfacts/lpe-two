@@ -179,7 +179,7 @@ class SymposiaDropdown extends Block
         $topics = get_terms($args);
         $min_count = 1;
         
-        return collect($topics)->map(function ($topic) {
+        $topics = collect($topics)->map(function ($topic) {
             if( $topic->count > $min_count ) {
                 return (object) [
                     'name' => $topic->name,
@@ -187,6 +187,13 @@ class SymposiaDropdown extends Block
                 ];   
             }
         });
+
+        $topics->prepend( (object) [
+            'name' => 'All Symposia',
+            'url' => home_url('/symposia/'),
+        ]);
+
+        return $topics;
     }
 
     /**
