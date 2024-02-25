@@ -12,6 +12,14 @@
     @apply no-underline;
 }
 
+.single-student_group article a {
+    @apply text-tahini-700 underline;
+}
+
+.single-student_group article a:hover {
+    @apply no-underline;
+}
+
 .archive .entry-summary {
     @apply overflow-x-hidden;
 }
