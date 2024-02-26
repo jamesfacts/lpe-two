@@ -23,7 +23,7 @@
                 <div class="registration-pills my-6">
                     <a href="javascript:void(0)" 
                         class="expansion-toggle border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block hover:text-tahini-500 hover:border-tahini-500" 
-                        aria-label="Read / Close Full Event Description" @click="selected !== {{$loop->index}} ? selected = {{$loop->index}} : selected = null" x-text="selected ? 'Close Description' : 'Learn More'">
+                        aria-label="Read / Close Full Event Description" @click="selected !== {{$loop->index}} ? selected = {{$loop->index}} : selected = null" x-text="selected == {{$loop->index}} ? 'Close Description' : 'Learn More'">
                         
                     </a>
                     
