@@ -31,7 +31,7 @@ class ScholarsTemplate extends Composer
             ];
 
             self::$scholarsDirectory = collect(get_field('scholars_directory'))->map(function ($item, $index) {
-                if (in_array($index, [2, 5, 10])) {
+                if (in_array($index, [2, 7, 10])) {
                     $texture = 'LPE_TextureRound' . rand(2, 3) . '.png';
                     
                     return (object)[
