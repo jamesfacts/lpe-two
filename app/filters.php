@@ -493,8 +493,6 @@ function wpse_custom_wp_trim_excerpt($wpse_excerpt)
    $wpse_excerpt = strip_shortcodes($wpse_excerpt);
    $wpse_excerpt = apply_filters('the_content', $wpse_excerpt);
    $wpse_excerpt = str_replace(']]>', ']]&gt;', $wpse_excerpt);
-   $url_regex = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@";
-   $wpse_excerpt = preg_replace($url_regex, ' ', $wpse_excerpt);
    $wpse_excerpt = strip_tags($wpse_excerpt, '<br>,<em>,<i>,<br/>'); /*IF you need to allow just certain tags. Delete if all tags are allowed */
 
    //Set the excerpt word count and only break after sentence is complete.
@@ -533,6 +531,8 @@ function wpse_custom_wp_trim_excerpt($wpse_excerpt)
    }
 
    $wpse_excerpt = trim(force_balance_tags($excerptOutput));
+   $url_regex = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@";
+   $wpse_excerpt = preg_replace($url_regex, ' ', $wpse_excerpt);
 
    return $wpse_excerpt;
 }
