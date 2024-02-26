@@ -195,7 +195,7 @@ a.topic-item:hover {
 
 @media screen(lg) {
     .learn-header h2.wp-block-heading {
-        @apply text-4xl mb-6;
+        @apply text-4.5xl tracking-tight mb-6 mt-0 pt-0.5;
     }
 
     .manifesto-block {
