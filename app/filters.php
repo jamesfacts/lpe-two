@@ -403,12 +403,12 @@ add_filter('category_rewrite_rules', __NAMESPACE__ . '\lpe_remove_blog_prefix_fr
 
 function lpe_remove_blog_prefix_from_categories($cat_rewrite_patterns)
 {
-   $cat_prefix_as_regex = '/blog\//';
+   $cat_prefix_as_url_regex = '/blog\//';
 
    $new_cat_rules = [];
 
    foreach ($cat_rewrite_patterns as $pattern_url => $pattern_to_server) {
-       $new_cat_rules[preg_replace($cat_prefix_as_regex, '', $pattern_url)] = $pattern_to_server;
+       $new_cat_rules[preg_replace($cat_prefix_as_url_regex, '', $pattern_url)] = $pattern_to_server;
    }
 
    return $new_cat_rules;
@@ -422,8 +422,8 @@ function lpe_remove_blog_prefix_from_categories($cat_rewrite_patterns)
 add_filter('term_link', function( $url, $term, $taxonomy ) {
 
     if( $taxonomy == 'category' ) {
-        $cat_prefix_as_regex = '/blog\//';
-        $url = preg_replace($cat_prefix_as_regex, '', $url);
+        $cat_prefix_as_url_regex = '/blog\//';
+        $url = preg_replace($cat_prefix_as_url_regex, '', $url);
     };
 
     return $url;
@@ -493,6 +493,8 @@ function wpse_custom_wp_trim_excerpt($wpse_excerpt)
    $wpse_excerpt = strip_shortcodes($wpse_excerpt);
    $wpse_excerpt = apply_filters('the_content', $wpse_excerpt);
    $wpse_excerpt = str_replace(']]>', ']]&gt;', $wpse_excerpt);
+   $url_regex = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@";
+   $wpse_excerpt = preg_replace($url_regex, ' ', $wpse_excerpt);
    $wpse_excerpt = strip_tags($wpse_excerpt, '<br>,<em>,<i>,<br/>'); /*IF you need to allow just certain tags. Delete if all tags are allowed */
 
    //Set the excerpt word count and only break after sentence is complete.
