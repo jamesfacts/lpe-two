@@ -249,4 +249,10 @@ a.topic-item:hover {
         margin-left: 0;
         margin-right: -2rem;
     }
+
+    .page-template-template-emerging-scholars {
+        .scholar-wrap::before {
+            right: 5rem;
+        }
+    }
 }
