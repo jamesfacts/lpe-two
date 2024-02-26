@@ -531,8 +531,8 @@ function wpse_custom_wp_trim_excerpt($wpse_excerpt)
    }
 
    $wpse_excerpt = trim(force_balance_tags($excerptOutput));
-   $url_regex = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@";
-   $wpse_excerpt = preg_replace($url_regex, ' ', $wpse_excerpt);
+//    $url_regex = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@";
+//    $wpse_excerpt = preg_replace($url_regex, ' ', $wpse_excerpt);
 
    return $wpse_excerpt;
 }

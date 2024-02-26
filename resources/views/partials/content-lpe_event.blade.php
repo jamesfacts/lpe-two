@@ -35,6 +35,12 @@
 
 
 <div class="entry-summary py-4">
-  @php(the_excerpt())
+  <?php
+    $excerpt = get_the_excerpt();
+
+    $url_regex = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@";
+    $excerpt = preg_replace($url_regex, ' ', $excerpt);
+  ?>
+  {!! $excerpt !!} 
 </div>
 </article>
