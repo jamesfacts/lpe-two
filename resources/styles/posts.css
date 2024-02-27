@@ -105,8 +105,9 @@
 
 .single-post {
     .lpe-contrib:hover {
-        -webkit-text-fill-color: black;
-        -webkit-text-stroke-width: 0;
+        -webkit-text-fill-color: #d4a45e !important;
+        -webkit-text-stroke-width: 0px;
+        color:  #d4a45e !important;
     }
 
     article.post a,
@@ -153,8 +154,18 @@
     } 
 }
 
-.single-lpe_event .prose {
-    @apply leading-6;
+.single-lpe_event .body-content {
+    p {
+        @apply mb-6;
+    }
+
+    a {
+        @apply text-tahini-700 underline;
+    
+        &:hover {
+            @apply no-underline;
+        }
+    }
 }
 
 .single-lpe_author aside a {
