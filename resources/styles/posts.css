@@ -153,8 +153,18 @@
     } 
 }
 
-.single-lpe_event .prose {
-    @apply leading-6;
+.single-lpe_event .body-content {
+    p {
+        @apply mb-6;
+    }
+
+    a {
+        @apply text-tahini-700 underline;
+    
+        &:hover {
+            @apply no-underline;
+        }
+    }
 }
 
 .single-lpe_author aside a {
