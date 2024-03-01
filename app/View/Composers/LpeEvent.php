@@ -126,7 +126,7 @@ class LpeEvent extends Composer
         $args = [
             'post_status'       => 'publish',
             'post_type'         => ['lpe_event'],
-            'posts_per_page'    => '5',
+            'posts_per_page'    => '8',
             'post__not_in'      => self::$featuredEventExclusion,
             'orderby'           => 'meta_value_num',
             'order'             => 'ASC',
