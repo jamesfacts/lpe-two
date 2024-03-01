@@ -33,7 +33,7 @@
           {{ __('By ', 'sage') }}
         </span>
         
-        @if(count($loopContributors) == 0 )
+        @if( is_int($loopContributors) && count($loopContributors) == 0 )
             <a href="javascript:void(0)" class="uppercase font-necto leading-tight tracking-wide mb-3 ">LPE Editors</a>
         @endif
         @foreach ($loopContributors as $s_contributor)
