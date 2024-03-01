@@ -96,8 +96,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{ $upcomingEvent->url }}"><img src="{{ $upcomingEvent->img_url }}" alt="{{ $upcomingEvent->alt }}" class="pt-6 xl:pt-10"></a>
-                                
+                                @if($upcomingEvent->img_url)
+                                    <a href="{{ $upcomingEvent->url }}"><img src="{{ $upcomingEvent->img_url }}" alt="{{ $upcomingEvent->alt }}" class="pt-6 xl:pt-10"></a>
+                                @endif
                             </article>
                         @endforeach
                     </div>
