@@ -12,6 +12,11 @@
     }
 }
 
+.meow-contact-form__group-input,
+.meow-contact-form__group-textarea {
+    @apply border border-black;
+}
+
 .search-field {
     letter-spacing: 0.02em;
 
