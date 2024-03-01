@@ -154,7 +154,8 @@
     } 
 }
 
-.single-lpe_event .body-content {
+.single-lpe_event .body-content,
+.single-syllabi .body-content {
     p {
         @apply mb-6;
     }
