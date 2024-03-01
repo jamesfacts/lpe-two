@@ -70,6 +70,7 @@
                 <div class="max-w-1400 px-10 lg:pt-8 lg:flex">
                     <aside class="w-full flex flex-col lg:w-1/4">
                         <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none my-4 lg:leading-8 ">Upcoming events</h1>
+                        <a id="upcoming-events"></a>
                     </aside>
                     <div class="w-full pb-10 lg:w-3/4 lg:pl-16">
                         @foreach($upcomingEvents as $upcomingEvent)
@@ -110,6 +111,7 @@
             <div class="max-w-1400 flex flex-col px-6 pt-12 xl:flex-row xl:flex-wrap">
                 <aside class="w-full px-4 pb-6 xl:w-1/4">
                 <h1 class="text-4xl font-bold uppercase font-rubik tracking-tighter leading-none my-4 lg:leading-8 ">Past events</h1>
+                <a id="past-events"></a>
                 </aside>
                 <div class="w-full past-event-grid max-w-sm ml-0 mr-auto grid grid-cols-1 gap-2 md:max-w-full md:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:px-5 xl:w-3/4 xl:pl-18">
                     @if($pastEvents)
