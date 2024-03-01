@@ -4,7 +4,7 @@
 
 @include('sections.header')
 
-  <main id="main" class="main">
+  <main id="main" class="main @if($localDev) {!! 'debug-screens' !!} @endif">
     @yield('content')
   </main>
 

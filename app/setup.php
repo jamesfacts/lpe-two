@@ -73,7 +73,9 @@ add_action('after_setup_theme', function () {
         'about_navigation' => __('About Navigation', 'sage'),
         'engage_navigation' => __('Engage Navigation', 'sage'),
         'learn_navigation' => __('Learn Navigation', 'sage'),
-        'events_navigation' => __('Events Navigation', 'sage')
+        'events_navigation' => __('Events Navigation', 'sage'),
+        'main_footer_nav' => __('Footer Navigation', 'sage'),
+        'lower_footer_nav' => __('Lower Footer Navigation', 'sage'),
     ]);
 
     /**
@@ -181,23 +183,23 @@ add_action('widgets_init', function () {
      */
     $footerConfig = [
         'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="d-none">',
+        'before_title'  => '<h3 class="hidden">',
         'after_title'   => '</h3>'
     ];
     register_sidebar([
         'name'          => __('Blog Sidebar', 'sage'),
         'id'            => 'sidebar-primary'
     ] + $sidebarConfig);
-    register_sidebar([
-        'name'          => __('Main Footer', 'sage'),
-        'before_widget' => '<section class="widget footer-widget %1$s %2$s">',
-        'id'            => 'sidebar-footer'
-    ] + $footerConfig);
-    register_sidebar([
-        'name'          => __('Lower Footer', 'sage'),
-        'before_widget' => '<section class="widget %1$s %2$s" id="sidebar-lower-footer">',
-        'id'            => 'sidebar-lower-footer'
-    ] + $footerConfig);
+    // register_sidebar([
+    //     'name'          => __('Main Footer', 'sage'),
+    //     'before_widget' => '<section class="widget footer-widget %1$s %2$s">',
+    //     'id'            => 'sidebar-footer'
+    // ] + $footerConfig);
+    // register_sidebar([
+    //     'name'          => __('Lower Footer', 'sage'),
+    //     'before_widget' => '<section class="widget %1$s %2$s" id="sidebar-lower-footer">',
+    //     'id'            => 'sidebar-lower-footer'
+    // ] + $footerConfig);
 });
 
 /**
@@ -216,20 +218,43 @@ add_action('widgets_init', function () {
  {
      if (!is_admin() && $query->is_main_query()) {
          if (is_home()) {
-             $args = [
+            $toppost_args = [
                  'post_type' => 'post',
-                 'posts_per_page' => '1',
                  'meta_query' => [
-                 ['key' => 'allow_featured', 'value' => 1] ]
-           ];
+                    ['key' => 'top_post', 'value' => 1] 
+                ]
+            ];
+
+            $sticky_args = [
+                'post_type' => 'post',
+                'meta_query' => [
+                    ['key' => 'sticky_zone', 'value' => 1] 
+                ]
+            ];
  
-             $excluded_query = new \WP_Query($args);
+             $excluded_toppost_query = new \WP_Query($toppost_args);
+             $excluded_sticky_query = new \WP_Query($sticky_args);
  
-             $excluded_posts = collect($excluded_query->posts)->map(function ($post) {
-                 return $post->ID;
-             })->first();
+             $excluded_toppost = collect($excluded_toppost_query->posts)->map(function ($post) {
+                 return (object) [
+                    'top_ID' => $post->ID,
+                    'post_modified' => $post->post_modified
+                 ];
+             })->sortByDesc('post_modified')->first();
+
+             $excluded_sticky_posts = collect($excluded_sticky_query->posts)->map(function ($post) {
+                return (object) [
+                   'sticky_ID' => $post->ID,
+                   'post_modified' => $post->post_modified
+                ];
+            })->sortByDesc('post_modified');
  
-             $query->set('post__not_in', [$excluded_posts]);
+             $query->set('post__not_in', [$excluded_toppost->top_ID]);
+             
+             if(get_query_var('paged') == 0) {
+                $query->set('posts_per_page', 6);
+             }
+             
          }
      }
  }

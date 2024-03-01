@@ -116,19 +116,19 @@ return [
                 'plural' => 'LPE events',
             ],
         ],  
-        'lpe_conference' => [
-            'enter_title_here' => 'Enter conference event title',
-            'menu_icon' => 'dashicons-calendar',
-            'supports' => ['title', 'editor', 'excerpt', 'thumbnail'],
-            'show_in_rest' => true,
-            'has_archive' => true,
-            'hierarchical' => false,
-            'rewrite' => ['slug' => 'conferences', 'with_front' => false],
-            'labels' => [
-                'singular' => 'LPE conferences event',
-                'plural' => 'LPE conferences events',
-            ],
-        ],            
+        // 'lpe_conference' => [
+        //     'enter_title_here' => 'Enter conference event title',
+        //     'menu_icon' => 'dashicons-calendar',
+        //     'supports' => ['title', 'editor', 'excerpt', 'thumbnail'],
+        //     'show_in_rest' => true,
+        //     'has_archive' => true,
+        //     'hierarchical' => false,
+        //     'rewrite' => ['slug' => 'conferences', 'with_front' => false],
+        //     'labels' => [
+        //         'singular' => 'LPE conferences event',
+        //         'plural' => 'LPE conferences events',
+        //     ],
+        // ],            
     ],
 
     /*
@@ -177,7 +177,7 @@ return [
     */
 
     'block' => [
-        // 'sage/accordion',
+        // 'sage/our-team',
     ],
 
     /*

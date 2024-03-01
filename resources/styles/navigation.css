@@ -1,0 +1,17 @@
+.navigation.posts-navigation {
+    @apply w-full;
+}
+
+nav .nav-links {
+    @apply flex flex-row-reverse w-full justify-between my-12;
+}
+
+.nav-previous a,
+.nav-next a {
+    @apply border border-black rounded-full uppercase font-rubik text-xs px-3 text-center py-2;
+}
+
+.nav-previous a:hover,
+.nav-next a:hover {
+    @apply border-tahini-500 text-tahini-500;
+}

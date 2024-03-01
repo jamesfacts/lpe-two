@@ -2124,6 +2124,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@popmotion/easing@npm:^1.0.1, @popmotion/easing@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@popmotion/easing@npm:1.0.2"
+  checksum: 5825b083c9a4cc449809c876e0c9a4f7c7fc6f19bc62e20be9881c09e16ad6158c445c09a282870f9b8140e55167161f26cd366b8897201e1dbaee3b5abc4a0d
+  languageName: node
+  linkType: hard
+
+"@popmotion/popcorn@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "@popmotion/popcorn@npm:0.4.4"
+  dependencies:
+    "@popmotion/easing": ^1.0.1
+    framesync: ^4.0.1
+    hey-listen: ^1.0.8
+    style-value-types: ^3.1.7
+    tslib: ^1.10.0
+  checksum: 70e433763ba5328dc9f82d26bf245ff965f6de0fd931fe15452e855a53b620dd90d45139234a5e0bfa8d3498a3f762bdd75c1e29f56705323571785ee526ea5e
+  languageName: node
+  linkType: hard
+
 "@roots/browserslist-config@npm:6.4.5":
   version: 6.4.5
   resolution: "@roots/browserslist-config@npm:6.4.5"
@@ -2710,6 +2730,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/typography@npm:^0.5.9":
+  version: 0.5.9
+  resolution: "@tailwindcss/typography@npm:0.5.9"
+  dependencies:
+    lodash.castarray: ^4.4.0
+    lodash.isplainobject: ^4.0.6
+    lodash.merge: ^4.6.2
+    postcss-selector-parser: 6.0.10
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: b98e21bdd1798d7e4683499893c5c20ad43fcc8955d5d6eefbe1d30e98e9b6c28949ae8f276d39be9a66fafe843597717196bc5a0a2ac0f87ef86aa051ab9611
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -2815,6 +2849,22 @@ __metadata:
   version: 7.0.9
   resolution: "@types/json-schema@npm:7.0.9"
   checksum: 259d0e25f11a21ba5c708f7ea47196bd396e379fddb79c76f9f4f62c945879dc21657904914313ec2754e443c5018ea8372362f323f30e0792897fdb2098a705
+  languageName: node
+  linkType: hard
+
+"@types/lodash.throttle@npm:^4.1.7":
+  version: 4.1.7
+  resolution: "@types/lodash.throttle@npm:4.1.7"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: 6e1b3836488fecbdc537b6ad9b3fe4855c7336b0fa388773cd57d486619f565a48cabc04b28677fd3819be3f2d13d2bb8f9d4428aa5632885c86cb99729bfd69
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*":
+  version: 4.14.199
+  resolution: "@types/lodash@npm:4.14.199"
+  checksum: e68d1fcbbfce953ed87b296a628573f62939227bcda0c934954e862b421e8a34c5e71cad6fea27b9980567909e6a4698f09025692958e36d64ea9ed99ec6fb2e
   languageName: node
   linkType: hard
 
@@ -3274,6 +3324,19 @@ __metadata:
   dependencies:
     "@vue/reactivity": ~3.1.1
   checksum: b6899cbbea085ab9f7fe7a41f4c6b38557cf2ce06f27ff56bd6c7c2be16cf48737230e1b4f7aa2d0be7dd98e4fc4e11de8339bc60220bf1b806fc82ff8b2907c
+  languageName: node
+  linkType: hard
+
+"animate-css-grid@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "animate-css-grid@npm:1.5.1"
+  dependencies:
+    "@popmotion/easing": ^1.0.2
+    "@types/lodash.throttle": ^4.1.7
+    framesync: ^6.1.2
+    lodash.throttle: ^4.1.1
+    popmotion: ^8.7.6
+  checksum: d9e798d663e354fe76b60d62b80e567d2bbd6b85fc395e223f19afdc5d712c68cfe5c5eef316af2768e8aab5e17dee3a023633af45940cdb67814b4f16141af5
   languageName: node
   linkType: hard
 
@@ -5238,6 +5301,24 @@ browserslist@latest:
   languageName: node
   linkType: hard
 
+"framesync@npm:^4.0.0, framesync@npm:^4.0.1":
+  version: 4.1.0
+  resolution: "framesync@npm:4.1.0"
+  dependencies:
+    hey-listen: ^1.0.5
+  checksum: 3caaddc32d3c8c4a5b0eacfb82d74aa63fc690765274ebbb8622555879aa713b36e8a557a917de4ae24d5f49e38f9c79459327493b071cec15a1fdea96601cea
+  languageName: node
+  linkType: hard
+
+"framesync@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "framesync@npm:6.1.2"
+  dependencies:
+    tslib: 2.4.0
+  checksum: 250dec78c351b087a47558b8bcf85a91a878507a73f05c095f7728617d40432b8ca0cb21deee98026d582c67610e961f83e535990035f6c9902e721580daff76
+  languageName: node
+  linkType: hard
+
 "fresh@npm:0.5.2":
   version: 0.5.2
   resolution: "fresh@npm:0.5.2"
@@ -5612,6 +5693,13 @@ browserslist@latest:
     lodash.once: 4.1.1
     lodash.throttle: 4.1.1
   checksum: 107405582cd1926e90c1d448bc5c3fe66e246c0aeb6e2531e9053c541997ccfb85c23dba655dbeb59426b3ff09dbb95ec1b3736854bd4281b7c7b7b2ec8d30c3
+  languageName: node
+  linkType: hard
+
+"hey-listen@npm:^1.0.5, hey-listen@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "hey-listen@npm:1.0.8"
+  checksum: 6bad60b367688f5348e25e7ca3276a74b59ac5a09b0455e6ff8ab7d4a9e38cd2116c708a7dcd8a954d27253ce1d8717ec891d175723ea739885b828cf44e4072
   languageName: node
   linkType: hard
 
@@ -6212,6 +6300,13 @@ browserslist@latest:
   languageName: node
   linkType: hard
 
+"jquery@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "jquery@npm:3.7.0"
+  checksum: 907785e133afc427650a131af5fccef66a404885037513b3d4d7d63aee6409bcc32a39836868c60e59b05aa0fb8ace8961c18b2ee3ffdf6ffdb571d6d7cd88ff
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -6497,6 +6592,13 @@ browserslist@latest:
   languageName: node
   linkType: hard
 
+"lodash.castarray@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.castarray@npm:4.4.0"
+  checksum: fca8c7047e0ae2738b0b2503fb00157ae0ff6d8a1b716f87ed715b22560e09de438c75b65e01a7e44ceb41c5b31dce2eb576e46db04beb9c699c498e03cbd00f
+  languageName: node
+  linkType: hard
+
 "lodash.debounce@npm:4.0.8, lodash.debounce@npm:^4.0.8":
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
@@ -6511,10 +6613,24 @@ browserslist@latest:
   languageName: node
   linkType: hard
 
+"lodash.isplainobject@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "lodash.isplainobject@npm:4.0.6"
+  checksum: 29c6351f281e0d9a1d58f1a4c8f4400924b4c79f18dfc4613624d7d54784df07efaff97c1ff2659f3e085ecf4fff493300adc4837553104cef2634110b0d5337
+  languageName: node
+  linkType: hard
+
 "lodash.memoize@npm:4.1.2, lodash.memoize@npm:^4.1.2":
   version: 4.1.2
   resolution: "lodash.memoize@npm:4.1.2"
   checksum: 9ff3942feeccffa4f1fafa88d32f0d24fdc62fd15ded5a74a5f950ff5f0c6f61916157246744c620173dddf38d37095a92327d5fd3861e2063e736a5c207d089
+  languageName: node
+  linkType: hard
+
+"lodash.merge@npm:^4.6.2":
+  version: 4.6.2
+  resolution: "lodash.merge@npm:4.6.2"
+  checksum: ad580b4bdbb7ca1f7abf7e1bce63a9a0b98e370cf40194b03380a46b4ed799c9573029599caebc1b14e3f24b111aef72b96674a56cfa105e0f5ac70546cdc005
   languageName: node
   linkType: hard
 
@@ -6525,7 +6641,7 @@ browserslist@latest:
   languageName: node
   linkType: hard
 
-"lodash.throttle@npm:4.1.1":
+"lodash.throttle@npm:4.1.1, lodash.throttle@npm:^4.1.1":
   version: 4.1.1
   resolution: "lodash.throttle@npm:4.1.1"
   checksum: 129c0a28cee48b348aef146f638ef8a8b197944d4e9ec26c1890c19d9bf5a5690fe11b655c77a4551268819b32d27f4206343e30c78961f60b561b8608c8c805
@@ -7839,6 +7955,21 @@ browserslist@latest:
   languageName: node
   linkType: hard
 
+"popmotion@npm:^8.7.6":
+  version: 8.7.6
+  resolution: "popmotion@npm:8.7.6"
+  dependencies:
+    "@popmotion/easing": ^1.0.1
+    "@popmotion/popcorn": ^0.4.4
+    framesync: ^4.0.0
+    hey-listen: ^1.0.5
+    style-value-types: ^3.1.7
+    stylefire: ^7.0.1
+    tslib: ^1.10.0
+  checksum: 47706065816e316d375665bf4d88ef41d42adfec53da6b746296a696e0937602f996c0b54cff78ba5a2869e7d0124d58fcddd5c6a97ee80e2f32a8feead95e5c
+  languageName: node
+  linkType: hard
+
 "postcss-attribute-case-insensitive@npm:^5.0.2":
   version: 5.0.2
   resolution: "postcss-attribute-case-insensitive@npm:5.0.2"
@@ -8584,7 +8715,7 @@ browserslist@latest:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.10":
+"postcss-selector-parser@npm:6.0.10, postcss-selector-parser@npm:^6.0.10":
   version: 6.0.10
   resolution: "postcss-selector-parser@npm:6.0.10"
   dependencies:
@@ -9327,7 +9458,11 @@ browserslist@latest:
     "@roots/bud": 6.4.5
     "@roots/bud-tailwindcss": 6.4.5
     "@roots/sage": 6.4.5
+    "@tailwindcss/typography": ^0.5.9
     alpinejs: ^3.12.2
+    animate-css-grid: ^1.5.1
+    jquery: ^3.7.0
+    tailwindcss-debug-screens: ^2.2.1
   languageName: unknown
   linkType: soft
 
@@ -9784,6 +9919,29 @@ browserslist@latest:
   languageName: node
   linkType: hard
 
+"style-value-types@npm:^3.1.7":
+  version: 3.2.0
+  resolution: "style-value-types@npm:3.2.0"
+  dependencies:
+    hey-listen: ^1.0.8
+    tslib: ^1.10.0
+  checksum: 26cee764836641e4423572a9f559ef22ac0f7759c3defc5514bb0c6376047839d70dcb9395819af461d15f50b0f9a1a518be1ffcc81b3cce7ca37d0c63a2c6c8
+  languageName: node
+  linkType: hard
+
+"stylefire@npm:^7.0.1":
+  version: 7.0.3
+  resolution: "stylefire@npm:7.0.3"
+  dependencies:
+    "@popmotion/popcorn": ^0.4.4
+    framesync: ^4.0.0
+    hey-listen: ^1.0.8
+    style-value-types: ^3.1.7
+    tslib: ^1.10.0
+  checksum: 42d9e578188fb1f9a6e28d951567d5ad8ef1ee1d58d03a969cbe210d21c899ef5f66212e3c5daa172e2696c72d6e206a5a0dd6db94e69c7f309881658abf5736
+  languageName: node
+  linkType: hard
+
 "stylehacks@npm:^5.1.0":
   version: 5.1.0
   resolution: "stylehacks@npm:5.1.0"
@@ -9861,6 +10019,15 @@ browserslist@latest:
   bin:
     svgo: bin/svgo
   checksum: b92f71a8541468ffd0b81b8cdb36b1e242eea320bf3c1a9b2c8809945853e9d8c80c19744267eb91cabf06ae9d5fff3592d677df85a31be4ed59ff78534fa420
+  languageName: node
+  linkType: hard
+
+"tailwindcss-debug-screens@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "tailwindcss-debug-screens@npm:2.2.1"
+  peerDependencies:
+    tailwindcss: ^1.0 || ^2.0 || ^3.0.0-alpha.1 || ^3.0
+  checksum: 21b871024632dfa68e69df78bd2fe8d79feaff928945f01b5c8b79e160a28ee8e566e56ab8087eb9e21620d7225634e87e84b1af4310d771497abb0a04c40b9e
   languageName: node
   linkType: hard
 
@@ -10033,6 +10200,13 @@ browserslist@latest:
   version: 2.4.0
   resolution: "tslib@npm:2.4.0"
   checksum: 8c4aa6a3c5a754bf76aefc38026134180c053b7bd2f81338cb5e5ebf96fefa0f417bff221592bf801077f5bf990562f6264fecbc42cd3309b33872cb6fc3b113
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^1.10.0":
+  version: 1.14.1
+  resolution: "tslib@npm:1.14.1"
+  checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
   languageName: node
   linkType: hard
 

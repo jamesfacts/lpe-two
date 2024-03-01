@@ -1,7 +1,8 @@
-<header class="nav-wrapper bg-black block lg:h-full lg:flex lg:space-between" x-data="{ open: false }" :class="open ? 'navigating' : ''">
-  <div class="nav-header nav-buttons bg-black py-6 lg:flex lg:flex-col lg:px-2 lg:justify-between">
+<header class="nav-wrapper bg-black py-6 h-[91px] lg:py-0 lg:flex lg:h-full lg:space-between" x-data="{ open: false }" :class="open ? 'navigating' : ''">
+  <div class="nav-header nav-buttons bg-black z-50 relative lg:flex lg:flex-col lg:h-full lg:py-8 lg:px-2 lg:justify-between">
     <button id="menuCollapse" class="absolute lg:relative" type="button" x-on:click=" open = ! open " >
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 30" version="1.1" x="0px" y="0px" class="menu-burger fill-white px-5" style="height:38px;>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 30" 
+           version="1.1" x="0px" y="0px" class="menu-burger fill-white px-5" style="height:38px;>
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g fill="white">
             <path d="M20.0387825,5.75903332 L4.26253805,5.75903332 C3.7175576,5.75903332 3.2759355,5.31741123 3.2759355,4.7734748 C3.2759355,4.22849435 3.7175576,3.78687226 4.26253805,3.78687226 L20.0387825,3.78687226 C20.5827189,3.78687226 21.024341,4.22849435 21.024341,4.7734748 C21.024341,5.31741123 20.5827189,5.75903332 20.0387825,5.75903332"/>
@@ -18,7 +19,8 @@
   </div>
 
   @if (has_nav_menu('primary_navigation'))
-    <nav class="nav-primary pt-8 pl-8 bg-black text-white w-full lg:flex lg:items-center lg:p-0" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}" x-show="open" >
+    <nav class="nav-primary pt-8 pl-8 bg-black text-white w-full z-40 relative lg:bg-transparent lg:flex lg:h-full lg:items-center lg:p-0" 
+         aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}" :class="open ? 'nav--expanded' : ''" >
       <div class="lg:w-168 lg:mx-auto" aria-modal="true" role="dialog">
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
         {!! get_search_form(false) !!}

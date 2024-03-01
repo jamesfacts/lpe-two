@@ -403,16 +403,31 @@ add_filter('category_rewrite_rules', __NAMESPACE__ . '\lpe_remove_blog_prefix_fr
 
 function lpe_remove_blog_prefix_from_categories($cat_rewrite_patterns)
 {
-   $cat_prefix_as_regex = '/blog\//';
+   $cat_prefix_as_url_regex = '/blog\//';
 
    $new_cat_rules = [];
 
    foreach ($cat_rewrite_patterns as $pattern_url => $pattern_to_server) {
-       $new_cat_rules[preg_replace($cat_prefix_as_regex, '', $pattern_url)] = $pattern_to_server;
+       $new_cat_rules[preg_replace($cat_prefix_as_url_regex, '', $pattern_url)] = $pattern_to_server;
    }
 
    return $new_cat_rules;
 }
+
+/**
+* Remove 'blog' prefix from category urls inside category dropdown menu
+* @return string $url
+*/
+
+add_filter('term_link', function( $url, $term, $taxonomy ) {
+
+    if( $taxonomy == 'category' ) {
+        $cat_prefix_as_url_regex = '/blog\//';
+        $url = preg_replace($cat_prefix_as_url_regex, '', $url);
+    };
+
+    return $url;
+}, 10, 3);
 
 function lpe_pre_get_posts_overrides($query)
 {
@@ -440,7 +455,7 @@ function lpe_pre_get_posts_overrides($query)
 
    // speaker archive and taxonomy pages get extra posts
    if (is_post_type_archive('student_group')) {
-       $query->set('posts_per_page', 21);
+       $query->set('posts_per_page', 52);
        $query->set('orderby', 'title');
        $query->set('order', 'ASC');
    }
@@ -460,6 +475,8 @@ add_filter(
    10,
    2
 );
+
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string');
 
 add_filter('wp_trim_excerpt', __NAMESPACE__.'\wpse_custom_wp_trim_excerpt');
 
@@ -514,6 +531,8 @@ function wpse_custom_wp_trim_excerpt($wpse_excerpt)
    }
 
    $wpse_excerpt = trim(force_balance_tags($excerptOutput));
+//    $url_regex = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@";
+//    $wpse_excerpt = preg_replace($url_regex, ' ', $wpse_excerpt);
 
    return $wpse_excerpt;
 }

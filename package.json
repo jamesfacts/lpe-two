@@ -20,9 +20,13 @@
   "devDependencies": {
     "@roots/bud": "6.4.5",
     "@roots/bud-tailwindcss": "6.4.5",
-    "@roots/sage": "6.4.5"
+    "@roots/sage": "6.4.5",
+    "tailwindcss-debug-screens": "^2.2.1"
   },
   "dependencies": {
-    "alpinejs": "^3.12.2"
+    "@tailwindcss/typography": "^0.5.9",
+    "alpinejs": "^3.12.2",
+    "animate-css-grid": "^1.5.1",
+    "jquery": "^3.7.0"
   }
 }

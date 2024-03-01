@@ -183,7 +183,7 @@ class Shortcodes
             $atts
         );
 
-        $html = '<div class="input-group dropdown">';
+        $html = '<div class="input-group dropdown relative">';
         $html .= '<input type="text" class="form-control" placeholder="Search for an author" aria-label="Search for an author" name="s" data-action="' . home_url('/') . '" id="author-search">';
         $html .= '<div class="input-group-append"><span class="dropdown-menu">';
         $html .= '&nbsp;</span></div>';

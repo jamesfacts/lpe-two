@@ -1,0 +1,252 @@
+.page-template-default .page-content {
+    p {
+        @apply mb-2;
+    }
+
+    a {
+        @apply text-tahini-700 underline;
+    }
+    
+    a:hover {
+        @apply no-underline;
+    }
+}
+
+.post-type-archive-lpe_event {
+    .archive-nav .generic-button:hover {
+        @apply border-white text-white;
+    }
+}
+
+.post-type-archive aside .archive-copy a {
+    @apply text-tahini-700 underline;
+}
+
+.post-type-archive aside .archive-copy a:hover {
+    @apply no-underline;
+}
+
+.single-student_group article a {
+    @apply text-tahini-700 underline;
+}
+
+.single-student_group article a:hover {
+    @apply no-underline;
+}
+
+.archive .entry-summary {
+    @apply overflow-x-hidden;
+}
+
+.archive .sidebar p {
+    @apply mb-6 leading-snug;
+}
+
+.primers-btn a:hover,
+.primers-nav a:hover,
+.speakers-nav a:hover,
+.bg-tahini-500 a:hover {
+    @apply border-white text-white;
+}
+
+.primers-blurb p {
+    @apply mb-4;
+}
+
+.primers-blurb a {
+    @apply underline;
+
+    &:hover {
+        @apply text-white;
+    }
+}
+
+.learn-header h2.wp-block-heading {
+    @apply text-2xl font-bold uppercase leading-none block font-rubik tracking-tighter mb-4 mt-1;
+}
+
+.learn-header ul.nav a,
+.engage-header ul.nav a {
+    @apply text-xl font-semibold uppercase leading-none block font-rubik tracking-tighter mb-1;
+}
+
+.learn-header ul.nav a:hover,
+.engage-header ul.nav a:hover {
+    @apply text-tahini-500;
+}
+
+.speakers-blurb p {
+    @apply mb-6;
+}
+
+.speakers-blurb p a {
+    @apply underline;
+}
+
+.speakers-blurb a:hover {
+    @apply text-tahini-500;
+}
+
+.speaker-topic-dropdown:hover {
+    svg {
+        @apply text-white;
+    }
+}
+
+a.topic-item:hover {
+    @apply text-black;
+}
+
+.page-template-template-conference {
+    .conf-copy p {
+        @apply mb-4 leading-5;
+    }
+
+    .conf-copy a {
+        @apply text-tahini-700 underline;
+    }
+}
+
+.page-template-template-conference .rounded-panel {
+    border-radius: 2.5rem;
+}
+
+.event-body p {
+    @apply mb-6;
+}
+
+.scroll-position.card--expanded .inner-card {
+    max-height: 2500px;
+}
+
+.manifesto-block h2 {
+    @apply uppercase text-4xl font-bold mb-8 mt-12 leading-8;
+}
+
+.manifesto-block h2,
+.manifesto-block p,
+.manifesto-block .wp-block-buttons {
+    @apply px-5;
+}
+
+.manifesto-block .wp-block-image {
+    width: 105vw;
+    margin-left: -2rem;
+    overflow: hidden;
+}
+
+.manifesto-block .wp-block-image img {
+    width: 100%;
+}
+
+.manifesto-block .wp-block-buttons {
+    @apply mb-10 mt-8;
+
+    a {
+        @apply text-black no-underline;
+    }
+
+    a:hover {
+        @apply text-tahini-500;
+    }
+}
+
+.page-template-template-emerging-scholars {
+    .scholar-wrap::before {
+        content: "";
+        width: 10px;
+        height: 94%;
+        right: 0.3rem;
+        
+        @apply absolute bg-conference-200 z-20;
+    }
+    
+    .workshop-item::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 120%;
+      top: 5px;
+      right: -1.2rem;
+      background-color: black;
+    }    
+}
+
+@media (max-width: 1023px) {
+    .page-template-template-conference .grid-placeholder  {
+        height: 300px;
+    }
+}  
+
+@media (min-width: 782px) {
+    .manifesto-block {
+        margin-top: -2rem !important;
+        width: 135%;
+    }
+
+    .manifesto-block h2 {
+        @apply mt-24;
+    }
+
+    .manifesto-block .wp-block-image img {
+        margin-left: 0;
+    }
+}  
+
+@media screen(lg) {
+    .learn-header h2.wp-block-heading {
+        @apply text-4.5xl tracking-tight mb-6 mt-0 pt-0.5;
+    }
+
+    .manifesto-block {
+        @apply -ml-64;
+    }
+
+    .manifesto-block .wp-block-image img {
+        width: auto;
+        @apply pl-16;
+    }
+
+    /* conf zone */
+
+    .page-template-template-conference  .conf-copy p {
+        @apply mb-6 leading-6;
+    }
+
+    .card--expanded {
+        grid-column: span 2;
+    }
+
+    .page-template-template-conference .rounded-panel {
+        border-radius: 4rem;
+    }
+
+    .scroll-position .inner-card {
+        @apply h-full;
+        max-height: 380px;
+    }
+}
+
+@media screen(xl) {
+    .page-template-template-conference .rounded-panel {
+        border-radius: 5rem;
+    }
+
+    .manifesto-block {
+        width: 150%;
+    }
+
+    .manifesto-block h2 {
+        @apply mt-36 text-6xl leading-14 mb-10;
+    }
+
+    .manifesto-block .wp-block-image img {
+        margin-left: 0;
+        margin-right: -2rem;
+    }
+
+    .manifesto-block .wp-block-image {
+        margin-left: 0;
+        margin-right: -2rem;
+    }
+}

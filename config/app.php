@@ -164,6 +164,7 @@ return [
         Roots\Acorn\Filesystem\FilesystemServiceProvider::class,
         Roots\Acorn\Providers\AcornServiceProvider::class,
         Roots\Acorn\View\ViewServiceProvider::class,
+        Log1x\Navi\Providers\NaviServiceProvider::class,
 
         /*
          * Package Service Providers...

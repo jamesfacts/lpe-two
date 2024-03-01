@@ -1,0 +1,147 @@
+.error404 form.search-form {
+    @apply mx-auto;
+}
+
+.search-submit {
+    @apply ml-auto mr-2;
+
+    svg {
+        stroke: black;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.meow-contact-form__group-input,
+.meow-contact-form__group-textarea {
+    @apply border border-black;
+}
+
+.search-field {
+    letter-spacing: 0.02em;
+
+    &::placeholder {
+      -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+    }
+}
+
+.events-form-mailpoet input[type="email"] {
+    &::placeholder {
+        @apply text-gray-800;
+    }
+}
+
+/* aside sidebar widgets */
+
+.blog aside .input-group-append {
+    @apply hidden;
+}
+
+.blog aside .author-results.show {
+    @apply border border-black border-t-0 py-4 w-full bg-white absolute z-10 max-w-sm bg-gray-400;
+
+    top: 47px;
+}
+
+.blog aside .author-results .author-li a {
+    @apply px-4;
+
+    &:hover {
+        @apply bg-gray-300 cursor-pointer;
+    }
+}
+
+.blog aside .author-results a.selected {
+    @apply bg-gray-200 cursor-pointer;
+}
+
+.wp-block-search__inside-wrapper,
+#author-search {
+    @apply border border-black w-full h-8 p-1 bg-white mb-4;
+}
+
+#author-search {
+    @apply h-8 px-2 p-1 uppercase text-black text-sm;
+
+    &::placeholder {
+        @apply text-black;
+    }
+}
+
+.widget_categories .wp-block-categories {
+    @apply border border-black w-full p-1 bg-white mb-4;
+}
+
+.widget_categories select {
+    @apply w-full bg-white p-2 uppercase;
+}
+
+.wp-block-search__inside-wrapper:hover,
+#author-search:hover,
+.widget_categories .wp-block-categories:hover {
+    @apply border-tahini-500;
+}
+
+#author-search:hover {
+  &::placeholder {
+    @apply text-tahini-500;
+  }
+}
+
+aside .sidebar-button a {
+    @apply text-black text-lg font-semibold;
+}
+
+.wp-block-search__label {
+    @apply !relative uppercase;
+}
+
+.wp-block-search__input {
+    @apply !py-0 w-full border-none;
+
+    &::placeholder {
+        @apply text-black text-sm;
+    }
+}
+
+.widget-hed,
+.widget_text {
+    @apply uppercase block mb-1;
+}
+
+.wp-block-search__button {
+    color: transparent !important;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 105 89'%3E%3Cpath class='st0' d='M52.6 88.6l49.6-44L52.6.6m-50.2 44h99.2' fill='none' stroke='%23000' stroke-width='2.4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    width: 12%;
+    max-width: 30px;
+    padding: 0 0.8rem 0 0;
+    border-radius: 0;
+}
+
+/** Mailpoet forms **/
+
+.mailpoet_hp_email_label,
+.mailpoet_text_label {
+  display: none !important;
+}
+
+@media screen(md) {
+    .search-submit {
+        background-position-y: 45%;
+        height: 3.6rem;
+    }
+}
+
+@media screen(lg) {
+    .search-submit {
+        max-width: 50px;
+    }
+    .search-field {
+        @apply text-5xl;
+    }
+}

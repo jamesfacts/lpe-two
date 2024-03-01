@@ -1,17 +1,26 @@
-<div class="page-hed-wrap col-lg-12">
-    <h1 class="page-hed">{!! $title !!}</h1>
-    @isset($our_team_title)
-        <span class="necto our-team-title d-block">{!! $our_team_title !!}</span>
-    @endisset
+<div class="hidden basis-full lg:p-12 lg:block">
+    <h1 class="uppercase text-6xl font-bold max-w-md leading-13">{!! $title !!}</h1>
 </div>
-<div class="menu col-lg-4">
-    <div class="menu-wrap">
-    @if (has_nav_menu('about_navigation') && $showMenu)
-        <h2>{!! wp_get_nav_menu_name('about_navigation') !!}</h2>
-        {!! wp_nav_menu(['theme_location' => 'about_navigation', 'menu_class' => 'page-navbar-nav']) !!}
-    @endif
-    </div>
+<div class="flex flex-col max-w-xl lg:flex-row lg:pl-12 lg:pr-2 lg:pt-2 lg:max-w-6xl">
+    <aside class="lg:w-full lg:max-w-[260px] ">
+        
+        @if($aboutNavigation && $showMenu)
+            <span class="text-4xl uppercase font-bold lg:leading-8">{!! wp_get_nav_menu_name('about_navigation') !!}</span>
+            
+            <ul class="mt-2 mb-8 lg:mt-6">
+            @foreach ($aboutNavigation as $item)
+            <li class="">
+                <a href="{{ $item->url }}" class="text-2xl uppercase font-semibold leading-6 hover:text-tahini-500">
+                {{ $item->label }}
+                </a>
+            </li>
+            @endforeach
+        </ul>
+        @endif
+        
+    </aside>
+    <h1 class="uppercase text-4.5xl font-bold lg:hidden lg:basis-full">{!! $title !!}</h1>
+    <section class="page-content pb-28 w-full lg:max-w-[620px] xl:pl-16">
+        @php(the_content())
+    </section>
 </div>
-<section class="page-content col-lg-8">
-    @php(the_content())
-</section>

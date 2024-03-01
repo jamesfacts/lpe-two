@@ -16,6 +16,13 @@ class LoopItems extends Composer
      */
     protected static $views = [
         'partials.content-post',
+        'partials.content-student_group',
+        'partials.content-syllabi',
+        'partials.content-primers',
+        'partials.content-lpe_event',
+        'partials.content-lpe_video',
+        'partials.content-lpe_author',
+        'partials.content-search',
     ];
 
     /**
@@ -28,12 +35,13 @@ class LoopItems extends Composer
         return [
             'postImage' => $this->postImage(),
             'loopContributors' => $this->loopContributors(),
+            'loopSyllabi' => $this->loopSyllabi(),
         ];
     }
 
     public function postImage() {
-        $img_url = get_the_post_thumbnail_url(get_the_ID(), 'w680')
-                ? get_the_post_thumbnail_url(get_the_ID(), 'w680')
+        $img_url = get_the_post_thumbnail_url(get_the_ID(), 'w450')
+                ? get_the_post_thumbnail_url(get_the_ID(), 'w450')
                 : \App\filler_image('thumb')["url"];
 
         $img_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
@@ -66,4 +74,16 @@ class LoopItems extends Composer
 
         return false;
     }
+
+    public function loopSyllabi() {
+        return (object) [
+            'name' => get_the_title(get_the_ID()),
+            'url' => get_the_permalink(get_the_ID()),
+            'excerpt' => get_the_excerpt(),
+            'professor' => get_field('syllabus_professor'),
+            'school' => get_field('syllabus_school'),
+            'download_url' => get_field('syllabus_attachment') ? get_field('syllabus_attachment') : '#'
+        ];
+    }
+    
 }

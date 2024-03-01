@@ -3,3 +3,8 @@
 @import 'tailwindcss/utilities';
 @import 'global.css';
 @import 'posts.css';
+@import 'pages.css';
+@import 'navigation.css';
+@import 'forms.css';
+@import 'amri-overview.css';
+/* @import 'prev_lpe.css'; */

@@ -1,3 +1,7 @@
+html {
+    @apply min-h-screen bg-black overflow-x-hidden;
+}
+
 @font-face {
     font-family: "Necto Mono";
     src: url("../fonts/NectoMono-Regular.otf");
@@ -7,12 +11,59 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Tiempos Headline";
+    src: url("../fonts/tiempos-headline-web-regular.eot");
+    src: url("../fonts/tiempos-headline-web-regular.woff2") format("woff2"),
+      url("../fonts/tiempos-headline-web-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: "Tiempos Headline";
+    src: url("../fonts/tiempos-headline-web-bold.eot");
+    src: url("../fonts/tiempos-headline-web-bold.woff2") format("woff2"),
+      url("../fonts/tiempos-headline-web-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: bold;
+  }
+
 body {
-    @apply font-rubik;
+    @apply font-rubik bg-white;
+}
+
+.black-outline {
+    color: #000;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+a.wp-block-button__link,
+.generic-button {
+    @apply border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block no-underline;
+
+    &:hover {
+        @apply border-tahini-500 text-tahini-500;
+    }
+}
+
+a.wp-block-button__link {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    @apply bg-white;
 }
 
 .nav-primary {
     height: 100vh;
+    width: 100vw;
+    transform: translateY(-110vh);
+    transition: transform .35s ease-in;
+}
+
+.nav-primary.nav--expanded {
+    transform: translateY(0);
 }
 
 .nav-primary #menu-primary a {
@@ -29,8 +80,8 @@ body {
     border: 1px solid #ffffff;
     border-top: none;
     border-left: none;
-    width: 1305px;
-    max-width: 82%;
+    /* width: 1305px;*/
+    width: 82%; 
     display: flex;
     justify-content: space-between;
     padding: 0 1rem 0.4rem 0;
@@ -39,30 +90,73 @@ body {
 .nav-primary .search-form .search-field {
     padding: 0 0 0 0.2rem;
     @apply bg-black text-4xl w-full uppercase font-rubik font-bold tracking-tight;
+
+    &::placeholder {
+        -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+        letter-spacing: 0.05rem;
+    }
 }
 
-.search-submit {
-    /* color: transparent!important; */
-    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 105 89' style='enable-background:new 0 0 105 89;' xml:space='preserve'%3E%3Cg style='fill:none;stroke:%23FFF;stroke-width:3.5px;'%3E%3Cpath class='st0' d='M52.6,88.6l49.6-44l-49.6-44'/%3E%3Cpath class='st0' d='M2.4,44.6l99.2,0'/%3E%3C/g%3E%3C/svg%3E%0A");
+.nav-primary .search-form .search-submit svg {
+    stroke: white;
+} 
+
+.nav-primary .search-form .search-submit svg:hover {
+    stroke: #d4a45e;
+}
+
+.img-fill {
+    background-size: cover;
+    background-position: 50%;
     background-repeat: no-repeat;
-    background-position-x: 50%;
-    background-position-y: 50%;
-    width: 12%;
-    max-width: 50px;
-    padding: 0 0.8rem 0 0;
-    height: 40px;
-    border-radius: 0;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.anchor-fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+  
+.underlay-fill {
+    display: flex;
+    width: 100%;
+}
+
+.lpe-footer .mailpoet_paragraph input::placeholder {
+    color: white;
+    opacity: 1; 
+}
+
+.video-wrap {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 @media screen(lg) {
-    .nav-wrapper {
+    .nav-wrapper,
+    .nav-header {
         width: 100px;
         position: fixed;
         z-index: 999;
     }
 
     .navigating .nav-primary {
-        @apply w-screen absolute left-0;
+        @apply w-screen absolute left-0 bg-black;
     }
 
     .nav-header {
@@ -71,6 +165,11 @@ body {
 
     .nav-primary {
         margin-left: 100px;
+        transform: translateX(-110vw);
+    }
+    
+    .nav-primary.nav--expanded {
+        transform: translateX(0);
     }
 
     .nav-primary #menu-primary a,
@@ -86,7 +185,8 @@ body {
         @apply mt-3;
     }
 
-    main.main {
+    main.main,
+    footer.lpe-footer {
         margin-left: 100px;
     }
 }

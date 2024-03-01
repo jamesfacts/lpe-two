@@ -72,7 +72,7 @@ class FrontPage extends Composer
                 'post_id' => $post->ID,
                 'img_url' => get_the_post_thumbnail_url($post->ID, 'w450')
                              ? get_the_post_thumbnail_url($post->ID, 'w450')
-                             : \App\filler_image(),
+                             : \App\filler_image()["url"],
                 'alt' =>    get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true) ?
                             get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true) : get_the_title($post),
                 'url' => get_permalink($post),
