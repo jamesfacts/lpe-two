@@ -143,6 +143,7 @@ class ConferenceTemplate extends Composer
             'placeholder_positions' => [1, 4, 8, 10, 13, 15, 17, 20],
             'symposiaItems' => $this->get_conf_symposia(),
             'confSubtitle' => $this->conference_subtitle(),
+            'emergingScholar' => get_the_date('Y') < 2022,
         ];
     }
 }
