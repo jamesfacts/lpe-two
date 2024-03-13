@@ -33,7 +33,7 @@ body {
     @apply font-rubik bg-white;
 }
 
-ul {
+article ul {
     @apply list-disc pl-8 mb-6;
 }
 
