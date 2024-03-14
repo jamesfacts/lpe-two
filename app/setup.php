@@ -221,9 +221,18 @@ add_action('widgets_init', function () {
                     ['key' => 'sticky_zone', 'value' => 1] 
                 ]
             ];
+
+            $natural_args = [
+                'post_type' => 'post',
+                'posts_per_page' => 6,
+                'post_status' => 'publish',
+                'orderby'     => 'date',
+                'order'       => 'DESC'
+            ];
  
             $excluded_toppost_query = new \WP_Query($toppost_args);
             $excluded_sticky_query = new \WP_Query($sticky_args);
+            $natural_home_query = new \WP_Query($natural_args);
  
             $excluded_toppost = collect($excluded_toppost_query->posts)->map(function ($post) {
                 return (object) [
@@ -236,7 +245,16 @@ add_action('widgets_init', function () {
                 return $post->ID;
             });
 
+            $natural_home_posts = collect($natural_home_query)->map(function ($post) {
+                return $post->ID;
+            })->toArray();
+
             $all_excluded = $excluded_sticky_posts->push($excluded_toppost->top_ID)->toArray();
+
+
+            $overlap = array_intersect($natural_home_posts, $all_excluded);
+
+            $offset = 6 - count($overlap);
 
             $query->set('post__not_in', $all_excluded);
             
@@ -245,7 +263,7 @@ add_action('widgets_init', function () {
             }
 
             if(get_query_var('paged') > 0) {
-                $query->set('offset', 6);
+                $query->set('offset', $offset);
             }
              
          }
