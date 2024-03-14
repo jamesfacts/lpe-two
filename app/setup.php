@@ -190,16 +190,6 @@ add_action('widgets_init', function () {
         'name'          => __('Blog Sidebar', 'sage'),
         'id'            => 'sidebar-primary'
     ] + $sidebarConfig);
-    // register_sidebar([
-    //     'name'          => __('Main Footer', 'sage'),
-    //     'before_widget' => '<section class="widget footer-widget %1$s %2$s">',
-    //     'id'            => 'sidebar-footer'
-    // ] + $footerConfig);
-    // register_sidebar([
-    //     'name'          => __('Lower Footer', 'sage'),
-    //     'before_widget' => '<section class="widget %1$s %2$s" id="sidebar-lower-footer">',
-    //     'id'            => 'sidebar-lower-footer'
-    // ] + $footerConfig);
 });
 
 /**
@@ -232,28 +222,31 @@ add_action('widgets_init', function () {
                 ]
             ];
  
-             $excluded_toppost_query = new \WP_Query($toppost_args);
-             $excluded_sticky_query = new \WP_Query($sticky_args);
+            $excluded_toppost_query = new \WP_Query($toppost_args);
+            $excluded_sticky_query = new \WP_Query($sticky_args);
  
-             $excluded_toppost = collect($excluded_toppost_query->posts)->map(function ($post) {
-                 return (object) [
-                    'top_ID' => $post->ID,
-                    'post_modified' => $post->post_modified
-                 ];
-             })->sortByDesc('post_modified')->first();
-
-             $excluded_sticky_posts = collect($excluded_sticky_query->posts)->map(function ($post) {
+            $excluded_toppost = collect($excluded_toppost_query->posts)->map(function ($post) {
                 return (object) [
-                   'sticky_ID' => $post->ID,
-                   'post_modified' => $post->post_modified
+                'top_ID' => $post->ID,
+                'post_modified' => $post->post_modified
                 ];
-            })->sortByDesc('post_modified');
- 
-             $query->set('post__not_in', [$excluded_toppost->top_ID]);
-             
-             if(get_query_var('paged') == 0) {
+            })->sortByDesc('post_modified')->first();
+
+            $excluded_sticky_posts = collect($excluded_sticky_query->posts)->map(function ($post) {
+                return $post->ID;
+            });
+
+            $all_excluded = $excluded_sticky_posts->push($excluded_toppost->top_ID)->toArray();
+
+            $query->set('post__not_in', $all_excluded);
+            
+            if(get_query_var('paged') == 0) {
                 $query->set('posts_per_page', 6);
-             }
+            }
+
+            if(get_query_var('paged') > 0) {
+                $query->set('offset', 6);
+            }
              
          }
      }
