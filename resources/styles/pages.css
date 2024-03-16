@@ -10,6 +10,10 @@
     a:hover {
         @apply no-underline;
     }
+
+    h3 a {
+        @apply no-underline;
+    }
 }
 
 .post-type-archive-lpe_event {

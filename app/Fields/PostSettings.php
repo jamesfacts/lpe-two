@@ -31,7 +31,7 @@ class PostSettings extends Field
                     'id' => '',
                 ],
                 'message' => '',
-                'default_value' => 0,
+                'default_value' => 1,
                 'ui' => 1,
                 'ui_on_text' => '',
                 'ui_off_text' => '',
