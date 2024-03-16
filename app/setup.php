@@ -267,6 +267,21 @@ add_action('widgets_init', function () {
             }
              
          }
+
+         if (is_archive() && ($query->is_post_type_archive('lpe_event') ) && get_query_var('paged') > 0 ) {
+            // 'orderby'           => 'meta_value_num',
+            // 'order'             => 'DESC',
+            // 'meta_query'        => [
+            //     ['key'       => 'event_start_date',
+
+            $meta_query = [
+                ['key'       => 'event_start_date'],
+            ];
+            $query->set('orderby', 'meta_value_num');
+            $query->set('order', 'DESC');
+            $query->set('meta_key', 'event_start_date');
+
+         }
      }
  }
  
