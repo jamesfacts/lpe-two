@@ -46,7 +46,7 @@
     <div class="px-4 sm:pl-8 md:pl-16 lg:pl-24 lg:pr-3 xl:pl-16">
       @php the_content() @endphp
     </div>
-    <div class="my-10 px-4 sm:pl-8 md:pl-16 lg:pl-12">
+    <div class="my-10 px-4 sm:pl-8 md:pl-16 lg:pl-24 xl:pl-16">
         <a class="generic-button !no-underline !text-black hover:!text-tahini-500" href="{{home_url('/blog/')}}" aria-label="View All Blog Posts">
             Back to the Blog Homepage
         </a>
