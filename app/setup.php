@@ -254,7 +254,7 @@ add_action('widgets_init', function () {
 
             $overlap = array_intersect($natural_home_posts, $all_excluded);
 
-            $offset = 6 - count($overlap);
+            $offset = 7 - count($overlap);
 
             $query->set('post__not_in', $all_excluded);
             
