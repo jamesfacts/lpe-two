@@ -105,10 +105,15 @@ class LpeEvent extends Composer
         })->sortByDesc('updated_time');
 
         self::$featuredEvents = $allFeaturedEvents->take(2);
-        
-        foreach (self::$featuredEvents as $event) {
-            self::$featuredEventExclusion[] = $event->ID;
+
+        if(count(self::$featuredEvents) == 0) {
+            self::$featuredEvents = false;
+        } else {
+            foreach (self::$featuredEvents as $event) {
+                self::$featuredEventExclusion[] = $event->ID;
+            }
         }
+    
     }
 
     public function getFeaturedEvents()

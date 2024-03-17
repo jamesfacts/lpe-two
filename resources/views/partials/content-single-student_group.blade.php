@@ -29,9 +29,9 @@
         </div>
         @if(get_field('external_group_url'))
             <div class="mt-10 mb-10">
-                <a class="generic-button no-underline" 
+                <a class="generic-button !no-underline !text-black hover:!text-tahini-500" 
                 href="{{ get_field('external_group_url') }}" aria-label="Visit Student Group Website">
-                Download Primer
+                Visit Group Website
                 </a>
             </div>
         @endif

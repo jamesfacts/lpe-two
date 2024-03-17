@@ -63,7 +63,7 @@
       @endforeach
       @if($emergingScholar)
         <article class="grid-placeholder rounded-panel relative z-0 mx-2 mb-12 border-black border-t pt-8 pb-12 px-5 
-            lg:-mt-6 lg:px-7 xl:px-10 bg-conference-200">
+            lg:mb-0 lg:px-7 xl:px-10 bg-conference-200">
             <div class="flex justify-between flex-col h-full my-5">
 
               <a class="font-tiempos text-3xl mb-6" href="{{ home_url('/emerging-scholars/') }}">

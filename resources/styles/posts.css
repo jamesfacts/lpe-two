@@ -10,21 +10,33 @@
     @apply sr-only;
 }
 
+.single-post figure.wp-block-pullquote {
+    @apply py-6;
+}
+
 .wp-block-pullquote p {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-    font-size: 2.8rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 3.2rem;
-    letter-spacing: -0.02rem;
-    text-align: left;
+    
+    @apply text-left leading-7 font-bold uppercase text-3xl;
 
     .pullquote-outline {
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: black;
     }
+}
+
+.single-post {
+
+    figure.wp-block-image.alignright,
+    img.alignright {
+        @apply float-right ml-4;
+    }
+
+    figure.wp-block-image.alignleft,
+    img.alignleft {
+        @apply float-left mr-4;
+    }
+
 }
 
 .single-student_group article p {
@@ -133,6 +145,10 @@
 
     h2.wp-block-heading {
         @apply uppercase font-bold text-3xl leading-7 mb-4 mt-10;
+    }
+
+    h3.wp-block-heading {
+        @apply uppercase font-bold text-xl leading-6 mb-4 mt-3;
     }
 
     blockquote.wp-block-quote p {

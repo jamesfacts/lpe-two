@@ -267,6 +267,14 @@ add_action('widgets_init', function () {
             }
              
          }
+
+         // set the paged event archive queries to go by meta value for event start dates
+         if (is_archive() && ($query->is_post_type_archive('lpe_event') ) && get_query_var('paged') > 0 ) {
+            $query->set('orderby', 'meta_value_num');
+            $query->set('order', 'DESC');
+            $query->set('meta_key', 'event_start_date');
+
+         }
      }
  }
  
