@@ -21,7 +21,7 @@
   </div>
 
   <header>
-    <h2 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none my-3 lg:leading-6 lg:text-2xl xl:text-2xl xl:leading-6">
+    <h2 class="text-3xl font-bold uppercase font-rubik tracking-tighter leading-none my-3 lg:leading-6 lg:text-2xl xl:text-3xl xl:leading-8">
       <a href="{{ get_permalink() }}" class="hover:text-tahini-500">
         {!! $title !!}
       </a>
@@ -33,7 +33,7 @@
           {{ __('By ', 'sage') }}
         </span>
         
-        @if( is_int($loopContributors) && count($loopContributors) == 0 )
+        @if( !$loopContributors )
             <a href="javascript:void(0)" class="uppercase font-necto leading-tight tracking-wide mb-3 ">LPE Editors</a>
         @endif
         @foreach ($loopContributors as $s_contributor)

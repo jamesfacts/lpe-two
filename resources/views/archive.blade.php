@@ -16,7 +16,7 @@
 
       @if($archiveTaxDropdown)
 
-        <div class="flex relative inline-block text-left max-w-md mt-6">
+        <div class="flex relative inline-block text-left max-w-md mt-6 archive-tax-wrap">
           <div
               x-data="{
                   open: false,

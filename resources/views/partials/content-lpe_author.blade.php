@@ -15,7 +15,7 @@
             'alt' => $postImage->alt
           ])
     @endif
-    <h2 class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl xl:text-2xl">
+    <h2 class="text-2xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter my-3 lg:leading-none lg:text-3xl xl:leading-6 xl:text-2xl">
       <a href="{{ $work->url ?? get_the_permalink() }}">
         {!! $work->title ?? $title !!}
       </a>

@@ -190,16 +190,6 @@ add_action('widgets_init', function () {
         'name'          => __('Blog Sidebar', 'sage'),
         'id'            => 'sidebar-primary'
     ] + $sidebarConfig);
-    // register_sidebar([
-    //     'name'          => __('Main Footer', 'sage'),
-    //     'before_widget' => '<section class="widget footer-widget %1$s %2$s">',
-    //     'id'            => 'sidebar-footer'
-    // ] + $footerConfig);
-    // register_sidebar([
-    //     'name'          => __('Lower Footer', 'sage'),
-    //     'before_widget' => '<section class="widget %1$s %2$s" id="sidebar-lower-footer">',
-    //     'id'            => 'sidebar-lower-footer'
-    // ] + $footerConfig);
 });
 
 /**
@@ -231,30 +221,59 @@ add_action('widgets_init', function () {
                     ['key' => 'sticky_zone', 'value' => 1] 
                 ]
             ];
- 
-             $excluded_toppost_query = new \WP_Query($toppost_args);
-             $excluded_sticky_query = new \WP_Query($sticky_args);
- 
-             $excluded_toppost = collect($excluded_toppost_query->posts)->map(function ($post) {
-                 return (object) [
-                    'top_ID' => $post->ID,
-                    'post_modified' => $post->post_modified
-                 ];
-             })->sortByDesc('post_modified')->first();
 
-             $excluded_sticky_posts = collect($excluded_sticky_query->posts)->map(function ($post) {
-                return (object) [
-                   'sticky_ID' => $post->ID,
-                   'post_modified' => $post->post_modified
-                ];
-            })->sortByDesc('post_modified');
+            $natural_args = [
+                'post_type' => 'post',
+                'posts_per_page' => 6,
+                'post_status' => 'publish',
+                'orderby'     => 'date',
+                'order'       => 'DESC'
+            ];
  
-             $query->set('post__not_in', [$excluded_toppost->top_ID]);
-             
-             if(get_query_var('paged') == 0) {
+            $excluded_toppost_query = new \WP_Query($toppost_args);
+            $excluded_sticky_query = new \WP_Query($sticky_args);
+            $natural_home_query = new \WP_Query($natural_args);
+ 
+            $excluded_toppost = collect($excluded_toppost_query->posts)->map(function ($post) {
+                return (object) [
+                'top_ID' => $post->ID,
+                'post_modified' => $post->post_modified
+                ];
+            })->sortByDesc('post_modified')->first();
+
+            $excluded_sticky_posts = collect($excluded_sticky_query->posts)->map(function ($post) {
+                return $post->ID;
+            });
+
+            $natural_home_posts = collect($natural_home_query)->map(function ($post) {
+                return $post->ID;
+            })->toArray();
+
+            $all_excluded = $excluded_sticky_posts->push($excluded_toppost->top_ID)->toArray();
+
+
+            $overlap = array_intersect($natural_home_posts, $all_excluded);
+
+            $offset = 7 - count($overlap);
+
+            $query->set('post__not_in', $all_excluded);
+            
+            if(get_query_var('paged') == 0) {
                 $query->set('posts_per_page', 6);
-             }
+            }
+
+            if(get_query_var('paged') > 0) {
+                $query->set('offset', $offset);
+            }
              
+         }
+
+         // set the paged event archive queries to go by meta value for event start dates
+         if (is_archive() && ($query->is_post_type_archive('lpe_event') ) && get_query_var('paged') > 0 ) {
+            $query->set('orderby', 'meta_value_num');
+            $query->set('order', 'DESC');
+            $query->set('meta_key', 'event_start_date');
+
          }
      }
  }

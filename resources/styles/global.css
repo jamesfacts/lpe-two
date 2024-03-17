@@ -33,6 +33,10 @@ body {
     @apply font-rubik bg-white;
 }
 
+article ul {
+    @apply list-disc pl-8 mb-6;
+}
+
 .black-outline {
     color: #000;
     -webkit-text-fill-color: transparent;
