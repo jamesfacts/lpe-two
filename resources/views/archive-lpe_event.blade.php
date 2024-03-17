@@ -19,7 +19,7 @@
                             <div class="w-full">
                                 <div class="lg:hidden">
                                     <h2 class="">
-                                        <a href="{{ $featuredEvent->url }}" class="text-xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter mb-3 mt-5 block lg:leading-none">{{ $featuredEvent->title }}</a>
+                                        <a href="{{ $featuredEvent->url }}" class="text-xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter mb-3 mt-5 block lg:leading-none">{!! $featuredEvent->title !!}</a>
                                     </h2>
                                     <span class="font-necto block">{{$featuredEvent->event_start_date}}</span>
                                 </div>
