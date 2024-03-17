@@ -34,14 +34,14 @@
                                 </div>
                                 <div class="w-full xl:w-3/6">
                                     <h2 class="hidden xl:block">
-                                        <a href="{{ $featuredEvent->url }}" class="text-3xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter mb-3 mt-2 block lg:leading-7">{{ $featuredEvent->title }}</a>
+                                        <a href="{{ $featuredEvent->url }}" class="text-3xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter mb-3 mt-2 block lg:leading-7">{!! $featuredEvent->title !!}</a>
                                     </h2>
                                     <p>{!! $featuredEvent->excerpt !!}</p>
                                 </div>
                                 <div class="hidden lg:block xl:w-1/6">
                                     <span class="font-necto text-lg block xl:mt-1">{{ $featuredEvent->event_start_date }}</span>
                                     <h2 class="xl:hidden">
-                                        <a href="{{ $featuredEvent->url }}" class="text-3xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter mb-3 mt-2 block lg:leading-7">{{ $featuredEvent->title }}</a>
+                                        <a href="{{ $featuredEvent->url }}" class="text-3xl font-bold uppercase leading-none hover:text-tahini-500 font-rubik tracking-tighter mb-3 mt-2 block lg:leading-7">{!! $featuredEvent->title !!}</a>
                                     </h2>
                                 </div>
                             </div>
