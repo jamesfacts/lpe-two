@@ -16,7 +16,6 @@
 
 .wp-block-pullquote p {
     
-
     @apply text-left leading-7 font-bold uppercase text-3xl;
 
     .pullquote-outline {
@@ -24,6 +23,20 @@
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: black;
     }
+}
+
+.single-post {
+
+    figure.wp-block-image.alignright,
+    img.alignright {
+        @apply float-right ml-4;
+    }
+
+    figure.wp-block-image.alignleft,
+    img.alignleft {
+        @apply float-left mr-4;
+    }
+
 }
 
 .single-student_group article p {
