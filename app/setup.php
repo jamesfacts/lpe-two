@@ -251,10 +251,17 @@ add_action('widgets_init', function () {
 
             $all_excluded = $excluded_sticky_posts->push($excluded_toppost->top_ID)->toArray();
 
+            // if there were no sticky posts, we could just tack on an offset of 6 (the recent updates)
+            // but because there are some sticky posts that potentially would have appeared on recent 
+            // updates, we need to calculate how many posts are missing from the standard flow
+
+            // overlap measures how we need to reduce the the recent updates offset to account
+            // for posts from the first six that are already excluded by the sticky check
 
             $overlap = array_intersect($natural_home_posts, $all_excluded);
 
-            $offset = 7 - count($overlap);
+            $page_two_offset = 7 - count($overlap);
+            $ppp = get_option( 'posts_per_page' );
 
             $query->set('post__not_in', $all_excluded);
             
@@ -262,8 +269,15 @@ add_action('widgets_init', function () {
                 $query->set('posts_per_page', 6);
             }
 
-            if(get_query_var('paged') > 0) {
-                $query->set('offset', $offset);
+            if(get_query_var('paged') == 2) {
+                $query->set('offset', $page_two_offset);
+            }
+
+            if(get_query_var('paged') > 2) {
+                // page 3                         ( 3 - 1) * 15 == 30
+                // page_two_offset = 4
+                $further_page_offset = ( ( $query->query_vars['paged']-1 ) * $ppp ) - ($ppp - $page_two_offset);
+                $query->set('offset', $further_page_offset);
             }
              
          }
