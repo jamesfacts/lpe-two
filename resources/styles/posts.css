@@ -152,7 +152,7 @@
     }
 
     blockquote.wp-block-quote p {
-        @apply pl-6 leading-5 my-10 text-slate-600;
+        @apply pl-6 leading-5 my-10;
     }
 
     .bylines {
