@@ -130,6 +130,24 @@ aside .sidebar-button a {
   display: none !important;
 }
 
+/** TODO pull a copy of the site and find a better way to target **/
+
+.page-id-5492 .mailpoet_form_html {
+
+    .mailpoet_text {
+        @apply border border-black;
+    }
+
+    .mailpoet_submit {
+        @apply border border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block no-underline !w-32;
+
+        &:hover {
+            @apply border-tahini-500 text-tahini-500;
+        }
+    }
+
+}
+
 @media screen(md) {
     .search-submit {
         background-position-y: 45%;
@@ -143,5 +161,9 @@ aside .sidebar-button a {
     }
     .search-field {
         @apply text-5xl;
+    }
+
+    .page-id-5492 .mailpoet_form_html {
+        @apply pl-0;
     }
 }
