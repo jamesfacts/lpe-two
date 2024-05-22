@@ -18,7 +18,7 @@
         <div class="contrib-meta text-4xl font-bold mt-2">
             @foreach ($lpeContributors as $lpeAuthor)
               <a href="{!! $lpeAuthor->url !!}" rel="author" class="lpe-contrib black-outline text-4xl font-bold uppercase font-rubik tracking-lil-tight leading-none lg:text-4.5xl lg:leading-10 lg:tracking-tight">
-                {{$lpeAuthor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
+                {!!$lpeAuthor->name!!}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
             @endforeach
         </div>
     @endif
