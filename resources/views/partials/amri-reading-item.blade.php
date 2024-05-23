@@ -7,7 +7,7 @@
             <span class="title text-2xl font-tiempos leading-6 font-bold tracking-lil-tight">{!! $item->title !!}</span>
             <span class="subtitle text-2xl font-tiempos leading-6 tracking-lil-tight">{!! " " . $item->subtitle !!}</span>
         </a>
-        <span class="authors block font-thin mt-1">{{ $item->authors }}</span>
+        <span class="authors block font-thin mt-1">{!! $item->authors !!}</span>
         @if($item->notes)
             <span class="notes">{{ "• " . $item->notes }}</span>
         @endif

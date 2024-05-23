@@ -23,7 +23,7 @@
         
         @foreach ($stickyPost->authors as $s_contributor)
           <a href="{!! $s_contributor->url !!}" rel="author" class="uppercase font-necto leading-tight tracking-wide mb-3 hover:underline">
-            {{$s_contributor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
+            {!!$s_contributor->name!!}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
         @endforeach
       </div>
     @endif
