@@ -25,7 +25,7 @@ if(is_array($contributorsInArticle)) {
     </span>
     @foreach ($contributors as $contributor)
       <a href="{!! $contributor->url !!}" rel="author" class="text-3xl font-bold uppercase font-rubik leading-tight tracking-wide mb-3">
-        {{$contributor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
+        {!!$contributor->name!!}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
     @endforeach
   </div>
 @else
