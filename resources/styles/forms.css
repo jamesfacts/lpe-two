@@ -39,6 +39,10 @@
     @apply hidden;
 }
 
+.blog aside .wp-block-search__button {
+    @apply bg-transparent;
+}
+
 .blog aside .author-results.show {
     @apply border border-black border-t-0 py-4 w-full bg-white absolute z-10 max-w-sm bg-gray-400;
 
