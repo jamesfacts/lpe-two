@@ -7,7 +7,7 @@
     <!-- postContributors -->
     @foreach ($loopContributors as $s_contributor)
       <a href="{!! $contributor->url !!}" rel="author" class="font-bold uppercase font-rubik leading-tight tracking-wide mb-3">
-        {{$s_contributor->name}}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
+        {!!$s_contributor->name!!}</a>@if(!($loop->last)){{ __(',', 'sage') }}@endif
     @endforeach
   </div>
 @else
