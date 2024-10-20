@@ -37,6 +37,21 @@
         @apply float-left mr-4;
     }
 
+    p {         
+        img.aligncenter {
+            margin-left: auto;
+            margin-right: auto;
+        }   
+    }
+
+    figure.wp-block-image.aligncenter.size-full {
+        width: 100%;
+                
+        img {
+            margin-left: auto;
+            margin-right: auto;
+        }   
+    }
 }
 
 .single-student_group article p {
@@ -174,6 +189,15 @@
 .single-syllabi .body-content {
     p {
         @apply mb-6;
+    }
+
+    figure.wp-block-image.aligncenter.size-full {
+        width: 100%;
+                
+        img {
+            margin-left: auto;
+            margin-right: auto;
+        }   
     }
 
     a {
