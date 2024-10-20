@@ -14,6 +14,15 @@
     h3 a {
         @apply no-underline;
     }
+
+    figure.wp-block-image.aligncenter.size-full {
+        width: 100%;
+                
+        img {
+            margin-left: auto;
+            margin-right: auto;
+        }   
+    }
 }
 
 .post-type-archive-lpe_event {
