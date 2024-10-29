@@ -294,7 +294,10 @@ add_action('widgets_init', function () {
 
      if (!is_admin() && is_post_type_archive( 'lpe_event' ) && $query->is_main_query()) {
         if(get_query_var('paged') > 0) {
-            $query->set('offset', 11);
+            $ppp = get_option('posts_per_page');
+            $page_offset = $offset + ( ($query->query_vars['paged']-1) * $ppp );
+
+            $query->set('offset', $page_offset - 9);
         }
      }
      
