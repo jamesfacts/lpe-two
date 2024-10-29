@@ -207,6 +207,7 @@ add_action('widgets_init', function () {
  function custom_query_vars($query)
  {
      if (!is_admin() && $query->is_main_query()) {
+        
          if (is_home()) {
             $toppost_args = [
                  'post_type' => 'post',
@@ -290,6 +291,13 @@ add_action('widgets_init', function () {
 
          }
      }
+
+     if (!is_admin() && is_post_type_archive( 'lpe_event' ) && $query->is_main_query()) {
+        if(get_query_var('paged') > 0) {
+            $query->set('offset', 11);
+        }
+     }
+     
  }
  
  add_action('pre_get_posts', __NAMESPACE__ . '\custom_query_vars');

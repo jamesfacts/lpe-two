@@ -1,0 +1,203 @@
+ID	post_title	post_name	post_date	post_status
+1 ✅ 9950	Past, Present, & Future of Student Debt Organizing	past-present-future-of-student-debt-organizing	2024-03-04 14:56:28	publish
+1 ✅ 9943	International & Comparative Perspectives with Aziz Rana	international-comparative-perspectives-on-the-the-courts-with-aziz-rana	2024-03-03 20:50:54	publish
+  🫥 9877	[POSTPONED] LPE NYC Night School: Race, Space, and Displacement in NYC	lpe-nyc-night-school-race-space-and-displacement-in-nyc	2024-02-27 13:23:26	publish
+1 ✅ 9869	LPE NYC: Unequal Procedure	unequal-procedure-lpe-and-civil-procedure	2024-02-26 12:40:53	publish
+  🫥 9862	Student & Emerging Scholar CFP: Heterodox Economics Meets LPE	cfp-heterodox-economics-meets-law-and-political-economy-power-for-a-just-transition	2024-02-25 09:26:10	publish
+  🫥 9810	LPE NYC: Vincent Bevins & Analilia Mejia on the Mass Protest Decade & the Missing Revolution	lpe-nyc-vincent-bevins-analilia-mejia-on-the-mass-protest-decade-the-missing-revolution	2024-02-24 19:49:45	publish
+1 ✅ 9854	The Law and Political Economy of Civil Procedure	the-law-and-political-economy-of-civil-procedure	2024-02-23 12:53:58	publish
+  🫥 9850	Antimonopoly Now: A Conversation on Practice and the Academy with FTC Chair Lina Khan	antimonoply-now-a-conversation-on-practice-and-the-academy-with-ftc-chair-lina-khan	2024-02-23 12:36:33	publish
+1 ✅ 9844	CFP: Labor & the Law Workshop	cfp-labor-the-law-workshop	2024-02-22 13:57:50	publish
+  🫥 9821	LPE NYC: Striking Debt: The Organizing & Legal Work of the Debt Collective		2024-02-21 13:53:46	draft
+1 ✅ 9806	"Heterodox Economics Meets Law and Political Economy: Power for a Just Transition" Conference	call-for-emerging-scholar-submissions	2024-02-19 15:47:16	publish
+  🫥 9771	History of Court Reform Efforts (1865–2022) with Samuel Moyn & William Forbath	history-of-court-reform-efforts	2024-02-18 09:30:51	publish
+  🫥 9755	If We Burn with Vincent Bevins	if-we-burn-with-vincent-bevins	2024-02-05 17:04:06	publish
+  🫥 9718	RebLaw: 2024 Rebellious Lawyering Conference	rebellious-lawyering-conference	2024-01-30 16:30:56	publish
+2 ✅ 9683	LPE NYC Night School: Courts - The Good, the Bad, and the Political Economy	lpe-nyc-night-school-courts-the-good-the-bad-and-the-political-economy	2024-01-26 14:20:58	publish
+  🫥 9690	Apply to the 2024 Law & Organizing Academy!	apply-to-the-2024-law-organizing-academy	2024-01-22 16:01:48	publish
+2 ✅ 9900	The Problem of the Court with Nikolas Bowie	the-problem-of-the-court-with-nikolas-bowie	2024-01-18 17:31:11	publish
+2 ✅ 9898	Open Course: What To Do About the Courts	open-course-what-to-do-about-the-courts	2024-01-17 14:25:30	publish
+2 ✅ 9895	Live to See the Day with Nikhil Goyal and Samuel Moyn	live-to-see-the-day-with-nikhil-goyal-and-samuel-moyn	2024-01-10 12:22:22	publish
+2 ✅ 9889	Administering a Democratic Political Economy	administering-a-democratic-political-economy	2024-01-08 17:04:06	publish
+2 ✅ 9423	SGEL Conference: Gender & Race in Law & Political Economy	sgel-conference-gender-race-in-law-political-economy	2023-11-22 16:43:46	publish
+2 ✅ 9421	LPE NYC: Night School on the Law & Political Economy of Housing	lpe-nyc-night-school-on-the-law-political-economy-of-housing	2023-11-21 17:41:20	publish
+2 ✅ 9415	Job Announcement: The Law & Political Economy Project is Hiring a 2024-2025 Law & Organizing Fellow!	job-announcement-the-law-political-economy-project-is-hiring-a-2024-2025-law-organizing-fellow	2023-11-21 11:23:09	publish
+2 ✅ 9300	Power-Building for the Long Haul: Rachel Gilmer, Astra Taylor, and Tara Raghuveer	power-building-for-the-long-haul	2023-11-10 09:31:21	publish
+2 ✅ 9352	Your Money or Your Life: Debt Collection in American Medicine with Luke Messac	your-money-or-your-life-debt-collection-in-american-medicine-with-luke-messac	2023-11-03 12:48:58	publish
+2 ✅ 9303	Tech and Taxis: Deregulation via Disruption	tech-and-taxis-deregulation-via-disruption	2023-11-01 15:36:05	publish
+2 ✅ 9310	Why Public Interest Students Should Study Banking & Financial Regulation with Saule Omarova	why-public-interest-students-should-study-banking-financial-regulation-with-saule-omarova	2023-11-01 13:26:17	publish
+3 ✅ 9203	Cornell LPE: Legal Issues + Rural Futures	legal-issues-rural-futures	2023-10-16 13:09:27	publish
+2 ✅ 9181	The Shadow Docket with Steve Vladeck, Samuel Moyn, and Judith Resnik	the-shadow-docket-with-steve-vladeck-samuel-moyn-and-judith-resnik	2023-10-11 14:41:08	publish
+2 ✅ 9155	LPE in New Haven - Happy Hour Oct 25th	lpe-in-new-haven-happy-hour	2023-10-05 09:24:00	publish
+3 ✅ 9135	JLPE IS HIRING!	jlpe-is-hiring	2023-10-01 11:48:03	publish
+3 ✅ 9088	LPE NYC: The New School's LPE Night School	lpe-nyc-the-new-schools-lpe-night-school	2023-09-22 14:28:26	publish
+3 ✅ 9030	Coöperism: Toward a Theory and Praxis of Cooperation with Bernard Harcourt	cooperism-toward-a-theory-and-praxis-of-cooperation-with-bernard-harcourt	2023-09-12 09:50:26	publish
+2 ✅ 9023	Heterodox Economics Meets LPE Conference	cfp-heterodox-economics-meets-lpe-institutions-power-students-emerging-scholars	2023-09-11 12:08:10	publish
+8989	Neoliberalism and Capitalism as Keywords	cfp-neoliberalism-and-capitalism-as-keywords-in-contemporary-history	2023-08-31 08:17:18	publish
+3 ✅ 8980	CFP: ClassCrits Conference at Southwestern Law School	cfp-classcrits-conference-at-southwestern-law-school	2023-08-23 09:19:32	publish
+3 ✅ 8972	CFP: Critical Legal Collective: Inaugural Conference	critical-legal-collective-inaugural-conference-cfp	2023-08-18 15:41:15	publish
+3 ✅ 8956	2 LPE Postdocs at Harvard	2-lpe-postdocs-at-harvard	2023-08-02 14:42:03	publish
+3 ✅ 8646	Job Announcement: The Law & Political Economy Project is Hiring!	job-announcement-deputy-director	2023-05-16 11:57:26	publish
+3 ✅ 8557	Brooklyn LPE Collective - "The Decriminalization of Sex Work"	brooklyn-lpe-decriminalization-sex-work	2023-04-23 11:49:03	publish
+3 ✅ 8523	Reviving Progressive Constitutional Political Economy at Berkeley Law School	reviving-progressive-constitution-berkeley	2023-04-12 15:18:53	publish
+3 ✅ 8519	Harvard LPE Association & Brooklyn LPE Collective - "Decolonizing Money"	harvard-lpe-decolonizing-money	2023-04-11 09:03:56	publish
+4 ✅ 8463	Symposium on TWAIL & Economic Sanctions	symposium-on-twail-economic-sanctions	2023-03-25 17:20:28	publish
+4 ✅ 8452	Harvard LPE Association - "Marking the roots/routes of racial capitalism: anti-Blackness or elsewhere?"	harvard-lpe-association-marking-the-roots-routes-of-racial-capitalism-anti-blackness-or-elsewhere	2023-03-22 17:15:10	publish
+4 ✅ 8416	Call for Abstracts: European Association for Evolutionary Political Economy	call-for-abstracts-eaepe-2023	2023-03-13 16:04:49	publish
+3 ✅ 8374	Convening on Law and Power Building	tal-law-and-power-building	2023-03-02 17:37:34	publish
+4 ✅ 8358	2023 LPE Conference - "Labor, Social Control, and Counterpower"	2023-lpe-conference-harvard	2023-02-27 15:41:35	publish
+4 ✅ 8352	Call for Submissions: Journal of Law and Political Economy (JLPE)	call-for-submissions-jlpe-february-2023	2023-02-27 11:12:45	publish
+4 ✅ 8330	Harvard LPE Association: Financing the Green New Deal - A Plan of Action	harvard-lpe-financing-green-new-deal	2023-02-23 16:37:08	publish
+4 ✅ 8325	LPE NYC Launch Event	lpe-nyc-launch-event	2023-02-21 15:51:19	publish
+4 ✅ 8288	CFP: International Law and the Challenge of Populism (2023 Workshop Series)	cfp-international-law-populism-2023-workshop	2023-02-15 14:43:08	publish
+3 ✅ 8295	Call for Abstracts: Routledge Handbook of Cooperative Economics & Management	routledge-handbook-cooperative-economics	2023-02-14 16:19:30	publish
+4 ✅ 8296	CFP: 2023 Lauren Berlant Graduate Student Conference	cfp-lauren-berlant-2023	2023-02-14 15:51:13	publish
+4 ✅ 8271	CFP: Workshop on LPE in Latin America	cfp-workshop-on-lpe-in-latin-america	2023-02-07 15:06:59	publish
+4 ✅ 8251	Berkeley LPE: Disorienting IP with Talha Syed	berkeley-lpe-disorienting-ip-with-talha-syed	2023-01-28 15:58:27	publish
+3 ✅ 8241	Money as a Democratic Medium 2.0	money-as-a-democratic-medium-2-0	2023-01-25 18:08:06	publish
+4 ✅ 8234	Harvard LPE Association: Introduction to MMT	harvard-lpe-association-introduction-to-mmt	2023-01-25 16:56:04	publish
+3 ✅ 8207	Law & Organizing Academy (2023)	law-organizing-academy-2023	2023-01-24 10:15:50	publish
+4 ✅ 8183	Book Launch for "Class Warrior: The Selected Works of E.T. Kingsley"	book-launch-for-class-warrior-the-selected-works-of-e-t-kingsley	2023-01-18 21:57:19	publish
+4 ✅ 8144	"Capitalizing a Cure" with Victor Roy	capitalizing-a-cure	2023-01-10 17:10:52	publish
+4 ✅ 8117	LPE Mentoring “Office Hours”	lpe-office-hours-01-20-23	2022-12-27 13:21:10	publish
+5 ✅ 8104	CFP: Emerging Scholars in Law and Political Economy	cfp-emerging-scholars-lpe-2023	2022-12-19 12:56:10	publish
+5 ✅ 8012	CFP: Law & Humanities Interdisciplinary Workshop for Junior Scholars	cfp-law-humanities-2023	2022-11-27 15:56:58	publish
+5 ✅ 7950	Job Announcement: The Law & Political Economy Project is Hiring!	job-announcement-academic-fellow	2022-11-18 12:36:41	publish
+5 ✅ 7884	CFP: University of Michigan Law Junior Scholars Conference	cfp-michigan-juniors-2023	2022-11-13 15:17:35	publish
+5 ✅ 7878	Reviving Progressive Constitutional Political Economy Conference at Georgetown Law Center	reviving-progressive-constitution	2022-11-11 20:17:06	publish
+5 ✅ 7841	YALE LPE: "The Price of Consent: Law and Political Economy in the War on Terror" with Zohra Ahmed	zohra-ahmed	2022-11-03 13:09:24	publish
+5 ✅ 7816	LPE Society at Berkeley: "From Critique to Construction: Legal Realism and CLS from an LPE Perspective" with Talha Syed	from-critique-to-construction	2022-10-27 18:13:42	publish
+5 ✅ 7802	Conference on African Economic and Monetary Sovereignty	african-monetary-sovereignty	2022-10-24 11:46:46	publish
+5 ✅ 7690	YALE LPE: The Law & Political Economy of Central Banking with Saule Omarova	saule-omarova	2022-10-19 15:13:49	publish
+---- 7773	Conference:		2022-10-15 14:47:21	draft
+5 ✅ 7719	LPE Mentoring “Office Hours”	lpe-office-hours-10-28-22	2022-10-14 11:56:27	publish
+5 ✅ 7766	Harvard LPE Event: "Thinking like an (LPE) Lawyer: Property Law" with Yochai Benkler	hls-lpe-yochai-benkler	2022-10-13 18:37:14	publish
+5 ✅ 7625	LPE Loyola Presents: Economic Justice Speaker Series	lpe-loyola-presents-economic-justice-speaker-series	2022-10-05 14:12:39	publish
+5 ✅ 7511	Antimonopoly in a New Political Economy	paul-wu-event	2022-09-29 17:08:11	publish
+5 ✅ 7457	The Future of Worker Power: Labor Organizing and Labor Law at a Crossroads	future-of-worker-power	2022-09-29 09:23:24	publish
+6 ✅ 7467	YALE LPE: "Identity Crisis: Race (and Class) in the Twilight of the Civil Rights Consensus" with Guy-Uriel Charles	guy-charles	2022-09-27 15:28:26	publish
+5 ✅ 7443	Fall 2022 Gruber Distinguished Lecture in Women’s Rights: Sara Nelson	gruber-distinguished-lecture-in-womens-rights-sara-nelson	2022-09-22 16:27:18	publish
+6 ✅ 7346	YALE LPE: Rewriting the Economy: Race, Gender, and Economy in LPE	yale-lpe-rewriting-the-economy-race-gender-and-economy-in-lpe	2022-09-17 18:11:46	publish
+6 ✅ 7391	CFP: Law & Macroeconomics	cfp-law-macroeconomics	2022-09-10 10:03:50	publish
+6 ✅ 7312	LPE 101: A Law & Political Economy Approach to Torts with Talha Syed	lpe-101-law-political-economy-of-torts-with-talha-syed	2022-08-24 14:20:00	publish
+6 ✅ 7300	YALE LPE: "How We Got Founding History So Wrong: From the Taney Court to the Trump Court" with Bill Novak	yale-lpe-bill-novak	2022-08-22 09:11:01	publish
+6 ✅ 7298	CASBS Event: Creating a New Political Economy Framework	casbs-event-creating-a-new-political-economy-framework	2022-08-19 08:07:43	publish
+6 ✅ 7180	Resourcing a New Paradigm: The Future of Antimonopoly Research	resourcing-a-new-paradigm-the-future-of-antimonopoly-research	2022-07-01 09:12:58	publish
+6 ✅ 7153	DSA Fund - How We Win: Local Worker Rights Campaigns	how-we-win-local-worker-rights-campaigns	2022-06-28 08:07:00	publish
+6 ✅ 7103	Inaugural Summer Academy on Law, Organizing, and Power Building	inaugural-summer-academy-on-law-organizing-and-power-building	2022-06-15 13:18:58	publish
+6 ✅ 7100	AMRI Academy Online - Summer 2022	amri-academy-online-summer-2022	2022-06-15 12:51:58	publish
+7077	CFP - Michigan Journal of Law & Society - Law & Social Movements	cfp-michigan-journal-of-law-society	2022-06-08 13:17:12	publish
+6 ✅ 7029	CFP - ClassCrits XIII	cfp-classcrits-xiii	2022-05-27 13:06:21	publish
+6 ✅ 6939	Announcement: EAEPE-YSI-APPEAL Summer School in Rome	announcement-eaepe-inet-appeal-summer-school-in-rome	2022-05-13 12:32:37	publish
+6 ✅ 6879	Sustainable and Global Economic Law Summer School	sgel-summer-school	2022-04-28 11:30:53	publish
+6 ✅ 6857	Shelter for All: A Conversation on Homelessness and Housing Policy	shelter-for-all-a-conversation-on-homelessness-and-housing-policy	2022-04-19 10:55:58	publish
+6 ✅ 6827	LPE Mentoring “Office Hours”	lpe-mentoring-office-hours-4	2022-04-17 16:13:51	publish
+6792	Labor of Love: Celebrating Karl Klare's Vision and Advocacy	labor-of-love	2022-04-03 16:56:41	publish
+6787	NYU LPE 101 SPEAKER SERIES: Torts with Talha Syed	torts-with-talha-syed	2022-04-03 00:37:30	publish
+6690	The LPE Society at Berkeley Presents: Inflation & Economic Justice	the-lpe-society-at-berkeley-presents-inflation-economic-justice	2022-03-25 14:47:12	publish
+6741	Abolition Across Criminal Justice, Immigration, and National Security	abolition-across-criminal-justice-immigration-and-national-security	2022-03-24 13:17:17	publish
+6738			2022-03-24 12:55:41	draft
+6685	NYU LPE 101 Speaker Series: Civil Procedure with Luke Norris	civpro-with-luke-norris	2022-03-23 21:10:50	publish
+6594	LPE Mentoring "Office Hours"	lpe-mentoring-office-hours-3	2022-02-23 10:03:24	publish
+6545	The LPE Society at Berkeley Presents: Commodified Justice & American Penal Form	the-berkeley-lpe-society-presents-commodified-justice-american-penal-form	2022-02-11 14:04:06	publish
+6429	CFP - Harvard Law Digital Symposium On COVID-19, Work, and Health	cfp-harvard-law-digital-symposium-on-covid-19-work-and-health	2022-01-13 11:46:22	publish
+6398	Keywords: CLS & LPE on 'Political Economy' and 'Indeterminacy'	cls-lpe-keywords	2022-01-12 15:15:46	publish
+6416	LPE Mentoring "Office Hours"	lpe-mentoring-office-hours-2	2022-01-11 10:19:11	publish
+6403	Health, Movements, and Power-Building	health-and-movements	2022-01-10 02:08:49	publish
+6411	Healthcare as Freedom, Healthcare as Control	healthcare-as-freedom-control	2022-01-09 16:33:03	publish
+6409	Neoliberalism & Healthcare	neoliberalism-healthcare	2022-01-09 16:27:50	publish
+6341	WINIR Event: Law & Political Economy with Amy Kapczynski & Nicholas Mercuro (moderated by Katharina Pistor)	winir-event	2021-12-15 13:20:03	publish
+6324	University of Amsterdam Event - "Towards a Sustainable Global Economic Law: Shifts, Ruptures and Social Justice	university-of-amsterdam-event-towards-a-sustainable-global-economic-law-shifts-ruptures-and-social-justice	2021-12-10 11:25:42	publish
+6306	DOJ & FTC Event - Fireside Chat: Worker Bargaining and the Antitrust Laws – 19th Century through the Present	doj-ftc-event-fireside-chat-worker-bargaining-and-the-antitrust-laws-19th-century-through-the-present	2021-12-03 15:39:29	publish
+6289	APPEAL's Capitalism Reading Group with Etienne Toussaint	appeals-capitalism-reading-etienne-toussaint	2021-11-23 19:41:15	publish
+6283	APPEAL Event on Government Religious Hospitals	government-religious-hospitals	2021-11-22 19:13:57	publish
+6275	ANU Law Conference: Law & Inequality	anu-law-conference	2021-11-21 13:34:46	publish
+6266	Care Extractivism	care-extractivism	2021-11-17 15:09:35	publish
+6249	Yale Law LPE Student presents Supreme Court Reform After the Commission	after-the-commission	2021-11-12 17:23:45	publish
+6227	name of event		2021-11-04 11:00:31	draft
+6204	LPE Mentoring "Office Hours"	lpe-mentoring-office-hours-11-12-21	2021-11-01 13:51:42	publish
+6180	New 2-year Harvard Law LPE Postdoc	harvard-lpe-postdoc	2021-10-26 12:06:57	publish
+6066	Property Rights Against Democracy: Implications of Cedar Point Nursery	cedar-point	2021-10-07 09:12:36	publish
+6058	How to Vaccinate the World	how-to-vaccinate-the-world	2021-10-06 12:35:00	publish
+6093	Historicizing the Assault on CRT: The Right vs. Public Education	historicizing-the-assault-on-crt-the-right-vs-public-education	2021-10-06 09:36:20	publish
+6081	Designing the Market: Workers, Concentration, and Big Tech	designing-the-market-workers-concentration-and-big-tech	2021-10-05 11:04:38	draft
+6057	Care as Labor, Care as Infrastructure	care-as-labor	2021-09-27 16:30:46	publish
+5941	"Launching an LPE Student Group"	launching-an-lpe-student-group	2021-08-31 12:12:06	publish
+5923	APPEAL: What Is Capitalism Reading Group	appeal-what-is-capitalism-reading-group	2021-08-20 20:35:18	publish
+5856	LPE Mentoring “Office Hours”	lpe-monthly-mentoring-office-hours-2	2021-07-21 16:11:18	publish
+5833	3rd Annual Summer Academy on Law, Money and Technology (University of Manchester)	3rd-annual-summer-academy-on-law-money-and-technology-university-of-manchester	2021-07-14 13:39:28	publish
+5798	CFP - "Sovereignty, States, and Inclusion"	cfp-sovereignty-states-and-inclusion	2021-06-30 14:11:35	publish
+5780	Job Alert: 2 Clinical Fellowships at UC Irvine's Environmental Law Clinic	job-alert-2-clinical-fellowships-at-uc-irvines-environmental-law-clinic	2021-06-26 17:12:16	publish
+5734	APPEAL’s “What Is Capitalism?” Reading Group	appeal-reading-2	2021-06-17 13:35:25	publish
+5711	JOB ALERT: Yale Global Health Justice Program Fellowships	job-alert-yale-global-health-justice-program-fellowships	2021-06-03 19:02:23	publish
+5539	Launch of "Remaking Appalachia: Ecosocialism, Ecofeminism, and Law"	launch-of-remaking-appalachia-ecosocialism-ecofeminism-and-law	2021-04-29 09:12:20	publish
+5499	LPE Blog Managing Editor Application	lpe-blog-managing-editor-application	2021-04-13 06:00:00	publish
+5463	LPE 101 Course: Law of Money & Banking with Lev Menand	lpe-101-course-law-of-money-banking-with-lev-menand	2021-03-31 15:19:06	publish
+5471	JCRED Symposium: Racial Capitalism as Legal Analysis	jcred-symposium	2021-03-30 17:22:36	publish
+5451	LPE Mentoring “Office Hours”	lpe-mentoring-office-hours	2021-03-30 10:15:42	publish
+5430	Network for a New Political Economy: "Big Tech: What is the Nature of the Challenge, and What Should We Do?"	big-tech-what-is	2021-03-26 09:49:07	publish
+5421	ClassCrits: Queering Class	classcrits-queering-class	2021-03-23 22:52:44	publish
+5415	LPE 101 Course: Law of the Platform Economy with Sanjukta Paul	law-of-the-platform-economy	2021-03-20 11:15:58	publish
+5365	NYU LPE 101: K-Sue Park on Conquest & Slavery in Property Law	nyu-lpe-101-k-sue-park-on-conquest-slavery-in-property-law	2021-03-12 08:35:59	publish
+5337	CLASSCRITS: Racial Capitalism Workshop	classcrits-racial-capitalism	2021-03-07 19:19:03	publish
+5323	APPEAL's "What Is Capitalism?" Reading Group	appeal-reading	2021-03-06 12:16:09	publish
+5318	Conference Panel: Intersectional Environmentalism and the Biden Administration	intersectional-environmentalism	2021-03-06 10:48:52	publish
+5317	Conference Panel: Critical Theory & Law Reform - Past & Future	critical-theory	2021-03-06 10:14:59	publish
+5250	LPE Society: Intro to LPE w/ David Grewal	intro-to-lpe-grewal	2021-02-20 19:18:11	publish
+5222	CFP “Migrant farmworkers: resisting and organizing before, during and after Coronavirus”	cfp-migrant-farmworkers-resisting	2021-02-17 11:53:52	publish
+5214	APPEAL’S “WHAT IS CAPITALISM?” READING GROUP	appeals-what-is-capitalism-reading-group-3	2021-02-16 15:33:29	publish
+5148	IGLP 2021 Global Scholars Academy Application	iglp-2021-global-scholars-academy	2021-02-10 14:35:33	publish
+5191	Conference Panel: Globalization After Neoliberalism - Disruption, Distribution, & Democracy in the World Economic Order	globalization-after-neoliberalism	2021-02-10 10:29:00	publish
+5206	Conference Panel: LPE, Inclusion, & Public Law	lpe-inclusion-public-law	2021-02-04 11:40:54	publish
+5200	Conference Panel: Racial Capitalism	racial-capitalism	2021-02-04 10:53:51	publish
+5198	Conference Plenary: Radical Legal Imaginaries	conference-plenary	2021-02-04 10:46:36	publish
+5092	ClassCrits Event: Presumed Incompetence	presumed-incompetence	2021-02-03 13:33:56	publish
+5062	Conference Panel: Revival and Renewal of Marxist Approaches	conference-panel-revival-and-renewal-of-marxist-approaches	2021-02-03 12:58:00	publish
+5061	Conference Panel: Transforming Private Control Over Political Production	transforming-private-control-over-political-production	2021-02-02 12:57:00	publish
+5060	Conference Panel: Moral Economy after Consumer Sovereignty	conference-panel-moral-economy	2021-02-02 10:21:00	publish
+5059	Conference Panel: Social Movements and the Relation to the Political	conference-panel-social-movements-and-the-relation-to-the-political	2021-02-01 12:55:00	publish
+5207	Conference Panel: The Political Economy of Motherhood	conference-panel-the-political-economy-of-motherhood	2021-02-01 11:42:00	publish
+5204	Conference Panel: Power, Money & Markets	power-money-markets	2021-02-01 11:28:00	publish
+5018	Conference Panel: The International Law of Money	conference-panel-the-international-law-of-money	2021-02-01 06:25:00	publish
+5075	NYU LPEA's 101 Speaker Series w/ James Kwak	james-kwak	2021-01-31 22:12:57	publish
+5155	Democracy Beyond Neoliberalism Conference	democracy-beyond-neoliberalism-conference	2021-01-28 08:11:00	publish
+4978	Conference Panel: LPE & Macroeconomics	conference-panel-lpe-macro	2021-01-25 15:55:00	publish
+5001	“Can the Center Hold?": LPE Perspectives on the Biden Administration	can-the-center-hold-lpe-perspectives-on-the-biden-administration	2021-01-22 16:56:34	publish
+4968	ClassCrits Impromptu Round-Table Discussion, The Coup	classcrits-impromptu-round-table-discussion-the-coup	2021-01-14 11:03:54	publish
+4959	APPEAL's "What Is Capitalism?" Reading Group	appeals-what-is-capitalism-reading-group-2	2021-01-12 14:14:10	publish
+4927	LPE Mentoring “Office Hours”	lpe-monthly-mentoring-office-hours	2021-01-04 15:14:19	publish
+4906	ClassCrits Online Junior Workshop CFP	classcrits-online-junior-workshop-cfp	2020-12-12 17:24:59	publish
+4904	APPEAL's What Is Capitalism? Reading Group	appeals-what-is-capitalism-reading-group	2020-12-08 15:29:54	publish
+4902	ClassCrits Happy Hour	classcrits-happy-hour	2020-12-08 15:23:51	publish
+4841	LPE Mentoring “Office Hours”	law-and-political-economy-monthly-mentoring-office-hours	2020-11-20 14:16:51	publish
+4837	Law and Political Economy Monthly Mentoring “Office Hours”		2020-11-19 20:35:59	draft
+4817	Conference Panel: The Political Economy of Inequality, Democracy, & Oligarchy	inequality-democracy-oligarchy	2020-11-11 14:55:31	publish
+4813	ClassCrits Workshop: Democracy, Social Justice, & the 2020 Election	classcrits-workshop-democracy-social-justice-the-2020-election	2020-11-10 18:46:04	publish
+4790	Criminal Law: an LPE Approach w/ Shaun Ossei-Owusu	criminal-law-an-lpe-approach-w-shaun-ossei-owusu	2020-11-09 14:05:53	publish
+4758	An LPE Approach to Constitutional Law w/ Jedediah Britton-Purdy	lpe-101-conlaw	2020-10-26 14:59:16	publish
+4733	LPE Society's 101 Reading Group on Property	lpe-societys-101-reading-group-on-property	2020-10-22 19:26:46	publish
+4726	Public Health Law: An LPE Approach w/ Frank Pasquale	public-health-law-an-lpe-approach-w-frank-pasquale	2020-10-19 18:36:55	publish
+4723	LPE 101 Course: Intro to LPE II with Angela Harris	intro-to-lpe-ii-with-angela-harris	2020-10-19 05:44:27	publish
+4465	Data and Democracy	data-and-democracy	2020-10-15 11:50:00	publish
+4654	NYU LPEA Law & Political Economy 101 Speaker Series	nyu-lpea-law-political-economy-101-speaker-series	2020-10-11 21:51:53	publish
+4650	APPEAL Reading Group: What Is Capitalism?	appeal-reading-group-what-is-capitalism-4	2020-10-07 22:05:00	publish
+4627	LPE Project launches new online Law & Political Economy 101 Course!	lpe-project-launches-new-online-law-political-economy-101-course	2020-10-02 12:28:28	publish
+4603	LPE Society’s People Over Courts: How to Beat an Extremist 6-3 Majority	lpe-societys-people-over-courts-how-to-beat-an-extremist-6-3-majority	2020-09-26 00:23:26	publish
+4593	Progressive Talent Pipeline: Apply by September 30!	progressive-talent-pipeline-apply-by-september-30	2020-09-23 14:26:31	publish
+4577	Introducing the Journal of Law and Political Economy	introducing-the-journal-of-law-and-political-economy	2020-09-18 21:02:26	publish
+4568	LPE Society's LPE 101 Reading Group on Contracts	lpe-societys-lpe-101-reading-group-on-contracts	2020-09-17 00:39:49	publish
+4684	Intro to LPE with Amy Kapczynski	lpe-101-intro-i	2020-09-14 16:15:43	publish
+4561	Emerging Scholars Happy Hour & Mentoring Session	emerging-scholars-happy-hour-mentoring-session	2020-09-14 16:14:11	publish
+4538	Inframarginalism & Internet: A Conference on Markets as Wealth Distributors, and the Implications for Tech Policy	inframarginalism-internet-a-conference-on-markets-as-wealth-distributors-and-the-implications-for-tech-policy	2020-09-09 15:47:15	publish
+4515	APPEAL Reading Group: What is Capitalism?	appeal-reading-group-what-is-capitalism-3	2020-09-03 23:27:18	publish
+4483	CFP: JCRED Special Issue on Racial Capitalism	cfp-jcred-special-issue-on-racial-capitalism	2020-08-22 13:28:45	publish
+4420	Pandemic Inequality	pandemic-inequality	2020-08-11 14:54:39	publish
+3957	American Empire with Asli Bâli & Aziz Rana	american-empire-with-asli-bali-aziz-rana	2020-08-10 08:54:00	publish
+3955	The Criminal Legal System with Jonathan Simon & Sean Ossei-Owusu	the-criminal-legal-system-with-jonathan-simon-sean-ossei-owusu	2020-08-01 11:52:00	publish
+4418	APPEAL Reading Group: What Is Capitalism?	appeal-reading-group-what-is-capitalism-2	2020-08-01 11:00:00	publish
+3971	APPEAL reading group:  What is Capitalism?	appeal-reading-group-what-is-capitalism	2020-07-20 18:38:33	publish
+3954	Labor & Employment with Veena Dubal & Kate Andrias	labor-employment-with-veena-dubal-kate-andrias	2020-07-16 23:47:54	publish
+3952	“Regulation and the Geography of Inequality” with Sitaraman Ricks, and Serkin	regulation-and-the-geography-of-inequality-sitaraman-ricks-and-serkin	2020-07-16 23:44:08	publish
+3951	Social Movements with Amna Akbar, Jocelyn Simonson, & Sameer Ashar	social-movements-with-amna-akbar-jocelyn-simonson-sameer-ashar	2020-07-16 23:24:41	publish
+3950	Money and Banking with Mehrsa Baradaran & Rohan Grey	money-and-banking-with-mehrsa-baradaran-rohan-grey	2020-07-16 23:22:25	publish
+3949	Antitrust with Sanjukta Paul & Sandeep Vaheesan	antitrust-with-sanjukta-paul-sandeep-vaheesan	2020-07-16 23:11:26	publish
