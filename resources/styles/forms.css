@@ -136,14 +136,15 @@ aside .sidebar-button a {
 
 /** TODO pull a copy of the site and find a better way to target **/
 
-.page-id-5492 .mailpoet_form_html {
+.mailpoet_form_html,
+.mailpoet_captcha_form {
 
     .mailpoet_text {
         @apply border border-black pl-2;
     }
 
     .mailpoet_submit {
-        @apply border !border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block no-underline !w-32;
+        @apply border !border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block no-underline !w-32 cursor-pointer !uppercase !text-sm;
 
         &:hover {
             @apply !border-tahini-500 text-tahini-500;
