@@ -144,7 +144,7 @@ aside .sidebar-button a {
     }
 
     .mailpoet_submit {
-        @apply border !border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block no-underline !w-32;
+        @apply border !border-black rounded-full uppercase text-xs px-3 text-center py-2 inline-block no-underline !w-32 cursor-pointer uppercase text-lg;
 
         &:hover {
             @apply !border-tahini-500 text-tahini-500;
