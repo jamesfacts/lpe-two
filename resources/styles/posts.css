@@ -54,6 +54,14 @@
     }
 }
 
+.single-post article ol {
+    @apply list-decimal pl-4;
+
+    li {
+        @apply pb-6;
+    }
+}
+
 .single-student_group article p {
     @apply mb-6;
 }
