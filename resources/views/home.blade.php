@@ -96,7 +96,7 @@
   @endif
 
 
-  @if($mastheadMembers)
+  @if(false)
   <section class="bg-black">
     @include('partials.masthead')
   </section>
