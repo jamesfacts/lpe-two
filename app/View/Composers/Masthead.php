@@ -64,6 +64,8 @@ class Masthead extends Composer
      */
     public function with()
     {
+        return false;
+        // the false return is temporary
         return [
             'mastheadMembers' => (object) [
                 'board' => $this->getMastheadOfType('editorial_board'),
