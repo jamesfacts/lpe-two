@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - staging
-      - dev
       - '!master'
       - '!main'
 
@@ -15,7 +14,6 @@ on:
 jobs:
   Build-and-Deploy:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -25,7 +23,12 @@ jobs:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@2.9.0
         with:
-          php-version: '8.1'
+          php-version: '8'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Cache - Get Yarn Cache Directory Path
         id: yarn-cache-dir-path
@@ -39,6 +42,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+
       - name: Cache - Get Composer Cache Directory Path
         id: get-composer-cache-dir
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
@@ -51,10 +55,13 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
+
+
       - name: Build - Install Yarn Dependecies
         run: |
           yarn --prefer-offline
           yarn build
+
       - name: Build - Install Composer Dependencies
         run: composer install --no-ansi --no-dev --no-interaction --optimize-autoloader --no-progress
 
@@ -78,12 +85,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.WPE_SSH_KEY_PRIVATE }}
           SSH_KNOWN_HOSTS: ${{ secrets.WPE_SSH_KNOWN_HOSTS }}
 
-      - name: Deploy - Git Config - Development?
-        if: contains(github.ref, 'dev')
-        run: git remote add wpe git@git.wpengine.com:production/${WPE_INSTALL_DEVELOPMENT}.git
-        env:
-          WPE_INSTALL_DEVELOPMENT: ${{ secrets.WPE_INSTALL_DEVELOPMENT }}
-
       - name: Deploy - Git Config - Staging?
         if: contains(github.ref, 'staging')
         run: git remote add wpe git@git.wpengine.com:production/${WPE_INSTALL_STAGING}.git
@@ -101,13 +102,16 @@ jobs:
            git config --global user.email "actions@github.com"
            git config --global user.name "Github Action Deployment"
            git fetch wpe
+
       - name: Deploy - Git Ingore
         run: |
            rm .gitignore; mv .gitignores/__production .gitignore
            echo $(ls -la ./wp-content/themes/)
+
       - name: Deploy - Git Push
         run: |
           git checkout -b ${GITHUB_REF##*/}-${{ github.run_id }}-${{ github.run_number }}
+
           git rm -r -q --cached --ignore-unmatch --force .github .gitignores composer.* gulpfile.babel.js package.json webpack.config.js yarn.lock .babelrc .editorconfig .eslintignore .eslintrc.json .stylelintrc tests
           git add .
           git status
