@@ -95,12 +95,10 @@
     </section>  
   @endif
 
-
-  @if(false)
   <section class="bg-black">
     @include('partials.masthead')
   </section>
-  @endif
+
   <section class="p-8 max-w-1400 flex justify-center xl:justify-end">
     @include('forms.search')
   </section>
