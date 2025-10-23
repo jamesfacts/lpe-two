@@ -2,7 +2,7 @@
     <span class="font-necto uppercase">share</span>
     <ul class="mt-3 flex flex-wrap">
         <li>
-            <a class="generic-button mr-2 mb-2" href="mailto:?subject={!! the_title() !!}body={!! $shareUrl !!}" target="_self"
+            <a class="generic-button mr-2 mb-2" href="mailto:?subject={!! the_title() !!}&body=An article from the LPE Project blog has been shared with you. Read more here: {!! $shareUrl !!}" target="_self"
                 rel="noopener" aria-label="Share by E-Mail">
                 <span class="">
                     Email 
