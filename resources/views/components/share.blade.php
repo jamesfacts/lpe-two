@@ -34,10 +34,10 @@
         </li>
     
         <li>
-            <a class="generic-button mr-2 mb-2" href="https://getpocket.com/edit?url={!! $shareUrl !!}" target="_blank"
-                rel="noopener" aria-label="Save to Pocket">
+            <a class="generic-button mr-2 mb-2" href="https://bsky.app/intent/compose?text={!! $shareTitle !!}%20--%20{!! $shareUrl !!}" target="_blank"
+                rel="noopener" aria-label="Save on Bluesky">
                 <span class="">
-                    Pocket
+                    Bluesky
                 </span>
             </a>
         </li>
